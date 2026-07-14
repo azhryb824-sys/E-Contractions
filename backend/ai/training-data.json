@@ -1,0 +1,334 @@
+[
+  {
+    "id": "seed-apartment-150",
+    "type": "project_example",
+    "source_type": "seed_example",
+    "validation": {
+      "schema_validated": true,
+      "logically_validated": true,
+      "engineering_reviewed": false,
+      "approved_for_training": false,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "notes": [
+        "مثال أولي يحتاج مراجعة مهندس قبل اعتماده للتدريب النهائي"
+      ]
+    },
+    "project": {
+      "name": "تشطيب شقة سكنية ثلاث غرف",
+      "project_type": "سكني",
+      "building_type": "شقة",
+      "city": "الرياض",
+      "area": 150,
+      "floor_count": 1,
+      "room_count": 3,
+      "bathroom_count": 2,
+      "kitchen_count": 1,
+      "apartment_count": 1,
+      "finish_level": "جيد جداً",
+      "scope": "تشطيب كامل",
+      "project_condition": "new"
+    },
+    "assumptions": [
+      "صالة واحدة وممرات داخلية",
+      "ارتفاع السقف 2.8 م",
+      "المساحة الإجمالية 150 م²",
+      "المشروع لا يشمل الأعمال الإنشائية"
+    ],
+    "sections": [
+      {
+        "code": "SEC-FLR",
+        "name": "أعمال الأرضيات",
+        "sort_order": 1,
+        "items": [
+          {"code":"FLR-004","name_ar":"توريد وتركيب بلاط بورسلان للأرضيات","unit":"م²","quantity":110,"quantity_min":100,"quantity_max":120,"calculation_method":"مساحة الفراغات الجافة المقدرة من مساحة الشقة","calculation_inputs":{"project_area":150,"coverage_ratio":0.73},"quantity_basis":"net","waste_percentage":7,"confidence":0.82,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"FLR-009","name_ar":"بلاط أرضيات الحمامات","unit":"م²","quantity":18,"quantity_min":14,"quantity_max":22,"calculation_method":"تقدير مساحة أرضيات حمامين","calculation_inputs":{"bathroom_count":2,"average_floor_area":9},"quantity_basis":"net","waste_percentage":10,"confidence":0.75,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"FLR-013","name_ar":"بلاط جدران الحمامات","unit":"م²","quantity":52,"quantity_min":44,"quantity_max":60,"calculation_method":"محيط الحمامين × ارتفاع التكسية مطروحاً منه الفتحات","calculation_inputs":{"bathroom_count":2,"tiling_height":2.2},"quantity_basis":"net","waste_percentage":10,"confidence":0.70,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"FLR-008","name_ar":"وزرات أرضيات","unit":"م.ط","quantity":85,"quantity_min":75,"quantity_max":95,"calculation_method":"محيط الفراغات الجافة مطروحاً منه فتحات الأبواب","calculation_inputs":{"room_count":3},"quantity_basis":"net","waste_percentage":5,"confidence":0.75,"classification":"مرتبط","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-PNT",
+        "name": "أعمال الدهانات",
+        "sort_order": 2,
+        "items": [
+          {"code":"PNT-003","name_ar":"معجون الجدران الداخلية","unit":"م²","quantity":320,"quantity_min":290,"quantity_max":350,"calculation_method":"مساحة الجدران الداخلية المقدرة مطروحاً منها الفتحات","calculation_inputs":{"project_area":150,"ceiling_height":2.8},"quantity_basis":"net","waste_percentage":5,"confidence":0.78,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"PNT-005","name_ar":"دهان الجدران الداخلية","unit":"م²","quantity":320,"quantity_min":290,"quantity_max":350,"calculation_method":"نفس مساحة المعجون المعتمدة","calculation_inputs":{"linked_item":"PNT-003"},"quantity_basis":"net","waste_percentage":5,"confidence":0.82,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"PNT-006","name_ar":"دهان الأسقف الداخلية","unit":"م²","quantity":135,"quantity_min":125,"quantity_max":145,"calculation_method":"مساحة الأسقف الداخلية بعد استبعاد المناطق الخاصة","calculation_inputs":{"project_area":150,"coverage_ratio":0.9},"quantity_basis":"net","waste_percentage":5,"confidence":0.80,"classification":"أساسي","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-ELC",
+        "name": "أعمال الكهرباء",
+        "sort_order": 3,
+        "items": [
+          {"code":"ELC-001","name_ar":"مفاتيح إنارة","unit":"عدد","quantity":18,"quantity_min":15,"quantity_max":22,"calculation_method":"نقاط التحكم المتوقعة للغرف والصالة والممرات والمطبخ والحمامات","calculation_inputs":{"room_count":3,"bathroom_count":2,"kitchen_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.80,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-003","name_ar":"أفياش كهرباء عامة","unit":"عدد","quantity":30,"quantity_min":25,"quantity_max":35,"calculation_method":"متوسط نقاط الكهرباء المتوقعة للفراغات","calculation_inputs":{"room_count":3,"project_area":150},"quantity_basis":"net","waste_percentage":0,"confidence":0.72,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-007","name_ar":"لوحة توزيع كهربائية","unit":"عدد","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"لوحة واحدة للشقة","calculation_inputs":{"apartment_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-010","name_ar":"تمديدات كابلات كهربائية","unit":"م.ط","quantity":350,"quantity_min":300,"quantity_max":400,"calculation_method":"معدل تقديري للتمديدات حسب مساحة وعدد فراغات الشقة","calculation_inputs":{"project_area":150,"room_count":3},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.68,"classification":"ضروري","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-PLM",
+        "name": "أعمال السباكة",
+        "sort_order": 4,
+        "items": [
+          {"code":"PLM-001","name_ar":"مواسير تغذية المياه","unit":"م.ط","quantity":80,"quantity_min":65,"quantity_max":95,"calculation_method":"تمديدات المطبخ ودورتي المياه","calculation_inputs":{"bathroom_count":2,"kitchen_count":1},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.68,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"PLM-002","name_ar":"مواسير الصرف الصحي","unit":"م.ط","quantity":65,"quantity_min":55,"quantity_max":80,"calculation_method":"خطوط صرف المطبخ ودورتي المياه","calculation_inputs":{"bathroom_count":2,"kitchen_count":1},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.65,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"PLM-011","name_ar":"خلاط حوض حمام","unit":"عدد","quantity":2,"quantity_min":2,"quantity_max":2,"calculation_method":"خلاط واحد لكل حمام","calculation_inputs":{"bathroom_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"أساسي","is_essential":true,"requires_engineer_review":false},
+          {"code":"PLM-012","name_ar":"خلاط دش","unit":"عدد","quantity":2,"quantity_min":2,"quantity_max":2,"calculation_method":"خلاط دش واحد لكل حمام","calculation_inputs":{"bathroom_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"أساسي","is_essential":true,"requires_engineer_review":false}
+        ]
+      },
+      {
+        "code": "SEC-HVAC",
+        "name": "أعمال التكييف",
+        "sort_order": 5,
+        "items": [
+          {"code":"HVAC-001","name_ar":"مكيف سبليت سعة مبدئية","unit":"عدد","quantity":4,"quantity_min":3,"quantity_max":5,"calculation_method":"وحدة مبدئية لكل غرفة نوم ووحدة للصالة","calculation_inputs":{"room_count":3,"living_room_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.72,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"HVAC-005","name_ar":"تمديدات فريون وتصريف المكيفات","unit":"م.ط","quantity":40,"quantity_min":25,"quantity_max":60,"calculation_method":"متوسط عشرة أمتار لكل وحدة مع اختلاف مواقع الوحدات الخارجية","calculation_inputs":{"ac_count":4,"average_run_length":10},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.62,"classification":"مرتبط","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-WOD",
+        "name": "أعمال الأبواب والنجارة",
+        "sort_order": 6,
+        "items": [
+          {"code":"WOD-001","name_ar":"أبواب داخلية خشبية","unit":"عدد","quantity":6,"quantity_min":6,"quantity_max":7,"calculation_method":"ثلاث غرف + حمامين + مطبخ","calculation_inputs":{"room_count":3,"bathroom_count":2,"kitchen_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.90,"classification":"أساسي","is_essential":true,"requires_engineer_review":false},
+          {"code":"WOD-002","name_ar":"باب مدخل رئيسي","unit":"عدد","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"باب رئيسي واحد للشقة","calculation_inputs":{"apartment_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"أساسي","is_essential":true,"requires_engineer_review":false}
+        ]
+      },
+      {
+        "code": "SEC-OPR",
+        "name": "أعمال الاختبار والتسليم",
+        "sort_order": 7,
+        "items": [
+          {"code":"OPR-001","name_ar":"اختبار تمديدات المياه والصرف","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"اختبار كامل لأنظمة الشقة","calculation_inputs":{"apartment_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"OPR-002","name_ar":"اختبار الدوائر الكهربائية","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"اختبار اللوحة والنقاط والدوائر","calculation_inputs":{"apartment_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"OPR-004","name_ar":"تنظيف نهائي وتسليم","unit":"م²","quantity":150,"quantity_min":150,"quantity_max":150,"calculation_method":"كامل مساحة الشقة","calculation_inputs":{"project_area":150},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seed-electrical-villa-350",
+    "type": "project_example",
+    "source_type": "seed_example",
+    "validation": {
+      "schema_validated": true,
+      "logically_validated": true,
+      "engineering_reviewed": false,
+      "approved_for_training": false,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "notes": ["مثال لأعمال الكهرباء فقط"]
+    },
+    "project": {
+      "name": "تحديث كهرباء فيلا قائمة",
+      "project_type": "سكني",
+      "building_type": "فيلا",
+      "city": "الدمام",
+      "area": 350,
+      "floor_count": 2,
+      "room_count": 6,
+      "bathroom_count": 4,
+      "kitchen_count": 1,
+      "apartment_count": 1,
+      "finish_level": "جيد",
+      "scope": "كهرباء فقط",
+      "project_condition": "existing"
+    },
+    "assumptions": [
+      "تحديث كامل للتمديدات",
+      "لوحة رئيسية ولوحة فرعية",
+      "ست غرف ومطبخ وأربع دورات مياه"
+    ],
+    "sections": [
+      {
+        "code": "SEC-ELC",
+        "name": "أعمال الكهرباء",
+        "sort_order": 1,
+        "items": [
+          {"code":"ELC-001","name_ar":"مفاتيح إنارة","unit":"عدد","quantity":30,"quantity_min":25,"quantity_max":35,"calculation_method":"مفاتيح للغرف والممرات والمداخل والخدمات","calculation_inputs":{"room_count":6,"floor_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.80,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-003","name_ar":"أفياش كهرباء عامة","unit":"عدد","quantity":45,"quantity_min":40,"quantity_max":50,"calculation_method":"متوسط نقاط الكهرباء للغرف والخدمات","calculation_inputs":{"room_count":6,"project_area":350},"quantity_basis":"net","waste_percentage":0,"confidence":0.75,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-005","name_ar":"أفياش أجهزة ذات أحمال خاصة","unit":"عدد","quantity":10,"quantity_min":8,"quantity_max":12,"calculation_method":"نقاط للمكيفات والثلاجات والغسالات والأفران","calculation_inputs":{"floor_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.78,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-007","name_ar":"لوحات توزيع كهربائية","unit":"عدد","quantity":2,"quantity_min":2,"quantity_max":2,"calculation_method":"لوحة رئيسية ولوحة فرعية للدور الثاني","calculation_inputs":{"floor_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"ELC-008","name_ar":"قواطع كهربائية فرعية","unit":"عدد","quantity":16,"quantity_min":14,"quantity_max":20,"calculation_method":"قاطع مستقل لكل دائرة رئيسية أو حمل خاص","calculation_inputs":{"floor_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.78,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-010","name_ar":"تمديدات كابلات كهربائية","unit":"م.ط","quantity":500,"quantity_min":430,"quantity_max":570,"calculation_method":"تقدير التمديدات لدورين ومساحة 350 م²","calculation_inputs":{"project_area":350,"floor_count":2},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.68,"classification":"ضروري","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-OPR",
+        "name": "الاختبارات والتسليم",
+        "sort_order": 2,
+        "items": [
+          {"code":"OPR-002","name_ar":"اختبار وفحص النظام الكهربائي","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"فحص اللوحات والقواطع والدوائر والنقاط","calculation_inputs":{"project_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seed-renovation-apartment-130",
+    "type": "project_example",
+    "source_type": "seed_example",
+    "validation": {
+      "schema_validated": true,
+      "logically_validated": true,
+      "engineering_reviewed": false,
+      "approved_for_training": false,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "notes": ["مشروع ترميم ويجب ربط الكميات بحالة الموقع الفعلية"]
+    },
+    "project": {
+      "name": "ترميم شامل لشقة قديمة",
+      "project_type": "سكني",
+      "building_type": "شقة",
+      "city": "جدة",
+      "area": 130,
+      "floor_count": 1,
+      "room_count": 3,
+      "bathroom_count": 2,
+      "kitchen_count": 1,
+      "apartment_count": 1,
+      "finish_level": "جيد",
+      "scope": "ترميم شامل",
+      "project_condition": "renovation"
+    },
+    "assumptions": [
+      "إزالة التشطيبات القديمة",
+      "تحديث الكهرباء والسباكة",
+      "إعادة تنفيذ الأرضيات والدهانات",
+      "لا تشمل الأعمال تعديلات إنشائية حاملة"
+    ],
+    "sections": [
+      {
+        "code": "SEC-DEM",
+        "name": "أعمال الإزالة",
+        "sort_order": 1,
+        "items": [
+          {"code":"DEM-001","name_ar":"إزالة بلاط الأرضيات القديم","unit":"م²","quantity":90,"quantity_min":80,"quantity_max":100,"calculation_method":"المساحة المتوقع استبدال أرضياتها","calculation_inputs":{"project_area":130,"replacement_ratio":0.69},"quantity_basis":"net","waste_percentage":0,"confidence":0.78,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"DEM-002","name_ar":"إزالة الدهانات والمعالجات القديمة","unit":"م²","quantity":280,"quantity_min":250,"quantity_max":310,"calculation_method":"مساحة الجدران والأسقف المتأثرة","calculation_inputs":{"project_area":130},"quantity_basis":"net","waste_percentage":0,"confidence":0.70,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"DEM-003","name_ar":"فك الأدوات الصحية القديمة","unit":"عدد","quantity":4,"quantity_min":4,"quantity_max":6,"calculation_method":"مرحاض ومغسلة لكل دورة مياه كحد أدنى","calculation_inputs":{"bathroom_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.85,"classification":"ضروري","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-REH",
+        "name": "أعمال المعالجة وإعادة التأهيل",
+        "sort_order": 2,
+        "items": [
+          {"code":"PNT-001","name_ar":"معالجة الشقوق الجدارية","unit":"م.ط","quantity":80,"quantity_min":50,"quantity_max":110,"calculation_method":"تقدير أولي يخضع للمعاينة","calculation_inputs":{"project_condition":"renovation"},"quantity_basis":"net","waste_percentage":0,"confidence":0.50,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"INS-001","name_ar":"عزل مائي للحمامات","unit":"م²","quantity":25,"quantity_min":20,"quantity_max":30,"calculation_method":"عزل أرضيات وارتفاعات حائط محددة لحمامين","calculation_inputs":{"bathroom_count":2},"quantity_basis":"net","waste_percentage":10,"confidence":0.70,"classification":"ضروري","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-FIN",
+        "name": "أعمال التشطيب الجديدة",
+        "sort_order": 3,
+        "items": [
+          {"code":"FLR-010","name_ar":"توريد وتركيب سيراميك جديد","unit":"م²","quantity":90,"quantity_min":80,"quantity_max":100,"calculation_method":"نفس المساحة التي أزيل منها البلاط القديم","calculation_inputs":{"linked_item":"DEM-001"},"quantity_basis":"net","waste_percentage":10,"confidence":0.85,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"PNT-005","name_ar":"دهان الجدران والأسقف","unit":"م²","quantity":280,"quantity_min":250,"quantity_max":310,"calculation_method":"نفس مساحة إزالة ومعالجة الدهانات القديمة","calculation_inputs":{"linked_item":"DEM-002"},"quantity_basis":"net","waste_percentage":5,"confidence":0.82,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-010","name_ar":"تحديث تمديدات الكابلات الكهربائية","unit":"م.ط","quantity":300,"quantity_min":240,"quantity_max":360,"calculation_method":"تقدير أولي لتحديث شامل لشقة 130 م²","calculation_inputs":{"project_area":130},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.62,"classification":"ضروري","is_essential":true,"requires_engineer_review":true},
+          {"code":"PLM-001","name_ar":"تحديث تمديدات تغذية المياه","unit":"م.ط","quantity":70,"quantity_min":55,"quantity_max":85,"calculation_method":"تمديدات المطبخ والحمامين بعد الإزالة","calculation_inputs":{"bathroom_count":2,"kitchen_count":1},"quantity_basis":"including_waste","waste_percentage":5,"confidence":0.65,"classification":"ضروري","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-OPR",
+        "name": "أعمال الاختبار والتسليم",
+        "sort_order": 4,
+        "items": [
+          {"code":"OPR-001","name_ar":"اختبار شبكات المياه والصرف","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"اختبار جميع التمديدات بعد التحديث","calculation_inputs":{"project_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"OPR-002","name_ar":"اختبار النظام الكهربائي","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"فحص الدوائر واللوحات والنقاط","calculation_inputs":{"project_count":1},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"OPR-004","name_ar":"تنظيف نهائي وتسليم","unit":"م²","quantity":130,"quantity_min":130,"quantity_max":130,"calculation_method":"كامل مساحة الشقة","calculation_inputs":{"project_area":130},"quantity_basis":"net","waste_percentage":0,"confidence":0.98,"classification":"ضروري","is_essential":true,"requires_engineer_review":false}
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-villa-300",
+    "type": "project_example",
+    "source_type": "seed_example",
+    "validation": {
+      "schema_validated": true,
+      "logically_validated": true,
+      "engineering_reviewed": false,
+      "approved_for_training": false,
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "notes": ["مثال فيلا دورين تشطيب كامل"]
+    },
+    "project": {
+      "name": "تشطيب فيلا دورين",
+      "project_type": "سكني",
+      "building_type": "فيلا",
+      "city": "الرياض",
+      "area": 300,
+      "floor_count": 2,
+      "room_count": 6,
+      "bathroom_count": 5,
+      "kitchen_count": 2,
+      "apartment_count": 1,
+      "finish_level": "جيد جداً",
+      "scope": "تشطيب كامل",
+      "project_condition": "new"
+    },
+    "assumptions": [
+      "فيلا مستقلة دورين",
+      "مجلس رجال + صالة",
+      "مطبخ رئيسي + مطبخ تحضيري",
+      "حديقة صغيرة"
+    ],
+    "sections": [
+      {
+        "code": "SEC-FLR",
+        "name": "أعمال الأرضيات",
+        "sort_order": 1,
+        "items": [
+          {"code":"FLR-004","name_ar":"بلاط بورسلان للأرضيات","unit":"م²","quantity":220,"quantity_min":200,"quantity_max":240,"calculation_method":"المساحة الإجمالية للفراغات الداخلية","calculation_inputs":{"project_area":300,"coverage_ratio":0.73},"quantity_basis":"net","waste_percentage":7,"confidence":0.80,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"FLR-011","name_ar":"أرضيات رخام للمداخل","unit":"م²","quantity":40,"quantity_min":30,"quantity_max":50,"calculation_method":"مدخل الفيلا والسلم والمداخل الداخلية","calculation_inputs":{"project_area":300,"coverage_ratio":0.13},"quantity_basis":"net","waste_percentage":5,"confidence":0.70,"classification":"مرتبط","is_essential":false,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-PNT",
+        "name": "أعمال الدهانات",
+        "sort_order": 2,
+        "items": [
+          {"code":"PNT-005","name_ar":"دهان الجدران الداخلية","unit":"م²","quantity":650,"quantity_min":600,"quantity_max":700,"calculation_method":"محيط الجدران × ارتفاع × عدد الطوابق","calculation_inputs":{"project_area":300,"ceiling_height":2.8,"floor_count":2},"quantity_basis":"net","waste_percentage":5,"confidence":0.78,"classification":"أساسي","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-ELC",
+        "name": "أعمال الكهرباء",
+        "sort_order": 3,
+        "items": [
+          {"code":"ELC-003","name_ar":"أفياش كهرباء عامة","unit":"عدد","quantity":50,"quantity_min":45,"quantity_max":60,"calculation_method":"متوسط نقاط للغرف والخدمات لفيلا 300 م² دورين","calculation_inputs":{"room_count":6,"project_area":300},"quantity_basis":"net","waste_percentage":0,"confidence":0.72,"classification":"أساسي","is_essential":true,"requires_engineer_review":true},
+          {"code":"ELC-007","name_ar":"لوحات توزيع كهربائية","unit":"عدد","quantity":2,"quantity_min":2,"quantity_max":2,"calculation_method":"لوحة لكل دور","calculation_inputs":{"floor_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"ضروري","is_essential":true,"requires_engineer_review":false}
+        ]
+      },
+      {
+        "code": "SEC-HVAC",
+        "name": "أعمال التكييف",
+        "sort_order": 4,
+        "items": [
+          {"code":"HVAC-001","name_ar":"مكيفات سبليت","unit":"عدد","quantity":7,"quantity_min":6,"quantity_max":8,"calculation_method":"غرف + صالات","calculation_inputs":{"room_count":6,"living_room_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.72,"classification":"أساسي","is_essential":true,"requires_engineer_review":true}
+        ]
+      },
+      {
+        "code": "SEC-WOD",
+        "name": "أعمال النجارة",
+        "sort_order": 5,
+        "items": [
+          {"code":"WOD-001","name_ar":"أبواب داخلية خشبية","unit":"عدد","quantity":12,"quantity_min":11,"quantity_max":13,"calculation_method":"أبواب الغرف والمطابخ والحمامات","calculation_inputs":{"room_count":6,"bathroom_count":5,"kitchen_count":2},"quantity_basis":"net","waste_percentage":0,"confidence":0.90,"classification":"أساسي","is_essential":true,"requires_engineer_review":false}
+        ]
+      },
+      {
+        "code": "SEC-OPR",
+        "name": "أعمال التشغيل والتسليم",
+        "sort_order": 6,
+        "items": [
+          {"code":"OPR-001","name_ar":"اختبار أنظمة المياه والصرف","unit":"نظام","quantity":1,"quantity_min":1,"quantity_max":1,"calculation_method":"نظام شامل للفيلا","calculation_inputs":{},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"ضروري","is_essential":true,"requires_engineer_review":false},
+          {"code":"OPR-004","name_ar":"تنظيف نهائي","unit":"م²","quantity":300,"quantity_min":300,"quantity_max":300,"calculation_method":"كامل مساحة الفيلا","calculation_inputs":{"project_area":300},"quantity_basis":"net","waste_percentage":0,"confidence":0.95,"classification":"ضروري","is_essential":true,"requires_engineer_review":false}
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "model_version": "v3.7.0-20260714",
+  "trained_at": "2026-07-14T19:59:50.610Z",
+  "training_data_hash": "d46a51926fdfb1f00a5face59f74746a356f499a01403cd7525024d54b1eb913",
+  "training_projects_count": 1173,
+  "training_items_count": 45,
+  "algorithm": "co_occurrence + similarity_weighted",
+  "feature_schema_version": "1.0",
+  "item_dictionary_version": "1.0",
+  "random_seed": 42,
+  "metrics_summary": {},
+  "limitations": [
+    "بيانات التدريب محدودة (8 مشاريع)",
+    "النموذج غير مدرب على المشاريع التجارية"
+  ]
+}

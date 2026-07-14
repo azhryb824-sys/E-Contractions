@@ -1,0 +1,19 @@
+[
+  {"trigger":"FLR-004","required":["FLR-001","FLR-ADH","FLR-GRT"],"recommended":["FLR-008"],"reason":"أعمال البلاط تتطلب تجهيز السطح والمواد اللاصقة"},
+  {"trigger":"PNT-005","required":["PNT-003","PNT-004"],"recommended":["PNT-001"],"reason":"الدهان يحتاج معجون وطبقة أساس"},
+  {"trigger":"HVAC-001","required":["HVAC-005","OPR-003"],"recommended":[],"reason":"المكيف يحتاج تمديدات فريون واختبار"},
+  {"trigger":"PLM-001","required":["OPR-001"],"recommended":[],"reason":"تمديدات المياه تحتاج اختبار"},
+  {"trigger":"ELC-010","required":["ELC-007","ELC-008","ELC-EARTH","OPR-002"],"recommended":[],"reason":"الكابلات تحتاج لوحات وقواطع وتأريض"},
+  {"trigger":"FLR-009","required":["FLR-ADH","FLR-GRT"],"recommended":["INS-001"],"reason":"بلاط الحمام يحتاج عزل مائي"},
+  {"trigger":"WOD-001","required":[],"recommended":["WOD-005"],"reason":"الأبواب الداخلية قد تحتاج خزائن في الغرف"},
+  {"trigger":"FLR-011","required":["FLR-001","FLR-ADH"],"recommended":[],"reason":"الرخام يحتاج تجهيز ومواد لاصقة خاصة"},
+  {"trigger":"CON-001","required":["EXC-001"],"recommended":["CON-003"],"reason":"الخرسانة تحتاج حفر وتسليح"},
+  {"trigger":"PLM-011","required":[],"recommended":[],"reason":"خلاط الحوض"},
+  {"trigger":"PLM-015","required":[],"recommended":["PLM-BASIN"],"reason":"المرحاض يحتاج مغسلة في نفس الحمام"},
+  {"trigger":"FLR-013","required":["FLR-ADH","FLR-GRT"],"recommended":["INS-001"],"reason":"بلاط الجدران يحتاج عزل"},
+  {"trigger":"ELC-001","required":["ELC-010"],"recommended":[],"reason":"المفاتيح تحتاج تمديدات كابلات"},
+  {"trigger":"ELC-003","required":["ELC-010"],"recommended":[],"reason":"الأفياش تحتاج تمديدات كابلات"},
+  {"trigger":"WOD-004","required":["PLM-KITCHEN-SINK"],"recommended":[],"reason":"خزائن المطبخ تحتاج حوض"},
+  {"trigger":"HVAC-DUCT","required":["HVAC-005"],"recommended":["OPR-003"],"reason":"مجاري الهواء تحتاج تمديدات"},
+  {"trigger":"ELC-EARTH","required":["OPR-002"],"recommended":[],"reason":"التأريض يحتاج اختبار"}
+]

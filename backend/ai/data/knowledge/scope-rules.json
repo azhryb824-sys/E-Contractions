@@ -1,0 +1,98 @@
+[
+  {
+    "scope": "إنشاء كامل",
+    "label": "إنشاء كامل من الحفر والأساسات حتى التسليم",
+    "description": "إنشاء كامل من الصفر: حفر، أساسات، هيكل، بناء، تشطيبات",
+    "allowed_sections": ["SEC-PRE","SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-INS","SEC-FLR","SEC-WCL","SEC-PNT","SEC-CLG","SEC-WOD","SEC-ALM","SEC-ELC","SEC-LIG","SEC-LVC","SEC-PLM","SEC-HVAC","SEC-FIR","SEC-EXT","SEC-OPR"],
+    "forbidden_sections": [],
+    "requires_structural_drawings": true,
+    "always_includes_structure": true,
+    "engineering_documents_required_for": ["الخرسانة", "حديد التسليح", "الأساسات", "الأحمال الكهربائية", "التكييف"],
+    "confidence_penalty_no_drawings": 0.5
+  },
+  {
+    "scope": "تشطيب كامل",
+    "label": "تشطيب مبنى قائم",
+    "description": "تشطيب كامل لمبنى قائم: أرضيات، دهانات، كهرباء، سباكة، تكييف، نجارة",
+    "allowed_sections": ["SEC-INS","SEC-FLR","SEC-WCL","SEC-PNT","SEC-CLG","SEC-WOD","SEC-ALM","SEC-ELC","SEC-LIG","SEC-LVC","SEC-PLM","SEC-HVAC","SEC-OPR"],
+    "forbidden_sections": ["SEC-PRE","SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-DEM"],
+    "forbidden_items": ["CON-001","CON-002","CON-003","CON-004","CON-005","EXC-001","EXC-002","DEM-001","DEM-002","BLK-001","BLK-002","PRE-001"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "كهرباء فقط",
+    "label": "أعمال كهرباء فقط",
+    "description": "أعمال الكهرباء والإنارة فقط",
+    "allowed_sections": ["SEC-ELC","SEC-LIG","SEC-LVC","SEC-OPR"],
+    "forbidden_sections": ["SEC-PLM","SEC-FLR","SEC-CON","SEC-EXC","SEC-BLK","SEC-PLA","SEC-WOD","SEC-ALM","SEC-PNT","SEC-CLG","SEC-INS","SEC-FIR","SEC-WCL","SEC-DEM","SEC-PRE","SEC-HVAC"],
+    "forbidden_items": ["PLM-001","PLM-002","PLM-011","PLM-012","PLM-015","PLM-BASIN","FLR-004","FLR-009","PNT-005","WOD-001","HVAC-001"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "سباكة فقط",
+    "label": "أعمال سباكة فقط",
+    "description": "أعمال السباكة الداخلية والتغذية والصرف",
+    "allowed_sections": ["SEC-PLM","SEC-INS","SEC-OPR"],
+    "forbidden_sections": ["SEC-ELC","SEC-FLR","SEC-CON","SEC-EXC","SEC-BLK","SEC-PLA","SEC-WOD","SEC-ALM","SEC-PNT","SEC-CLG","SEC-HVAC"],
+    "forbidden_items": ["ELC-001","ELC-003","ELC-007","FLR-004","PNT-005","HVAC-001","WOD-001"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "دهانات فقط",
+    "label": "أعمال دهانات فقط",
+    "description": "أعمال الدهانات الداخلية والخارجية فقط",
+    "allowed_sections": ["SEC-PNT","SEC-OPR"],
+    "forbidden_sections": ["SEC-FLR","SEC-PLM","SEC-ELC","SEC-CON","SEC-EXC","SEC-BLK","SEC-PLA","SEC-WOD","SEC-ALM","SEC-CLG","SEC-INS","SEC-HVAC"],
+    "forbidden_items": ["FLR-004","PLM-011","ELC-007","WOD-001","HVAC-001"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "ترميم شامل",
+    "label": "ترميم وتجديد مبنى قائم",
+    "description": "ترميم شامل: إزالة التشطيبات القديمة، معالجة، تشطيبات جديدة، تحديث الكهرباء والسباكة",
+    "allowed_sections": ["SEC-DEM","SEC-PLA","SEC-INS","SEC-FLR","SEC-PNT","SEC-CLG","SEC-WOD","SEC-ALM","SEC-ELC","SEC-PLM","SEC-HVAC","SEC-OPR"],
+    "forbidden_sections": ["SEC-EXC","SEC-CON","SEC-BLK","SEC-PRE"],
+    "forbidden_items": ["CON-001","CON-003","EXC-001","BLK-001","PRE-001"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "تشطيب جزئي",
+    "label": "تشطيب بعض الأقسام فقط",
+    "description": "تشطيب أقسام محددة دون غيرها",
+    "allowed_sections": ["SEC-FLR","SEC-PNT","SEC-ELC","SEC-PLM","SEC-HVAC","SEC-WOD","SEC-OPR"],
+    "forbidden_sections": ["SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-PRE"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "توسعة",
+    "label": "توسعة مبنى قائم",
+    "description": "توسعة مبنى قائم يتطلب حسابات إنشائية",
+    "allowed_sections": ["SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-INS","SEC-FLR","SEC-PNT","SEC-ELC","SEC-PLM","SEC-OPR"],
+    "requires_structural_drawings": true,
+    "always_includes_structure": true
+  },
+  {
+    "scope": "صيانة",
+    "label": "صيانة وإصلاحات",
+    "description": "أعمال صيانة وإصلاحات طفيفة",
+    "allowed_sections": ["SEC-ELC","SEC-PLM","SEC-PNT","SEC-OPR"],
+    "forbidden_sections": ["SEC-PRE","SEC-DEM","SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-FLR","SEC-CLG","SEC-WOD","SEC-ALM","SEC-HVAC","SEC-FIR","SEC-EXT"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  },
+  {
+    "scope": "تجديد حمامات",
+    "label": "تجديد حمامات فقط",
+    "description": "إعادة تشطيب وتجديد الحمامات",
+    "allowed_sections": ["SEC-DEM","SEC-INS","SEC-FLR","SEC-PLM","SEC-ELC","SEC-OPR"],
+    "forbidden_sections": ["SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-PNT","SEC-CLG","SEC-WOD","SEC-HVAC","SEC-EXT"],
+    "requires_structural_drawings": false,
+    "always_includes_structure": false
+  }
+]

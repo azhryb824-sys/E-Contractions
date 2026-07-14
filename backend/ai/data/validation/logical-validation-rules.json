@@ -1,0 +1,11 @@
+[
+  {"rule_id":"LV-001","condition":"تشطيب فقط","forbidden_sections":["SEC-EXC","SEC-CON","SEC-DEM"],"severity":"error","message":"لا يمكن إضافة أعمال حفر أو خرسانة في مشروع تشطيب"},
+  {"rule_id":"LV-002","condition":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON","SEC-EXC","SEC-BLK","SEC-PLA","SEC-WOD","SEC-ALM","SEC-PNT","SEC-HVAC"],"severity":"error","message":"لا يمكن إضافة أعمال سباكة أو تشطيب في مشروع كهرباء فقط"},
+  {"rule_id":"LV-003","condition":"finish_level=اقتصادي","forbidden_items_by_category":["فاخر","ديكور"],"severity":"warning","message":"لا توجد بنود فاخرة مع التشطيب الاقتصادي"},
+  {"rule_id":"LV-004","condition":"no area provided","action":"استخدام نطاق تقديري","severity":"warning","message":"لم يتم تحديد المساحة، تم استخدام نطاق تقديري"},
+  {"rule_id":"LV-005","condition":"missing bathroom count","action":"استخدام القيمة الافتراضية","severity":"warning","message":"لم يتم تحديد عدد الحمامات"},
+  {"rule_id":"LV-006","condition":"missing room count","action":"استخدام القيمة الافتراضية","severity":"warning","message":"لم يتم تحديد عدد الغرف"},
+  {"rule_id":"LV-007","condition":"بند اختياري مع تصنيف أساسي","action":"إعادة التصنيف إلى اختياري","severity":"warning","message":"تم إعادة تصنيف البند إلى اختياري"},
+  {"rule_id":"LV-008","condition":"كمية غير متناسبة مع المساحة","action":"وضع علامة مراجعة","severity":"warning","message":"الكمية لا تتناسب مع المساحة، يرجى المراجعة"},
+  {"rule_id":"LV-009","condition":"بند بنظام بدون quantity_driver=fixed","action":"مراجعة الكمية","severity":"warning","message":"الأنظمة عادة ما تكون بوحدة نظام","item_codes":["OPR-001","OPR-002","OPR-003","ELC-EARTH"]}
+]

@@ -1,0 +1,13 @@
+{
+  "model_version": null,
+  "trained_at": null,
+  "training_status": "not_trained",
+  "data_version": "1.1.0",
+  "total_projects": 500,
+  "total_training_examples": 5400,
+  "algorithms": [],
+  "metrics": {},
+  "best_algorithm": null,
+  "model_path": null,
+  "training_time_seconds": 0
+}

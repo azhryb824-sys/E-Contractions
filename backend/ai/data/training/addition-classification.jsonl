@@ -1,0 +1,500 @@
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"ترميم شامل","forbidden_items":["مسبح جديد","مصعد جديد","خزان جديد"],"reason":"الترميم لا يشمل إضافات كبيرة دون طلب","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كمية بند بوحدة عدد","rule":"الكمية يجب أن تكون عدداً صحيحاً","reason":"وحدات العد تتطلب أرقاماً صحيحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سعر غير موجود","rule":"لا تخترع سعراً ولا تحول السعر إلى صفر","reason":"الأسعار تجلب من قاعدة الأسعار المعتمدة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"فيلا بمسبح في منطقة سكنية عادية","rule":"تأكد من توفر المساحة والتصريح قبل اقتراح المسبح","reason":"المسبح يحتاج مساحة إضافية وتصريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب شقة قائمة","forbidden_sections":["SEC-EXC","SEC-CON"],"reason":"لا توجد أعمال أساسات أو هيكل في شقة قائمة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"تشطيب اقتصادي","optional_not_required":["رخام فاخر","منزل ذكي","ثريات كريستال","جبس زخرفي معقد"],"reason":"لا تتناسب مع التشطيب الاقتصادي","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"حمامان ومساحة المشروع تضاعفت","rule":"لا تضاعف عدد المراحيض والخلاطات إذا لم يتغير عدد الحمامات","reason":"عدد الأدوات الصحية يعتمد على عدد الحمامات لا المساحة","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دور واحد","rule":"لا تضف أكثر من لوحة توزيع رئيسية دون سبب فني","reason":"لوحة واحدة تكفي للدور الواحد","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"شقة مستقلة","forbidden_items":["مصعد","مسبح"],"reason":"لا تقترح في شقة إلا بطلب صريح","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"كهرباء فقط","forbidden_sections":["SEC-PLM","SEC-FLR","SEC-CON"],"reason":"خارج نطاق المستخدم","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"دهانات فقط","forbidden_items":["أعمال الأرضيات","أعمال السباكة"],"reason":"نطاق العمل يقتصر على الدهانات","source_type":"synthetic_seed","engineering_reviewed":false}
+{"input":"سباكة فقط","forbidden_sections":["SEC-ELC","SEC-FLR","SEC-CON"],"reason":"نطاق العمل يقتصر على السباكة","source_type":"synthetic_seed","engineering_reviewed":false}

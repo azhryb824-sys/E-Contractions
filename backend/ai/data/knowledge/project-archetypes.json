@@ -1,0 +1,81 @@
+[
+  {
+    "id": "APT-FINISH-NEW",
+    "name": "تشطيب شقة جديدة",
+    "building_type": "شقة",
+    "project_type": "سكني",
+    "scope": "تشطيب كامل",
+    "condition": "new",
+    "typical_area_range": [60, 300],
+    "sections_required": ["SEC-FLR","SEC-PNT","SEC-WOD","SEC-ELC","SEC-PLM","SEC-HVAC","SEC-OPR"],
+    "sections_forbidden": ["SEC-EXC","SEC-CON"],
+    "quantity_hints": {"FLR-004": "area*0.7", "PNT-005": "area*2.2", "PLM-011": "bathrooms", "HVAC-001": "rooms+1"}
+  },
+  {
+    "id": "VILLA-NEW-CONSTRUCTION",
+    "name": "فيلا إنشاء جديد",
+    "building_type": "فيلا",
+    "project_type": "سكني",
+    "scope": "إنشاء جديد",
+    "condition": "new",
+    "typical_area_range": [200, 1000],
+    "sections_required": ["SEC-PRE","SEC-EXC","SEC-CON","SEC-BLK","SEC-PLA","SEC-INS","SEC-FLR","SEC-WCL","SEC-PNT","SEC-CLG","SEC-WOD","SEC-ALM","SEC-ELC","SEC-LIG","SEC-PLM","SEC-HVAC","SEC-OPR"],
+    "quantity_hints": {"CON-001": "area*0.35", "BLK-001": "area*25", "FLR-004": "area*0.65"}
+  },
+  {
+    "id": "SHOP-FINISH",
+    "name": "تشطيب محل تجاري",
+    "building_type": "محل",
+    "project_type": "تجاري",
+    "scope": "تشطيب كامل",
+    "condition": "new",
+    "typical_area_range": [20, 500],
+    "sections_required": ["SEC-FLR","SEC-PNT","SEC-CLG","SEC-ELC","SEC-PLM","SEC-HVAC","SEC-OPR"],
+    "sections_forbidden": ["SEC-EXC","SEC-CON"],
+    "quantity_hints": {"FLR-004": "area*0.9", "HVAC-004": "1"}
+  },
+  {
+    "id": "RENOVATION-COMPLETE",
+    "name": "ترميم شامل",
+    "building_type": null,
+    "project_type": "سكني",
+    "scope": "ترميم شامل",
+    "condition": "renovation",
+    "typical_area_range": [50, 500],
+    "sections_required": ["SEC-DEM","SEC-PLA","SEC-INS","SEC-FLR","SEC-PNT","SEC-ELC","SEC-PLM","SEC-OPR"],
+    "quantity_hints": {"FLR-004": "area*0.7", "PNT-005": "area*2.2"}
+  },
+  {
+    "id": "ELECTRICITY-ONLY",
+    "name": "كهرباء فقط",
+    "building_type": null,
+    "project_type": null,
+    "scope": "كهرباء فقط",
+    "condition": "any",
+    "typical_area_range": [50, 1000],
+    "sections_required": ["SEC-ELC","SEC-LIG","SEC-LVC","SEC-OPR"],
+    "sections_forbidden": ["SEC-PLM","SEC-FLR","SEC-CON","SEC-EXC","SEC-BLK","SEC-PLA","SEC-WOD"]
+  },
+  {
+    "id": "PLUMBING-ONLY",
+    "name": "سباكة فقط",
+    "building_type": null,
+    "project_type": null,
+    "scope": "سباكة فقط",
+    "condition": "any",
+    "typical_area_range": [50, 1000],
+    "sections_required": ["SEC-PLM","SEC-OPR"],
+    "sections_forbidden": ["SEC-ELC","SEC-FLR","SEC-CON","SEC-EXC","SEC-BLK"]
+  },
+  {
+    "id": "PAINTING-ONLY",
+    "name": "دهانات فقط",
+    "building_type": null,
+    "project_type": null,
+    "scope": "دهانات فقط",
+    "condition": "any",
+    "typical_area_range": [30, 500],
+    "sections_required": ["SEC-PNT","SEC-OPR"],
+    "sections_forbidden": ["SEC-FLR","SEC-PLM","SEC-ELC","SEC-CON"]
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {"rule_id":"QV-001","rule":"الكمية يجب أن تكون أكبر من 0","severity":"error","scope":"all"},
+  {"rule_id":"QV-002","rule":"الكمية لوحدة عدد يجب أن تكون عدداً صحيحاً","severity":"error","scope":"count_units","units":["عدد","قطعة","جهاز","نظام","طقم","باب","لوحة","مكيف","مضخة","خزان","مصعد"]},
+  {"rule_id":"QV-003","rule":"عدد المكيفات لا يجب أن يتجاوز عدد الغرف + 2","severity":"warning","scope":"hvac","item_codes":["HVAC-001","HVAC-002","HVAC-003"]},
+  {"rule_id":"QV-004","rule":"عدد المراحيض يجب أن يساوي عدد الحمامات","severity":"error","scope":"plumbing","item_codes":["PLM-015"]},
+  {"rule_id":"QV-005","rule":"مساحة الأرضيات لا يجب أن تتجاوز مساحة المشروع","severity":"warning","scope":"flooring","item_codes":["FLR-004","FLR-010"]},
+  {"rule_id":"QV-006","rule":"مساحة الدهان يجب أن تكون بين 1.5 و 4 أضعاف مساحة المشروع","severity":"warning","scope":"painting","item_codes":["PNT-005","PNT-003"]},
+  {"rule_id":"QV-007","rule":"عدد اللوحات الكهربائية يجب أن يكون لوحة واحدة على الأقل لكل دور","severity":"info","scope":"electrical","item_codes":["ELC-007"]},
+  {"rule_id":"QV-008","rule":"عدد أنظمة الاختبار يجب أن يكون 1","severity":"info","scope":"testing","item_codes":["OPR-001","OPR-002","OPR-003","OPR-005"]},
+  {"rule_id":"QV-009","rule":"عدد الحمامات يجب أن يكون عدداً صحيحاً موجباً","severity":"error","scope":"project_info"},
+  {"rule_id":"QV-010","rule":"عدد الغرف يجب أن يكون عدداً صحيحاً موجباً","severity":"error","scope":"project_info"},
+  {"rule_id":"QV-011","rule":"المساحة يجب أن تكون رقماً موجباً","severity":"error","scope":"project_info"},
+  {"rule_id":"QV-012","rule":"عدد المغاسل يجب أن يتناسب مع عدد الحمامات","severity":"warning","scope":"plumbing","item_codes":["PLM-BASIN","PLM-013"]},
+  {"rule_id":"QV-013","rule":"عدد خلاطات الحمام يجب أن يتناسب مع عدد الحمامات","severity":"warning","scope":"plumbing","item_codes":["PLM-011","PLM-012"]}
+]

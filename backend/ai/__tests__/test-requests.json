@@ -1,0 +1,33 @@
+[
+  {
+    "id": "test-01",
+    "title": "تشطيب شقة 3 غرف",
+    "description": "تشطيب شقة جديدة 3 غرف وصالة ومطبخ وحمامين",
+    "project_type": "سكني",
+    "building_type": "شقة",
+    "city": "الرياض",
+    "area": 150,
+    "rooms": 3,
+    "bathrooms": 2,
+    "floor_count": 1,
+    "finish_level": "جيد جداً"
+  },
+  {
+    "id": "test-02",
+    "title": "كهرباء فقط",
+    "description": "أعمال كهرباء فقط لفيلا قائمة",
+    "project_type": "سكني",
+    "building_type": "فيلا",
+    "area": 300,
+    "rooms": 5,
+    "bathrooms": 4,
+    "finish_level": "جيد"
+  },
+  {
+    "id": "test-03",
+    "title": "مشروع بمعلومات قليلة",
+    "description": "أريد تشطيب فيلا",
+    "project_type": "سكني",
+    "building_type": "فيلا"
+  }
+]

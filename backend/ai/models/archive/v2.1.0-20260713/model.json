@@ -1,0 +1,16 @@
+{
+  "type": "item_prediction",
+  "algorithm": "neural_network",
+  "trained_at": "2026-07-13T16:34:24.610Z",
+  "data": {
+    "item_item_matrix": {},
+    "item_section_map": {},
+    "section_probabilities": {},
+    "item_probabilities": {},
+    "building_type_item_stats": {},
+    "finish_level_item_stats": {},
+    "item_quantity_stats": {},
+    "quantity_models": {}
+  },
+  "version": "v2.1.0-20260713"
+}

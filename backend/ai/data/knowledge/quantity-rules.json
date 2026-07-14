@@ -1,0 +1,175 @@
+[
+  {
+    "rule_id": "PLM-BATHROOM-FIXTURES-001",
+    "item_codes": ["PLM-011", "PLM-012", "PLM-015", "PLM-BASIN"],
+    "quantity_driver": "bathroom_count",
+    "integer_required": true,
+    "rule": "الكمية الأساسية تساوي عدد الحمامات ما لم يذكر المستخدم أكثر من أداة لكل حمام",
+    "default_per_bathroom": 1,
+    "confidence_without_drawings_max": 0.75,
+    "confidence_with_drawings_max": 0.9
+  },
+  {
+    "rule_id": "PLM-KITCHEN-SINK-001",
+    "item_codes": ["PLM-KITCHEN-SINK"],
+    "quantity_driver": "kitchen_count",
+    "integer_required": true,
+    "rule": "حوض واحد مبدئياً لكل مطبخ",
+    "default_quantity": 1,
+    "confidence_without_drawings_max": 0.8
+  },
+  {
+    "rule_id": "PLM-KITCHEN-FAUCET-001",
+    "item_codes": ["PLM-009"],
+    "quantity_driver": "kitchen_count",
+    "integer_required": true,
+    "rule": "خلاط واحد لكل حوض مطبخ",
+    "default_quantity": 1,
+    "confidence_without_drawings_max": 0.8
+  },
+  {
+    "rule_id": "WOD-INTERNAL-DOORS-001",
+    "item_codes": ["WOD-001"],
+    "quantity_driver": "door_count_from_spaces",
+    "integer_required": true,
+    "rule": "أبواب الفراغات المغلقة فقط: عدد غرف النوم + عدد الحمامات + مطبخ + صالة مدخل إن وجدت",
+    "confidence_without_drawings_max": 0.7
+  },
+  {
+    "rule_id": "WOD-ENTRANCE-001",
+    "item_codes": ["WOD-002"],
+    "quantity_driver": "entrance_count",
+    "integer_required": true,
+    "default_when_unknown": 1,
+    "requires_confirmation_when_multiple": true,
+    "confidence_without_drawings_max": 0.95
+  },
+  {
+    "rule_id": "HVAC-CONDITIONED-SPACES-001",
+    "item_codes": ["HVAC-001"],
+    "quantity_driver": "conditioned_space_count",
+    "integer_required": true,
+    "rule": "وحدة مبدئية لكل غرفة وصالة مستقلة ومجلس، لكن سعة الوحدة تحتاج حساب حمل حراري",
+    "requires_engineering_calculation": true,
+    "confidence_without_drawings_max": 0.65
+  },
+  {
+    "rule_id": "OPR-FIXED-SYSTEMS-001",
+    "item_codes": ["OPR-001", "OPR-002", "OPR-003", "OPR-005", "OPR-006"],
+    "quantity_driver": "fixed_per_project",
+    "integer_required": true,
+    "default_quantity": 1,
+    "confidence_without_drawings_max": 0.98
+  },
+  {
+    "rule_id": "OPR-CLEANING-001",
+    "item_codes": ["OPR-004"],
+    "quantity_driver": "project_area",
+    "integer_required": false,
+    "default_coverage_ratio": 1.0,
+    "confidence_without_drawings_max": 0.5
+  },
+  {
+    "rule_id": "ELC-DISTRIBUTION-BOARD-001",
+    "item_codes": ["ELC-007"],
+    "quantity_driver": "fixed_per_floor",
+    "integer_required": true,
+    "rule": "لوحة مبدئية لكل دور، وقد تختلف حسب التصميم الكهربائي",
+    "requires_engineering_calculation": true,
+    "confidence_without_drawings_max": 0.6
+  },
+  {
+    "rule_id": "ELC-SWITCHES-001",
+    "item_codes": ["ELC-001"],
+    "quantity_driver": "rate_by_space_type",
+    "integer_required": true,
+    "rule": "4 مفاتيح لكل غرفة نوم، 2 لكل حمام، 3 للصالة، 1 للمطبخ",
+    "confidence_without_drawings_max": 0.7
+  },
+  {
+    "rule_id": "ELC-OUTLETS-001",
+    "item_codes": ["ELC-003"],
+    "quantity_driver": "rate_by_space_type",
+    "integer_required": true,
+    "rule": "6 أفياش لكل غرفة نوم، 2 لكل حمام، 8 للصالة، 4 للمطبخ، 2 للممر",
+    "confidence_without_drawings_max": 0.7
+  },
+  {
+    "rule_id": "ELC-HEAVY-OUTLETS-001",
+    "item_codes": ["ELC-005"],
+    "quantity_driver": "equipment_count",
+    "integer_required": true,
+    "rule": "فيش مكيف لكل وحدة تكييف، فيش غسالة، فيش فرن، فيش سخان",
+    "confidence_without_drawings_max": 0.6
+  },
+  {
+    "rule_id": "FLR-PORCELAIN-001",
+    "item_codes": ["FLR-004"],
+    "quantity_driver": "usable_area",
+    "integer_required": false,
+    "requires_space_distribution": true,
+    "default_coverage_ratio": 0.7,
+    "confidence_without_drawings_max": 0.5
+  },
+  {
+    "rule_id": "FLR-CERAMIC-BATH-001",
+    "item_codes": ["FLR-009", "FLR-013"],
+    "quantity_driver": "bathroom_count",
+    "integer_required": false,
+    "rule": "مساحة أرض لكل حمام 20 م²، وجدران 45 م² لكل حمام",
+    "confidence_without_drawings_max": 0.65
+  },
+  {
+    "rule_id": "PNT-WALL-AREA-001",
+    "item_codes": ["PNT-003", "PNT-004", "PNT-005"],
+    "quantity_driver": "wall_area",
+    "integer_required": false,
+    "preferred_source": "drawing_measurement",
+    "fallback_source": "seed_rule",
+    "default_wall_factor": 2.2,
+    "confidence_without_drawings_max": 0.5
+  },
+  {
+    "rule_id": "PNT-CEILING-001",
+    "item_codes": ["PNT-006"],
+    "quantity_driver": "ceiling_area",
+    "integer_required": false,
+    "default_ceiling_ratio": 0.95,
+    "confidence_without_drawings_max": 0.5
+  },
+  {
+    "rule_id": "STRUCTURE-DRAWINGS-REQUIRED-001",
+    "item_codes": ["CON-001", "CON-003", "EXC-001"],
+    "quantity_driver": "drawing_measurement",
+    "requires_engineering_calculation": true,
+    "rule": "لا تعرض كمية عالية الثقة دون مخططات إنشائية أو بيانات أساسات",
+    "confidence_without_drawings_max": 0.35
+  },
+  {
+    "rule_id": "WATER-HEATER-001",
+    "item_codes": ["PLM-005"],
+    "quantity_driver": "bathroom_count",
+    "integer_required": true,
+    "rule": "سخان واحد لكل حمام، أو سخان مركزي واحد للمشروع",
+    "default_per_bathroom": 1,
+    "confidence_without_drawings_max": 0.7
+  },
+  {
+    "rule_id": "BATHROOM-FAN-001",
+    "item_codes": ["ELC-012"],
+    "quantity_driver": "bathroom_count",
+    "integer_required": true,
+    "rule": "مروحة شفط لكل حمام",
+    "default_per_bathroom": 1,
+    "confidence_without_drawings_max": 0.8
+  },
+  {
+    "rule_id": "ALUMINUM-WINDOWS-001",
+    "item_codes": ["ALM-001", "ALM-006"],
+    "quantity_driver": "room_count",
+    "integer_required": true,
+    "rule": "شباك واحد لكل غرفة نوم، شباك للصالة، شباك للمجلس",
+    "default_per_room": 1.2,
+    "confidence_without_drawings_max": 0.6
+  }
+]

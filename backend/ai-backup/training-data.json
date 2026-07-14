@@ -1,0 +1,2301 @@
+[
+  {
+    "id": "ex-001",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "تشطيب شقة سكنية - 3 غرف",
+      "project_type": "سكني",
+      "building_type": "شقة",
+      "city": "الرياض",
+      "area": 150,
+      "area_min": 120,
+      "area_max": 180,
+      "floor_count": 1,
+      "room_count": 3,
+      "bathroom_count": 2,
+      "finish_level": "جيد جداً",
+      "scope": "تشطيب كامل"
+    },
+    "assumptions": [
+      "مساحة الشقة 150 م²",
+      "دورتان مياه",
+      "مطبخ واحد",
+      "غرفة معيشة وغرفة طعام",
+      "ارتفاع السقف 2.8 م"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الأرضيات",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "FLR-004",
+            "name_ar": "بلاط بورسلين للأرضيات",
+            "unit": "م²",
+            "quantity": 110,
+            "quantity_min": 100,
+            "quantity_max": 120,
+            "calculation_method": "مساحة الأرضيات = 70% من مساحة الشقة",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-008",
+            "name_ar": "وزرات للحوائط",
+            "unit": "م.ط",
+            "quantity": 85,
+            "quantity_min": 75,
+            "quantity_max": 95,
+            "calculation_method": "محيط الغرف مطروحاً منه عرض الأبواب",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-009",
+            "name_ar": "بلاط سيراميك للحمامات",
+            "unit": "م²",
+            "quantity": 18,
+            "quantity_min": 15,
+            "quantity_max": 22,
+            "calculation_method": "مساحة الحمامين × 2 (أرضيات وجدران بارتفاع 2.2 م)",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال الدهانات",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "PNT-005",
+            "name_ar": "دهان الجدران الداخلية",
+            "unit": "م²",
+            "quantity": 320,
+            "quantity_min": 290,
+            "quantity_max": 350,
+            "calculation_method": "مساحة الجدران = محيط الغرف × ارتفاع السقف - مساحة الفتحات",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-003",
+            "name_ar": "معجون جدران",
+            "unit": "م²",
+            "quantity": 320,
+            "quantity_min": 290,
+            "quantity_max": 350,
+            "calculation_method": "نفس مساحة الدهان",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-001",
+            "name_ar": "معالجة الشقوق الجدارية",
+            "unit": "م.ط",
+            "quantity": 60,
+            "quantity_min": 40,
+            "quantity_max": 80,
+            "calculation_method": "تقدير بناءً على حالة الجدران",
+            "confidence": 0.6,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال الكهرباء",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 18,
+            "quantity_min": 15,
+            "quantity_max": 22,
+            "calculation_method": "مفتاح لكل غرفة وممر ومطبخ",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-003",
+            "name_ar": "أفياش كهرباء عامة",
+            "unit": "عدد",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "4-6 أفياش لكل غرفة + مطبخ + حمامات",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-006",
+            "name_ar": "قاطع كهرباء رئيسي",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "قاطع واحد للوحة الرئيسية",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-010",
+            "name_ar": "تمديدات كابلات كهرباء",
+            "unit": "م.ط",
+            "quantity": 350,
+            "quantity_min": 300,
+            "quantity_max": 400,
+            "calculation_method": "إجمالي أطوال التمديدات في الجدران والأسقف",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال السباكة",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "PLM-001",
+            "name_ar": "مواسير تغذية مياه بلاستيكية",
+            "unit": "م.ط",
+            "quantity": 80,
+            "quantity_min": 70,
+            "quantity_max": 90,
+            "calculation_method": "إجمالي أطوال التمديدات من الخزان للنقاط الصحية",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-010",
+            "name_ar": "خلاط ماء حوض مطبخ",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "خلاط واحد لكل حوض مطبخ",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-006",
+            "name_ar": "محبس ماء رئيسي",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 3,
+            "calculation_method": "محبس رئيسي + محبس لكل دورة مياه",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال التكييف",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "HVAC-001",
+            "name_ar": "مكيف سبليت 18000 وحدة",
+            "unit": "عدد",
+            "quantity": 3,
+            "quantity_min": 2,
+            "quantity_max": 4,
+            "calculation_method": "مكيف لكل غرفة معيشة ومجلس وغرفة نوم رئيسية",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-005",
+            "name_ar": "تمديدات فريون وتصريف مكيفات",
+            "unit": "م.ط",
+            "quantity": 30,
+            "quantity_min": 20,
+            "quantity_max": 45,
+            "calculation_method": "أطوال التمديدات من الوحدة الداخلية للخارجية",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-06",
+        "name": "أعمال الألمنيوم والزجاج",
+        "sort_order": 6,
+        "items": [
+          {
+            "code": "ALM-001",
+            "name_ar": "نوافذ ألمنيوم زجاج مزدوج",
+            "unit": "عدد",
+            "quantity": 6,
+            "quantity_min": 4,
+            "quantity_max": 8,
+            "calculation_method": "عدد النوافذ بناءً على تصميم الشقة",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-002",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "تشطيب فيلا دورين",
+      "project_type": "سكني",
+      "building_type": "فيلا",
+      "city": "جدة",
+      "area": 450,
+      "area_min": 400,
+      "area_max": 500,
+      "floor_count": 2,
+      "room_count": 7,
+      "bathroom_count": 5,
+      "finish_level": "ممتاز",
+      "scope": "تشطيب كامل"
+    },
+    "assumptions": [
+      "مساحة الفيلا 450 م²",
+      "دور أرضي ودور أول",
+      "5 دورات مياه",
+      "مطبخ رئيسي ومطبخ تحضيري",
+      "سطح ومستودع ومدخل سيارات"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الخرسانة والهيكل",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "CON-001",
+            "name_ar": "خرسانة جاهزة للهيكل",
+            "unit": "م³",
+            "quantity": 180,
+            "quantity_min": 160,
+            "quantity_max": 200,
+            "calculation_method": "حجم الخرسانة للأعمدة والسقوف والجسور",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "CON-003",
+            "name_ar": "حديد تسليح",
+            "unit": "كجم",
+            "quantity": 18000,
+            "quantity_min": 16000,
+            "quantity_max": 20000,
+            "calculation_method": "120-150 كجم/م³ من الخرسانة",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "EXC-001",
+            "name_ar": "حفر الأساسات",
+            "unit": "م³",
+            "quantity": 90,
+            "quantity_min": 75,
+            "quantity_max": 110,
+            "calculation_method": "حجم الحفر بناءً على مساحة الأساسات وعمقها",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "CON-005",
+            "name_ar": "صبات خرسانة أرضية",
+            "unit": "م²",
+            "quantity": 400,
+            "quantity_min": 380,
+            "quantity_max": 420,
+            "calculation_method": "مساحة الأرضيات الخرسانية لدورين",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال البناء واللياسة",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "BLK-001",
+            "name_ar": "طوب بناء أسمنتي",
+            "unit": "عدد",
+            "quantity": 12000,
+            "quantity_min": 11000,
+            "quantity_max": 13000,
+            "calculation_method": "جدران داخلية وخارجية للمساحة الكلية",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLA-001",
+            "name_ar": "لياسة جدران داخلية",
+            "unit": "م²",
+            "quantity": 850,
+            "quantity_min": 800,
+            "quantity_max": 900,
+            "calculation_method": "مساحة الجدران الداخلية الإجمالية",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLA-002",
+            "name_ar": "لياسة جدران خارجية",
+            "unit": "م²",
+            "quantity": 250,
+            "quantity_min": 220,
+            "quantity_max": 280,
+            "calculation_method": "مساحة الواجهات الخارجية",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال الأرضيات",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "FLR-004",
+            "name_ar": "بلاط بورسلين للأرضيات",
+            "unit": "م²",
+            "quantity": 300,
+            "quantity_min": 280,
+            "quantity_max": 320,
+            "calculation_method": "مساحة الأرضيات الإجمالية للدورين",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-011",
+            "name_ar": "أرضيات رخام للمداخل",
+            "unit": "م²",
+            "quantity": 25,
+            "quantity_min": 20,
+            "quantity_max": 30,
+            "calculation_method": "مدخل رئيسي + مدخل سيارات",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "FLR-008",
+            "name_ar": "وزرات للحوائط",
+            "unit": "م.ط",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "محيط الغرف لدورين",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال الكهرباء",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 40,
+            "quantity_min": 35,
+            "quantity_max": 45,
+            "calculation_method": "مفتاح لكل غرفة وممر ومدخل",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-013",
+            "name_ar": "نظام جرس باب",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "نظام واحد للبوابة الرئيسية",
+            "confidence": 0.9,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "ELC-014",
+            "name_ar": "كاميرات مراقبة",
+            "unit": "عدد",
+            "quantity": 6,
+            "quantity_min": 4,
+            "quantity_max": 8,
+            "calculation_method": "كاميرات للمداخل والحدائق والمواقف",
+            "confidence": 0.65,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "ELC-007",
+            "name_ar": "لوحة توزيع كهرباء رئيسية",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "لوحة رئيسية + لوحة فرعية للدور الثاني",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال السباكة",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "PLM-001",
+            "name_ar": "مواسير تغذية مياه بلاستيكية",
+            "unit": "م.ط",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "تمديدات المياه لدورين مع سطح",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-002",
+            "name_ar": "مواسير صرف صحي",
+            "unit": "م.ط",
+            "quantity": 150,
+            "quantity_min": 130,
+            "quantity_max": 170,
+            "calculation_method": "خطوط الصرف لدورين مع توصيلات الحمامات",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-003",
+            "name_ar": "خزان مياه علوي",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "خزانان بسعة 2000 لتر لكل منهما",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-004",
+            "name_ar": "مضخة مياه منزلية",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "مضخة واحدة لرفع المياه للخزان العلوي",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-06",
+        "name": "أعمال التكييف",
+        "sort_order": 6,
+        "items": [
+          {
+            "code": "HVAC-001",
+            "name_ar": "مكيف سبليت 18000 وحدة",
+            "unit": "عدد",
+            "quantity": 5,
+            "quantity_min": 4,
+            "quantity_max": 6,
+            "calculation_method": "مكيف للغرف الرئيسية والمعيشة",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-002",
+            "name_ar": "مكيف سبليت 24000 وحدة",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 3,
+            "calculation_method": "مكيف للمجلس الكبير والصالة",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-07",
+        "name": "أعمال النجارة",
+        "sort_order": 7,
+        "items": [
+          {
+            "code": "WOD-001",
+            "name_ar": "أبواب داخلية خشبية",
+            "unit": "عدد",
+            "quantity": 14,
+            "quantity_min": 12,
+            "quantity_max": 16,
+            "calculation_method": "عدد الغرف والحمامات والمطابخ",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-004",
+            "name_ar": "مطبخ خشب بلوط",
+            "unit": "م.ط",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "طول مطبخ رئيسي 6 م + مطبخ تحضيري 4 م",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-005",
+            "name_ar": "خزائن غرف نوم خشبية",
+            "unit": "م.ط",
+            "quantity": 18,
+            "quantity_min": 15,
+            "quantity_max": 21,
+            "calculation_method": "خزانة لكل غرفة نوم بعرض 3 م في المتوسط",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-08",
+        "name": "أعمال الأسقف والديكور",
+        "sort_order": 8,
+        "items": [
+          {
+            "code": "WOD-006",
+            "name_ar": "أسقف جبس بورد معلق",
+            "unit": "م²",
+            "quantity": 180,
+            "quantity_min": 150,
+            "quantity_max": 200,
+            "calculation_method": "أسقف مجالس وصالات وغرفة طعام",
+            "confidence": 0.65,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "LIG-001",
+            "name_ar": "إضاءة سبوت لايت مخفية",
+            "unit": "عدد",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "إضاءة مخفية في أسقف الجبس",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-09",
+        "name": "أعمال التشغيل والتسليم",
+        "sort_order": 9,
+        "items": [
+          {
+            "code": "OPR-001",
+            "name_ar": "اختبار تسريب المياه",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "اختبار جميع نقاط السباكة",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "OPR-002",
+            "name_ar": "اختبار كهرباء وفحص أفياش",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "فحص جميع الدوائر والأفياش",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "OPR-004",
+            "name_ar": "تنظيف نهائي وتسليم",
+            "unit": "م²",
+            "quantity": 450,
+            "quantity_min": 400,
+            "quantity_max": 500,
+            "calculation_method": "كامل مساحة الفيلا",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-003",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "أعمال كهرباء فقط - فيلا قائمة",
+      "project_type": "سكني",
+      "building_type": "فيلا",
+      "city": "الدمام",
+      "area": 350,
+      "area_min": 300,
+      "area_max": 400,
+      "floor_count": 2,
+      "room_count": 6,
+      "bathroom_count": 4,
+      "finish_level": "جيد",
+      "scope": "كهرباء فقط"
+    },
+    "assumptions": [
+      "فيلا قائمة تحتاج تحديث كهرباء شامل",
+      "تمديدات جديدة مع تغيير اللوحة",
+      "نقاط إنارة لكل الغرف"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الكهرباء",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "مفتاح لكل غرفة ومدخل",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-002",
+            "name_ar": "مفاتيح كهرباء مزدوجة",
+            "unit": "عدد",
+            "quantity": 10,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "calculation_method": "للإضاءات المركبة والمراوح",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-003",
+            "name_ar": "أفياش كهرباء عامة",
+            "unit": "عدد",
+            "quantity": 45,
+            "quantity_min": 40,
+            "quantity_max": 50,
+            "calculation_method": "6 أفياش لكل غرفة + 4 للمطبخ",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-005",
+            "name_ar": "أفياش كهرباء للأجهزة",
+            "unit": "عدد",
+            "quantity": 10,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "calculation_method": "فياش 20 أمبير للمكيفات والغسالة والثلاجة",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-006",
+            "name_ar": "قاطع كهرباء رئيسي",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "قاطع رئيسي للفيلا 100 أمبير",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-007",
+            "name_ar": "لوحة توزيع كهرباء رئيسية",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "لوحة رئيسية + لوحة فرعية",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-008",
+            "name_ar": "قواطع كهرباء فرعية",
+            "unit": "عدد",
+            "quantity": 16,
+            "quantity_min": 14,
+            "quantity_max": 18,
+            "calculation_method": "قاطع لكل دائرة إنارة وأفياش",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-010",
+            "name_ar": "تمديدات كابلات كهرباء",
+            "unit": "م.ط",
+            "quantity": 500,
+            "quantity_min": 450,
+            "quantity_max": 550,
+            "calculation_method": "إجمالي أطوال الكابلات للدورين",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-015",
+            "name_ar": "كابل تلفزيون وفايبر",
+            "unit": "م.ط",
+            "quantity": 80,
+            "quantity_min": 70,
+            "quantity_max": 90,
+            "calculation_method": "تمديدات للتلفزيون والإنترنت لكل الغرف",
+            "confidence": 0.65,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-004",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "تشطيب شقة 2 غرف",
+      "project_type": "سكني",
+      "building_type": "شقة",
+      "city": "الخبر",
+      "area": 90,
+      "area_min": 80,
+      "area_max": 100,
+      "floor_count": 1,
+      "room_count": 2,
+      "bathroom_count": 1,
+      "finish_level": "جيد",
+      "scope": "تشطيب كامل"
+    },
+    "assumptions": [
+      "مساحة الشقة 90 م²",
+      "دورة مياه واحدة",
+      "مطبخ صغير",
+      "صالة ومعيشة مدمجة"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الأرضيات",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "FLR-010",
+            "name_ar": "سيراميك للأرضيات",
+            "unit": "م²",
+            "quantity": 65,
+            "quantity_min": 60,
+            "quantity_max": 70,
+            "calculation_method": "مساحة الأرضيات = 70% من مساحة الشقة",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-009",
+            "name_ar": "بلاط سيراميك للحمامات",
+            "unit": "م²",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "أرضية وجدران الحمام بارتفاع 2 م",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-008",
+            "name_ar": "وزرات للحوائط",
+            "unit": "م.ط",
+            "quantity": 55,
+            "quantity_min": 50,
+            "quantity_max": 60,
+            "calculation_method": "محيط الغرف مطروحاً منه الأبواب",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-006",
+            "name_ar": "لاصق بلاط أسمنتي",
+            "unit": "كجم",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "وزن اللاصق = 3 كجم/م² من البلاط",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال الدهانات",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "PNT-005",
+            "name_ar": "دهان الجدران الداخلية",
+            "unit": "م²",
+            "quantity": 200,
+            "quantity_min": 185,
+            "quantity_max": 215,
+            "calculation_method": "الجدران الداخلية بشقة 90 م²",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-003",
+            "name_ar": "معجون جدران",
+            "unit": "م²",
+            "quantity": 200,
+            "quantity_min": 185,
+            "quantity_max": 215,
+            "calculation_method": "نفس مساحة الدهان",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-004",
+            "name_ar": "طبقة أساس دهان",
+            "unit": "لتر",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "5 لتر لكل 40 م² تقريباً",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال الكهرباء",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "غرف نوم + صالة + مطبخ + حمام + ممر",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-003",
+            "name_ar": "أفياش كهرباء عامة",
+            "unit": "عدد",
+            "quantity": 20,
+            "quantity_min": 18,
+            "quantity_max": 22,
+            "calculation_method": "4 أفياش لكل غرفة + مطبخ + صالة",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال السباكة",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "PLM-010",
+            "name_ar": "خلاط ماء حوض مطبخ",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "خلاط واحد للمطبخ",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-011",
+            "name_ar": "خلاط ماء حوض حمام",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "خلاط واحد لدورة المياه",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-012",
+            "name_ar": "خلاط ماء دش حمام",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "خلاط دش للحمام",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-015",
+            "name_ar": "مرحاض معلق",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "مرحاض واحد لدورة المياه",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال التكييف",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "HVAC-001",
+            "name_ar": "مكيف سبليت 18000 وحدة",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 3,
+            "calculation_method": "مكيف للصالة ومكيف لغرف النوم",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-06",
+        "name": "أعمال النجارة",
+        "sort_order": 6,
+        "items": [
+          {
+            "code": "WOD-001",
+            "name_ar": "أبواب داخلية خشبية",
+            "unit": "عدد",
+            "quantity": 4,
+            "quantity_min": 3,
+            "quantity_max": 5,
+            "calculation_method": "باب شقة رئيسي + بابين غرف + باب مطبخ + باب حمام",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-004",
+            "name_ar": "مطبخ خشب بلوط",
+            "unit": "م.ط",
+            "quantity": 4,
+            "quantity_min": 3,
+            "quantity_max": 5,
+            "calculation_method": "مطبخ صغير بطول 4 م",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-005",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "أعمال سباكة وتكييف - مبنى قائم",
+      "project_type": "سكني",
+      "building_type": "عمارة",
+      "city": "مكة",
+      "area": 600,
+      "area_min": 500,
+      "area_max": 700,
+      "floor_count": 4,
+      "room_count": 16,
+      "bathroom_count": 8,
+      "finish_level": "جيد",
+      "scope": "سباكة وتكييف وتمديدات غاز"
+    },
+    "assumptions": [
+      "مبنى 4 أدوار سكني",
+      "شقتين في كل دور",
+      "8 حمامات",
+      "تمديدات غاز مركزي"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال السباكة",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "PLM-001",
+            "name_ar": "مواسير تغذية مياه بلاستيكية",
+            "unit": "م.ط",
+            "quantity": 300,
+            "quantity_min": 280,
+            "quantity_max": 320,
+            "calculation_method": "تمديدات من الخزان لجميع الأدوار",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-002",
+            "name_ar": "مواسير صرف صحي",
+            "unit": "م.ط",
+            "quantity": 250,
+            "quantity_min": 230,
+            "quantity_max": 270,
+            "calculation_method": "خطوط صرف رئيسية وفرعية للأدوار",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-003",
+            "name_ar": "خزان مياه علوي",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 2,
+            "quantity_max": 3,
+            "calculation_method": "خزانين سعة 5000 لتر لكل منهما",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-004",
+            "name_ar": "مضخة مياه منزلية",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "مضخة رئيسية + مضخة احتياطية",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-005",
+            "name_ar": "سخان مياه كهربائي 80 لتر",
+            "unit": "عدد",
+            "quantity": 8,
+            "quantity_min": 8,
+            "quantity_max": 8,
+            "calculation_method": "سخان لكل شقة",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-009",
+            "name_ar": "حوض مطبخ ستانلس ستيل",
+            "unit": "عدد",
+            "quantity": 8,
+            "quantity_min": 8,
+            "quantity_max": 8,
+            "calculation_method": "حوض لكل مطبخ",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-014",
+            "name_ar": "محبس غسالة ملابس",
+            "unit": "عدد",
+            "quantity": 8,
+            "quantity_min": 8,
+            "quantity_max": 8,
+            "calculation_method": "محبس لكل شقة",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "تمديدات الغاز المركزي",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "PLM-016",
+            "name_ar": "مواسير غاز مركزي",
+            "unit": "م.ط",
+            "quantity": 120,
+            "quantity_min": 100,
+            "quantity_max": 140,
+            "calculation_method": "تمديدات من خزان الغاز لكل شقة",
+            "confidence": 0.65,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-017",
+            "name_ar": "محبس غاز أمان لكل شقة",
+            "unit": "عدد",
+            "quantity": 8,
+            "quantity_min": 8,
+            "quantity_max": 8,
+            "calculation_method": "محبس لكل شقة مع كاشف تسرب",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-018",
+            "name_ar": "كاشف تسرب غاز",
+            "unit": "عدد",
+            "quantity": 8,
+            "quantity_min": 8,
+            "quantity_max": 8,
+            "calculation_method": "كاشف لكل شقة",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال التكييف",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "HVAC-001",
+            "name_ar": "مكيف سبليت 18000 وحدة",
+            "unit": "عدد",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "مكيفين لكل شقة",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-005",
+            "name_ar": "تمديدات فريون وتصريف مكيفات",
+            "unit": "م.ط",
+            "quantity": 120,
+            "quantity_min": 100,
+            "quantity_max": 140,
+            "calculation_method": "تمديدات لجميع المكيفات",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-003",
+            "name_ar": "مكيف اسبليت 12000 وحدة",
+            "unit": "عدد",
+            "quantity": 4,
+            "quantity_min": 2,
+            "quantity_max": 6,
+            "calculation_method": "مكيف صغير لغرف النوم الصغيرة",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال العزل",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "INS-003",
+            "name_ar": "عزل حراري للأسطح",
+            "unit": "م²",
+            "quantity": 150,
+            "quantity_min": 130,
+            "quantity_max": 170,
+            "calculation_method": "مساحة سطح المبنى",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "INS-001",
+            "name_ar": "عزل مائي للحمامات",
+            "unit": "م²",
+            "quantity": 80,
+            "quantity_min": 70,
+            "quantity_max": 90,
+            "calculation_method": "مساحة أرضيات وجدران الحمامات",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-006",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "تشطيب مبنى تجاري صغير",
+      "project_type": "تجاري",
+      "building_type": "محل",
+      "city": "الرياض",
+      "area": 200,
+      "area_min": 150,
+      "area_max": 250,
+      "floor_count": 1,
+      "room_count": 3,
+      "bathroom_count": 2,
+      "finish_level": "جيد جداً",
+      "scope": "تشطيب كامل تجاري"
+    },
+    "assumptions": [
+      "مبنى تجاري بمساحة 200 م²",
+      "واجهة زجاجية",
+      "مكتبين + صالة عرض",
+      "دورتين مياه",
+      "مطبخ صغير للموظفين"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الأرضيات",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "FLR-004",
+            "name_ar": "بلاط بورسلين للأرضيات",
+            "unit": "م²",
+            "quantity": 140,
+            "quantity_min": 130,
+            "quantity_max": 150,
+            "calculation_method": "مساحة الأرضيات التجارية",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-012",
+            "name_ar": "أرضيات جرانيت للمدخل",
+            "unit": "م²",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 15,
+            "calculation_method": "مدخل المحل التجاري",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال الألمنيوم والواجهات",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "ALM-003",
+            "name_ar": "واجهة زجاجية ألمنيوم",
+            "unit": "م²",
+            "quantity": 35,
+            "quantity_min": 30,
+            "quantity_max": 40,
+            "calculation_method": "واجهة المحل بعرض 10 م وارتفاع 3.5 م",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ALM-001",
+            "name_ar": "نوافذ ألمنيوم زجاج مزدوج",
+            "unit": "عدد",
+            "quantity": 4,
+            "quantity_min": 3,
+            "quantity_max": 5,
+            "calculation_method": "نوافذ جانبية للمكتبين",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ALM-004",
+            "name_ar": "باب ألمنيوم زجاجي أتوماتيكي",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "باب المدخل الرئيسي",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ALM-005",
+            "name_ar": "كلادينج واجهة خارجية",
+            "unit": "م²",
+            "quantity": 50,
+            "quantity_min": 40,
+            "quantity_max": 60,
+            "calculation_method": "واجهات جانبية خارجية",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال الكهرباء",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "مكاتب + صالة + مطبخ + حمامات",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-003",
+            "name_ar": "أفياش كهرباء عامة",
+            "unit": "عدد",
+            "quantity": 25,
+            "quantity_min": 20,
+            "quantity_max": 30,
+            "calculation_method": "مكاتب وصالة عرض",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "LIG-004",
+            "name_ar": "إنارة تجارية ليد معلقة",
+            "unit": "عدد",
+            "quantity": 12,
+            "quantity_min": 10,
+            "quantity_max": 14,
+            "calculation_method": "إنارة لصالة العرض والمكاتب",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-007",
+            "name_ar": "لوحة توزيع كهرباء رئيسية",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "لوحة توزيع للمحل التجاري",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال السباكة",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "PLM-001",
+            "name_ar": "مواسير تغذية مياه بلاستيكية",
+            "unit": "م.ط",
+            "quantity": 40,
+            "quantity_min": 35,
+            "quantity_max": 45,
+            "calculation_method": "تمديدات مياه للحمامات والمطبخ",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-002",
+            "name_ar": "مواسير صرف صحي",
+            "unit": "م.ط",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "صرف للحمامات",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-011",
+            "name_ar": "خلاط ماء حوض حمام",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 2,
+            "quantity_max": 2,
+            "calculation_method": "خلاط لكل دورة مياه",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال التكييف",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "HVAC-004",
+            "name_ar": "مكيف دكت مركزي",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "نظام تكييف مركزي للمحل التجاري",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-006",
+            "name_ar": "مجاري هواء مكيف مركزي",
+            "unit": "م²",
+            "quantity": 60,
+            "quantity_min": 50,
+            "quantity_max": 70,
+            "calculation_method": "مجاري هواء لصالة العرض والمكاتب",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-06",
+        "name": "أمان وحماية",
+        "sort_order": 6,
+        "items": [
+          {
+            "code": "ELC-014",
+            "name_ar": "كاميرات مراقبة",
+            "unit": "عدد",
+            "quantity": 4,
+            "quantity_min": 3,
+            "quantity_max": 5,
+            "calculation_method": "كاميرات للمدخل والصالة والمستودع",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-016",
+            "name_ar": "نظام إنذار حريق",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "نظام كامل للمحل التجاري",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-017",
+            "name_ar": "طفايات حريق",
+            "unit": "عدد",
+            "quantity": 3,
+            "quantity_min": 2,
+            "quantity_max": 4,
+            "calculation_method": "طفاية لكل منطقة",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-007",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "ترميم شقة قديمة",
+      "project_type": "سكني",
+      "building_type": "شقة",
+      "city": "جدة",
+      "area": 130,
+      "area_min": 120,
+      "area_max": 140,
+      "floor_count": 1,
+      "room_count": 3,
+      "bathroom_count": 2,
+      "finish_level": "جيد",
+      "scope": "ترميم شامل"
+    },
+    "assumptions": [
+      "شقة قديمة تحتاج ترميم شامل",
+      "إزالة التشطيبات القديمة",
+      "إعادة تأهيل كاملة",
+      "تحديث الكهرباء والسباكة"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال إزالة وهدم",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "EXC-003",
+            "name_ar": "إزالة بلاط قديم",
+            "unit": "م²",
+            "quantity": 90,
+            "quantity_min": 85,
+            "quantity_max": 95,
+            "calculation_method": "إزالة كامل بلاط الأرضيات القديم",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "EXC-004",
+            "name_ar": "إزالة دهانات قديمة",
+            "unit": "م²",
+            "quantity": 280,
+            "quantity_min": 260,
+            "quantity_max": 300,
+            "calculation_method": "إزالة دهان الجدران والأسقف القديمة",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "EXC-005",
+            "name_ar": "هدم جدران غير حاملة",
+            "unit": "م²",
+            "quantity": 15,
+            "quantity_min": 10,
+            "quantity_max": 20,
+            "calculation_method": "هدم جدران لإعادة التقسيم",
+            "confidence": 0.6,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "EXC-006",
+            "name_ar": "فك وتركيب أدوات صحية",
+            "unit": "عدد",
+            "quantity": 4,
+            "quantity_min": 3,
+            "quantity_max": 5,
+            "calculation_method": "فك المرحاض والمغاسل القديمة",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال البناء والترميم",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "PLA-003",
+            "name_ar": "ترميم ليارة جدران",
+            "unit": "م²",
+            "quantity": 100,
+            "quantity_min": 80,
+            "quantity_max": 120,
+            "calculation_method": "ترميم الأجزاء المتضررة من اللياسة",
+            "confidence": 0.65,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-001",
+            "name_ar": "معالجة الشقوق الجدارية",
+            "unit": "م.ط",
+            "quantity": 80,
+            "quantity_min": 60,
+            "quantity_max": 100,
+            "calculation_method": "معالجة الشقوق في الجدران والأسقف",
+            "confidence": 0.6,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "INS-001",
+            "name_ar": "عزل مائي للحمامات",
+            "unit": "م²",
+            "quantity": 25,
+            "quantity_min": 22,
+            "quantity_max": 28,
+            "calculation_method": "إعادة عزل الحمامات بعد إزالة البلاط",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "INS-002",
+            "name_ar": "عزل مائي للأسطح",
+            "unit": "م²",
+            "quantity": 50,
+            "quantity_min": 40,
+            "quantity_max": 60,
+            "calculation_method": "إعادة عزل السطح المعرض للتسرب",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال التشطيب الجديدة",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "FLR-010",
+            "name_ar": "سيراميك للأرضيات",
+            "unit": "م²",
+            "quantity": 90,
+            "quantity_min": 85,
+            "quantity_max": 95,
+            "calculation_method": "تركيب سيراميك جديد بعد الإزالة",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PNT-005",
+            "name_ar": "دهان الجدران الداخلية",
+            "unit": "م²",
+            "quantity": 280,
+            "quantity_min": 260,
+            "quantity_max": 300,
+            "calculation_method": "دهان جديد بعد المعالجة",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-010",
+            "name_ar": "تمديدات كابلات كهرباء",
+            "unit": "م.ط",
+            "quantity": 300,
+            "quantity_min": 250,
+            "quantity_max": 350,
+            "calculation_method": "إعادة تمديدات كاملة للكهرباء",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "PLM-001",
+            "name_ar": "مواسير تغذية مياه بلاستيكية",
+            "unit": "م.ط",
+            "quantity": 70,
+            "quantity_min": 60,
+            "quantity_max": 80,
+            "calculation_method": "إعادة تمديدات السباكة بالكامل",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال النجارة",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "WOD-001",
+            "name_ar": "أبواب داخلية خشبية",
+            "unit": "عدد",
+            "quantity": 5,
+            "quantity_min": 4,
+            "quantity_max": 6,
+            "calculation_method": "استبدال الأبواب القديمة بأخرى جديدة",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-004",
+            "name_ar": "مطبخ خشب بلوط",
+            "unit": "م.ط",
+            "quantity": 5,
+            "quantity_min": 4,
+            "quantity_max": 6,
+            "calculation_method": "مطبخ جديد للمطبخ المرمم",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال التسليم",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "OPR-001",
+            "name_ar": "اختبار تسريب المياه",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "اختبار جميع التمديدات الجديدة",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "OPR-004",
+            "name_ar": "تنظيف نهائي وتسليم",
+            "unit": "م²",
+            "quantity": 130,
+            "quantity_min": 120,
+            "quantity_max": 140,
+            "calculation_method": "تنظيف الشقة بالكامل بعد الترميم",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ex-008",
+    "type": "project_example",
+    "source": "معتمد",
+    "project": {
+      "name": "تشطيب فاخر - فيلا",
+      "project_type": "سكني",
+      "building_type": "فيلا",
+      "city": "الرياض",
+      "area": 700,
+      "area_min": 650,
+      "area_max": 800,
+      "floor_count": 3,
+      "room_count": 10,
+      "bathroom_count": 7,
+      "finish_level": "فاخر",
+      "scope": "تشطيب كامل فاخر"
+    },
+    "assumptions": [
+      "فيلا فاخرة 3 أدوار",
+      "قبو ومسبح وحديقة",
+      "مجلس رجال ومجلس نساء",
+      "غرفة سائق وغرفة خادمة",
+      "مصعد داخلي",
+      "مواقف خاصة"
+    ],
+    "sections": [
+      {
+        "code": "SEC-01",
+        "name": "أعمال الأرضيات الفاخرة",
+        "sort_order": 1,
+        "items": [
+          {
+            "code": "FLR-004",
+            "name_ar": "بلاط بورسلين للأرضيات",
+            "unit": "م²",
+            "quantity": 350,
+            "quantity_min": 330,
+            "quantity_max": 380,
+            "calculation_method": "الأرضيات الرئيسية للصالات والمجالس",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-011",
+            "name_ar": "أرضيات رخام للمداخل",
+            "unit": "م²",
+            "quantity": 60,
+            "quantity_min": 50,
+            "quantity_max": 70,
+            "calculation_method": "مداخل رئيسية ودرج",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-010",
+            "name_ar": "أرضيات باركيه خشبية",
+            "unit": "م²",
+            "quantity": 120,
+            "quantity_min": 100,
+            "quantity_max": 140,
+            "calculation_method": "غرف النوم الرئيسية",
+            "confidence": 0.65,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "FLR-008",
+            "name_ar": "وزرات للحوائط",
+            "unit": "م.ط",
+            "quantity": 300,
+            "quantity_min": 280,
+            "quantity_max": 320,
+            "calculation_method": "جميع الغرف والممرات",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-02",
+        "name": "أعمال الأسقف والديكور",
+        "sort_order": 2,
+        "items": [
+          {
+            "code": "WOD-006",
+            "name_ar": "أسقف جبس بورد معلق",
+            "unit": "م²",
+            "quantity": 300,
+            "quantity_min": 270,
+            "quantity_max": 330,
+            "calculation_method": "أسقف المجالس والصالات والغرف الرئيسية",
+            "confidence": 0.65,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-008",
+            "name_ar": "ديكور جبس بورد للجدران",
+            "unit": "م²",
+            "quantity": 80,
+            "quantity_min": 60,
+            "quantity_max": 100,
+            "calculation_method": "جدران المجالس والمداخل",
+            "confidence": 0.55,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "WOD-009",
+            "name_ar": "إفريز جبس أسقف",
+            "unit": "م.ط",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "محيط الأسقف في الغرف الرئيسية",
+            "confidence": 0.6,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "LIG-001",
+            "name_ar": "إضاءة سبوت لايت مخفية",
+            "unit": "عدد",
+            "quantity": 60,
+            "quantity_min": 50,
+            "quantity_max": 70,
+            "calculation_method": "إضاءة مخفية في أسقف الجبس",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "LIG-005",
+            "name_ar": "ثريا كريستال للصالات",
+            "unit": "عدد",
+            "quantity": 3,
+            "quantity_min": 2,
+            "quantity_max": 4,
+            "calculation_method": "ثريا رئيسية للصالة والمجلس وغرفة الطعام",
+            "confidence": 0.5,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-03",
+        "name": "أعمال الكهرباء المتقدمة",
+        "sort_order": 3,
+        "items": [
+          {
+            "code": "ELC-001",
+            "name_ar": "مفاتيح كهرباء أحادية",
+            "unit": "عدد",
+            "quantity": 50,
+            "quantity_min": 45,
+            "quantity_max": 55,
+            "calculation_method": "جميع الغرف والممرات والمداخل",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "ELC-018",
+            "name_ar": "نظام أتمتة المنزل الذكي",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "نظام تحكم ذكي للإضاءة والمكيفات والستائر",
+            "confidence": 0.5,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "ELC-014",
+            "name_ar": "كاميرات مراقبة",
+            "unit": "عدد",
+            "quantity": 10,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "calculation_method": "كاميرات للمداخل والحدائق والقبو",
+            "confidence": 0.7,
+            "classification": "تحسيني",
+            "is_essential": false
+          },
+          {
+            "code": "ELC-015",
+            "name_ar": "كابل تلفزيون وفايبر",
+            "unit": "م.ط",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "جميع الغرف والمجالس",
+            "confidence": 0.65,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-04",
+        "name": "أعمال النجارة الفاخرة",
+        "sort_order": 4,
+        "items": [
+          {
+            "code": "WOD-001",
+            "name_ar": "أبواب داخلية خشبية",
+            "unit": "عدد",
+            "quantity": 20,
+            "quantity_min": 18,
+            "quantity_max": 22,
+            "calculation_method": "أبواب خشب زان فاخرة لجميع الغرف",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-002",
+            "name_ar": "باب رئيسي خشب ثقيل",
+            "unit": "عدد",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "باب رئيسي خشب زان مقاس كبير",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-004",
+            "name_ar": "مطبخ خشب بلوط",
+            "unit": "م.ط",
+            "quantity": 15,
+            "quantity_min": 13,
+            "quantity_max": 17,
+            "calculation_method": "مطبخ رئيسي 8 م + مطبخ تحضيري 5 م",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-005",
+            "name_ar": "خزائن غرف نوم خشبية",
+            "unit": "م.ط",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "خزانة لكل غرفة نوم بتصميم مخصص",
+            "confidence": 0.65,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "WOD-003",
+            "name_ar": "دولاب مطبخ علوي خشب",
+            "unit": "م.ط",
+            "quantity": 10,
+            "quantity_min": 8,
+            "quantity_max": 12,
+            "calculation_method": "دواليب علوية للمطبخين",
+            "confidence": 0.65,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-05",
+        "name": "أعمال التكييف",
+        "sort_order": 5,
+        "items": [
+          {
+            "code": "HVAC-004",
+            "name_ar": "مكيف دكت مركزي",
+            "unit": "عدد",
+            "quantity": 2,
+            "quantity_min": 1,
+            "quantity_max": 2,
+            "calculation_method": "نظام تكييف مركزي للمبنى بالكامل",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-006",
+            "name_ar": "مجاري هواء مكيف مركزي",
+            "unit": "م²",
+            "quantity": 200,
+            "quantity_min": 180,
+            "quantity_max": 220,
+            "calculation_method": "مجاري هواء للفيلا بأكملها",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "HVAC-007",
+            "name_ar": "منظم حرارة ذكي لكل منطقة",
+            "unit": "عدد",
+            "quantity": 6,
+            "quantity_min": 5,
+            "quantity_max": 8,
+            "calculation_method": "مناطق التكييف المختلفة في الفيلا",
+            "confidence": 0.6,
+            "classification": "تحسيني",
+            "is_essential": false
+          }
+        ]
+      },
+      {
+        "code": "SEC-06",
+        "name": "أعمال المسبح والحديقة",
+        "sort_order": 6,
+        "items": [
+          {
+            "code": "EXC-007",
+            "name_ar": "حفر مسبح",
+            "unit": "م³",
+            "quantity": 80,
+            "quantity_min": 70,
+            "quantity_max": 90,
+            "calculation_method": "حفر مسبح 8×4×2.5 م",
+            "confidence": 0.7,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "CON-001",
+            "name_ar": "خرسانة جاهزة للهيكل",
+            "unit": "م³",
+            "quantity": 30,
+            "quantity_min": 25,
+            "quantity_max": 35,
+            "calculation_method": "خرسانة المسبح والحديقة",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "INS-004",
+            "name_ar": "عزل مائي للمسبح",
+            "unit": "م²",
+            "quantity": 120,
+            "quantity_min": 110,
+            "quantity_max": 130,
+            "calculation_method": "عزل مائي كامل للمسبح",
+            "confidence": 0.8,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "FLR-005",
+            "name_ar": "بلاط بورسلين للمسبح",
+            "unit": "م²",
+            "quantity": 120,
+            "quantity_min": 110,
+            "quantity_max": 130,
+            "calculation_method": "بلاط خاص للمسبح ومحيطه",
+            "confidence": 0.75,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-07",
+        "name": "أعمال المصعد",
+        "sort_order": 7,
+        "items": [
+          {
+            "code": "ELC-019",
+            "name_ar": "مصعد داخلي 3 أدوار",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "مصعد كهربائي هيدروليكي للفيلا",
+            "confidence": 0.85,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      },
+      {
+        "code": "SEC-08",
+        "name": "أعمال التشغيل والتسليم",
+        "sort_order": 8,
+        "items": [
+          {
+            "code": "OPR-001",
+            "name_ar": "اختبار تسريب المياه",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "اختبار جميع التمديدات والمسبح",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "OPR-003",
+            "name_ar": "اختبار المصعد والتأكد من السلامة",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "اختبار المصعد قبل التسليم",
+            "confidence": 0.95,
+            "classification": "أساسي",
+            "is_essential": true
+          },
+          {
+            "code": "OPR-005",
+            "name_ar": "تقارير فحص وصيانة",
+            "unit": "نظام",
+            "quantity": 1,
+            "quantity_min": 1,
+            "quantity_max": 1,
+            "calculation_method": "تقارير شاملة لجميع الأنظمة",
+            "confidence": 0.9,
+            "classification": "أساسي",
+            "is_essential": true
+          }
+        ]
+      }
+    ]
+  }
+]

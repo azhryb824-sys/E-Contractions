@@ -1,0 +1,264 @@
+[
+  {
+    "id": "APT-1BR",
+    "name": "شقة غرفة نوم واحدة",
+    "building_type": "شقة",
+    "description": "شقة صغيرة بغرفة نوم واحدة مناسبة للأفراد أو الأزواج",
+    "typical_area_range": [55, 90],
+    "required_spaces": [
+      {"name": "مجلس / صالة", "type": "living", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "حمام", "type": "bathroom", "count": 1},
+      {"name": "مطبخ", "type": "kitchen", "count": 1},
+      {"name": "مدخل", "type": "entrance", "count": 1}
+    ]
+  },
+  {
+    "id": "APT-2BR",
+    "name": "شقة غرفتي نوم",
+    "building_type": "شقة",
+    "description": "شقة متوسطة بغرفتي نوم مناسبة للعائلات الصغيرة",
+    "typical_area_range": [90, 160],
+    "required_spaces": [
+      {"name": "مجلس / صالة", "type": "living", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 1},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 1},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "مطبخ", "type": "kitchen", "count": 1},
+      {"name": "مدخل", "type": "entrance", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة غسيل", "type": "utility", "count": 1},
+      {"name": "غرفة خادمة", "type": "maid", "count": 1}
+    ]
+  },
+  {
+    "id": "APT-3BR",
+    "name": "شقة ثلاث غرف نوم",
+    "building_type": "شقة",
+    "description": "شقة كبيرة بثلاث غرف نوم مناسبة للعائلات",
+    "typical_area_range": [130, 220],
+    "required_spaces": [
+      {"name": "مجلس", "type": "living", "count": 1},
+      {"name": "صالة عائلية", "type": "family", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 2},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 1},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "مطبخ", "type": "kitchen", "count": 1},
+      {"name": "مدخل", "type": "entrance", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة غسيل", "type": "utility", "count": 1},
+      {"name": "غرفة خادمة", "type": "maid", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 1}
+    ]
+  },
+  {
+    "id": "APT-4BR",
+    "name": "شقة أربع غرف نوم",
+    "building_type": "شقة",
+    "description": "شقة فسيحة بأربع غرف نوم للعائلات الكبيرة",
+    "typical_area_range": [170, 300],
+    "required_spaces": [
+      {"name": "مجلس", "type": "living", "count": 1},
+      {"name": "صالة عائلية", "type": "family", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 3},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 1},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "حمام خدم", "type": "bathroom", "count": 1},
+      {"name": "مطبخ", "type": "kitchen", "count": 1},
+      {"name": "مدخل", "type": "entrance", "count": 1},
+      {"name": "غرفة غسيل", "type": "utility", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة خادمة", "type": "maid", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 1},
+      {"name": "غرفة جلوس إضافية", "type": "living", "count": 1}
+    ]
+  },
+  {
+    "id": "APT-STUDIO",
+    "name": "استوديو",
+    "building_type": "شقة",
+    "description": "وحدة سكنية مدمجة بمساحة مفتوحة",
+    "typical_area_range": [25, 55],
+    "required_spaces": [
+      {"name": "غرفة معيشة ونوم مفتوحة", "type": "open_living", "count": 1},
+      {"name": "حمام", "type": "bathroom", "count": 1},
+      {"name": "مطبخ مفتوح", "type": "kitchenette", "count": 1},
+      {"name": "مدخل", "type": "entrance", "count": 1}
+    ]
+  },
+  {
+    "id": "VILLA-1F",
+    "name": "فيلا دور واحد",
+    "building_type": "فيلا",
+    "description": "فيلا أرضية من دور واحد مع حديقة",
+    "typical_area_range": [200, 500],
+    "required_spaces": [
+      {"name": "مجلس رجال", "type": "majlis_male", "count": 1},
+      {"name": "صالة عائلية", "type": "family", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 2},
+      {"name": "غرفة نوم ضيوف", "type": "bedroom_guest", "count": 1},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 1},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "حمام خدم", "type": "bathroom", "count": 1},
+      {"name": "مطبخ رئيسي", "type": "kitchen", "count": 1},
+      {"name": "مطبخ تحضير", "type": "kitchen_prep", "count": 1},
+      {"name": "مدخل رئيسي", "type": "entrance", "count": 1},
+      {"name": "غرفة غسيل", "type": "utility", "count": 1},
+      {"name": "غرفة خادمة", "type": "maid", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "مجلس نساء", "type": "majlis_female", "count": 1},
+      {"name": "غرفة طعام", "type": "dining", "count": 1},
+      {"name": "مكتب", "type": "office", "count": 1}
+    ]
+  },
+  {
+    "id": "VILLA-2F",
+    "name": "فيلا دورين",
+    "building_type": "فيلا",
+    "description": "فيلا من دورين تشمل مجلس وصالات وغرف نوم متعددة",
+    "typical_area_range": [300, 800],
+    "required_spaces": [
+      {"name": "مجلس رجال", "type": "majlis_male", "count": 1},
+      {"name": "صالة", "type": "living", "count": 1},
+      {"name": "صالة عائلية", "type": "family", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 3},
+      {"name": "غرفة نوم ضيوف", "type": "bedroom_guest", "count": 1},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 2},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "حمام خدم", "type": "bathroom", "count": 1},
+      {"name": "مطبخ رئيسي", "type": "kitchen", "count": 1},
+      {"name": "مطبخ تحضير", "type": "kitchen_prep", "count": 1},
+      {"name": "مدخل رئيسي", "type": "entrance", "count": 1},
+      {"name": "غرفة غسيل", "type": "utility", "count": 1},
+      {"name": "غرفة خادمة", "type": "maid", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "مجلس نساء", "type": "majlis_female", "count": 1},
+      {"name": "غرفة طعام", "type": "dining", "count": 1},
+      {"name": "مكتب منزلي", "type": "office", "count": 1},
+      {"name": "صالة ألعاب", "type": "game_room", "count": 1},
+      {"name": "غرفة سينما", "type": "cinema", "count": 1}
+    ]
+  },
+  {
+    "id": "VILLA-3F",
+    "name": "فيلا ثلاثة أدوار",
+    "building_type": "فيلا",
+    "description": "فيلا كبيرة من ثلاثة أدوار مع مرافق متكاملة",
+    "typical_area_range": [500, 1200],
+    "required_spaces": [
+      {"name": "مجلس رجال", "type": "majlis_male", "count": 1},
+      {"name": "مجلس نساء", "type": "majlis_female", "count": 1},
+      {"name": "صالة", "type": "living", "count": 1},
+      {"name": "صالة عائلية", "type": "family", "count": 1},
+      {"name": "غرفة نوم رئيسية", "type": "bedroom", "count": 1},
+      {"name": "غرفة نوم", "type": "bedroom", "count": 4},
+      {"name": "غرفة نوم ضيوف", "type": "bedroom_guest", "count": 1},
+      {"name": "حمام رئيسي", "type": "bathroom", "count": 3},
+      {"name": "حمام ضيوف", "type": "bathroom", "count": 1},
+      {"name": "حمام خدم", "type": "bathroom", "count": 1},
+      {"name": "مطبخ رئيسي", "type": "kitchen", "count": 1},
+      {"name": "مطبخ تحضير", "type": "kitchen_prep", "count": 1},
+      {"name": "مدخل رئيسي", "type": "entrance", "count": 1},
+      {"name": "غرفة غسيل", "type": "utility", "count": 1},
+      {"name": "غرفة خادمة", "type": "maid", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 2}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة طعام", "type": "dining", "count": 1},
+      {"name": "مكتب منزلي", "type": "office", "count": 1},
+      {"name": "صالة ألعاب", "type": "game_room", "count": 1},
+      {"name": "غرفة سينما", "type": "cinema", "count": 1},
+      {"name": "غرفة رياضة", "type": "gym", "count": 1},
+      {"name": "سطح", "type": "roof", "count": 1}
+    ]
+  },
+  {
+    "id": "SHOP-SMALL",
+    "name": "محل صغير",
+    "building_type": "محل",
+    "description": "محل تجاري صغير للمبيعات بالتجزئة",
+    "typical_area_range": [20, 100],
+    "required_spaces": [
+      {"name": "صالة عرض", "type": "showroom", "count": 1},
+      {"name": "مستودع صغير", "type": "storage", "count": 1},
+      {"name": "حمام", "type": "bathroom", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة مدير", "type": "office", "count": 1},
+      {"name": "غرفة كاشير", "type": "cashier", "count": 1}
+    ]
+  },
+  {
+    "id": "OFFICE-MEDIUM",
+    "name": "مكتب متوسط",
+    "building_type": "مكتب",
+    "description": "مساحة مكتبية متوسطة للشركات",
+    "typical_area_range": [80, 300],
+    "required_spaces": [
+      {"name": "مكتب استقبال", "type": "reception", "count": 1},
+      {"name": "صالة انتظار", "type": "waiting", "count": 1},
+      {"name": "مكتب مدير", "type": "office_director", "count": 1},
+      {"name": "مكتب موظفين", "type": "office_open", "count": 1},
+      {"name": "غرفة اجتماعات", "type": "meeting", "count": 1},
+      {"name": "حمام", "type": "bathroom", "count": 1},
+      {"name": "مطبخ صغير", "type": "kitchenette", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة سيرفرات", "type": "server", "count": 1},
+      {"name": "غرفة أرشيف", "type": "archive", "count": 1},
+      {"name": "مستودع", "type": "storage", "count": 1}
+    ]
+  },
+  {
+    "id": "RESTAURANT-SMALL",
+    "name": "مطعم صغير",
+    "building_type": "مطعم",
+    "description": "مطعم صغير مع مطبخ تحضيري",
+    "typical_area_range": [50, 200],
+    "required_spaces": [
+      {"name": "صالة طعام", "type": "dining_hall", "count": 1},
+      {"name": "مطبخ", "type": "kitchen_commercial", "count": 1},
+      {"name": "مستودع مواد", "type": "storage_dry", "count": 1},
+      {"name": "حمام رجال", "type": "bathroom_male", "count": 1},
+      {"name": "حمام نساء", "type": "bathroom_female", "count": 1},
+      {"name": "كاشير", "type": "cashier", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "مكتب مدير", "type": "office", "count": 1},
+      {"name": "غرفة طاقم", "type": "staff_room", "count": 1},
+      {"name": "غرفة تبريد", "type": "cold_room", "count": 1}
+    ]
+  },
+  {
+    "id": "CLINIC-SMALL",
+    "name": "عيادة صغيرة",
+    "building_type": "عيادة",
+    "description": "عيادة طبية صغيرة مع غرفة كشف",
+    "typical_area_range": [50, 150],
+    "required_spaces": [
+      {"name": "استقبال", "type": "reception", "count": 1},
+      {"name": "صالة انتظار", "type": "waiting", "count": 1},
+      {"name": "غرفة كشف", "type": "examination", "count": 1},
+      {"name": "غرفة علاج", "type": "treatment", "count": 1},
+      {"name": "حمام", "type": "bathroom", "count": 1},
+      {"name": "مكتب طبيب", "type": "office_doctor", "count": 1}
+    ],
+    "optional_spaces": [
+      {"name": "غرفة أشعة", "type": "xray", "count": 1},
+      {"name": "صيدلية صغيرة", "type": "pharmacy", "count": 1},
+      {"name": "مستودع طبي", "type": "medical_storage", "count": 1}
+    ]
+  }
+]

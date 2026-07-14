@@ -1,0 +1,37 @@
+{
+  "name": "al-moqawel-backend",
+  "version": "1.0.0",
+  "description": "النظام الخلفي للمقاول الإلكتروني",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node db/seed.js",
+    "ai:validate-data": "node ai/data-validator.js",
+    "ai:train": "node ai/train.js",
+    "ai:evaluate": "node ai/evaluate.js",
+    "ai:data:generate": "node ai/data-generation/generate-training-projects.js",
+    "ai:data:validate": "node ai/data-validator.js",
+    "ai:train:parser": "node ai/train.js",
+    "ai:train:items": "node ai/train.js",
+    "ai:train:quantities": "node ai/train.js",
+    "ai:evaluate": "node ai/evaluate.js",
+    "ai:test": "node ai/__tests__/training-data.test.js && node ai/__tests__/training.test.js && node ai/__tests__/evaluation.test.js && node ai/__tests__/inference.test.js && node ai/__tests__/calculation.test.js && node ai/__tests__/templates.test.js && node ai/__tests__/output-schema.test.js",
+    "ai:full-check": "node ai/data-validator.js && node ai/train.js && node ai/evaluate.js",
+    "ai:full-report": "node ai/train.js && node ai/evaluate.js"
+  },
+  "dependencies": {
+    "arabic-reshaper": "^1.1.0",
+    "better-sqlite3": "^11.0.0",
+    "bidi": "^0.0.1",
+    "cors": "^2.8.5",
+    "docx": "^8.5.0",
+    "dotenv": "^16.4.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.15.0",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "project_type": "إنشاء جديد",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "أعمال التجهيز والحفر",
+        "sections": ["SEC-PRE", "SEC-EXC"],
+        "description": "تجهيز الموقع والحفر للأساسات"
+      },
+      {
+        "phase": 2,
+        "name": "أعمال الهيكل الخرساني",
+        "sections": ["SEC-CON"],
+        "description": "صب الخرسانة للأساسات والأعمدة والسقف"
+      },
+      {
+        "phase": 3,
+        "name": "أعمال البناء بالطوب",
+        "sections": ["SEC-BLK"],
+        "description": "بناء الجدران بالطوب"
+      },
+      {
+        "phase": 4,
+        "name": "أعمال اللياسة",
+        "sections": ["SEC-PLA"],
+        "description": "لياسة الجدران والأسقف"
+      },
+      {
+        "phase": 5,
+        "name": "أعمال العزل",
+        "sections": ["SEC-INS"],
+        "description": "عزل الأسطح والحمامات والأرضيات"
+      },
+      {
+        "phase": 6,
+        "name": "أعمال التمديدات",
+        "sections": ["SEC-ELC", "SEC-PLM", "SEC-HVAC"],
+        "description": "تمديدات الكهرباء والسباكة والتكييف قبل التشطيب",
+        "allow_parallel": true
+      },
+      {
+        "phase": 7,
+        "name": "أعمال الأرضيات",
+        "sections": ["SEC-FLR"],
+        "description": "تبليط الأرضيات وتلبيس الجدران"
+      },
+      {
+        "phase": 8,
+        "name": "أعمال الدهان والتشطيب",
+        "sections": ["SEC-PNT", "SEC-CLG", "SEC-WCL"],
+        "description": "الدهان والأسقف المعلقة والجدران الجبسية",
+        "allow_parallel": true
+      },
+      {
+        "phase": 9,
+        "name": "أعمال النجارة والألمنيوم",
+        "sections": ["SEC-WOD", "SEC-ALM"],
+        "description": "تركيب الأبواب والخزائن والألمنيوم",
+        "allow_parallel": true
+      },
+      {
+        "phase": 10,
+        "name": "أعمال التركيبات النهائية",
+        "sections": ["SEC-LIG", "SEC-LVC", "SEC-FIR"],
+        "description": "تركيب الإضاءة والتحكم وأعمال الحريق",
+        "allow_parallel": true
+      },
+      {
+        "phase": 11,
+        "name": "أعمال خارجية ونهائية",
+        "sections": ["SEC-EXT"],
+        "description": "أعمال السور والحديقة والمواقف"
+      },
+      {
+        "phase": 12,
+        "name": "التشغيل والاختبار",
+        "sections": ["SEC-OPR"],
+        "description": "اختبار جميع الأنظمة والتسليم"
+      }
+    ]
+  },
+  {
+    "project_type": "تشطيب كامل",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "أعمال التجهيز",
+        "sections": ["SEC-PRE"],
+        "description": "تجهيز الموقع وحماية المواد"
+      },
+      {
+        "phase": 2,
+        "name": "أعمال العزل",
+        "sections": ["SEC-INS"],
+        "description": "عزل الحمامات والمطابخ"
+      },
+      {
+        "phase": 3,
+        "name": "أعمال التمديدات",
+        "sections": ["SEC-ELC", "SEC-PLM", "SEC-HVAC"],
+        "description": "تمديدات تحت التشطيب",
+        "allow_parallel": true
+      },
+      {
+        "phase": 4,
+        "name": "أعمال الأرضيات",
+        "sections": ["SEC-FLR"],
+        "description": "تبليط الأرضيات"
+      },
+      {
+        "phase": 5,
+        "name": "أعمال التشطيب",
+        "sections": ["SEC-PNT", "SEC-CLG"],
+        "description": "الدهان والأسقف المعلقة",
+        "allow_parallel": true
+      },
+      {
+        "phase": 6,
+        "name": "أعمال النجارة والألمنيوم",
+        "sections": ["SEC-WOD", "SEC-ALM"],
+        "description": "تركيب الأبواب والخزائن",
+        "allow_parallel": true
+      },
+      {
+        "phase": 7,
+        "name": "أعمال التركيبات النهائية",
+        "sections": ["SEC-LIG", "SEC-LVC"],
+        "description": "تركيب الإضاءة والتحكم"
+      },
+      {
+        "phase": 8,
+        "name": "التشغيل والاختبار",
+        "sections": ["SEC-OPR"],
+        "description": "اختبار جميع الأنظمة والتسليم"
+      }
+    ]
+  },
+  {
+    "project_type": "ترميم شامل",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "أعمال الإزالة",
+        "sections": ["SEC-DEM"],
+        "description": "إزالة التشطيبات القديمة والهدم المطلوب"
+      },
+      {
+        "phase": 2,
+        "name": "أعمال الترميم الهيكلي",
+        "sections": ["SEC-CON"],
+        "description": "ترميم أي عناصر هيكلية متضررة"
+      },
+      {
+        "phase": 3,
+        "name": "أعمال اللياسة",
+        "sections": ["SEC-PLA"],
+        "description": "لياسة الجدران بعد الإزالة"
+      },
+      {
+        "phase": 4,
+        "name": "أعمال العزل",
+        "sections": ["SEC-INS"],
+        "description": "عزل الحمامات والأرضيات"
+      },
+      {
+        "phase": 5,
+        "name": "أعمال التمديدات",
+        "sections": ["SEC-ELC", "SEC-PLM", "SEC-HVAC"],
+        "description": "تمديدات جديدة تحت التشطيب",
+        "allow_parallel": true
+      },
+      {
+        "phase": 6,
+        "name": "أعمال الأرضيات",
+        "sections": ["SEC-FLR"],
+        "description": "تبليط الأرضيات"
+      },
+      {
+        "phase": 7,
+        "name": "أعمال التشطيب",
+        "sections": ["SEC-PNT", "SEC-CLG"],
+        "description": "الدهان والأسقف المعلقة",
+        "allow_parallel": true
+      },
+      {
+        "phase": 8,
+        "name": "أعمال النجارة والألمنيوم",
+        "sections": ["SEC-WOD", "SEC-ALM"],
+        "description": "تركيب الأبواب والخزائن",
+        "allow_parallel": true
+      },
+      {
+        "phase": 9,
+        "name": "أعمال التركيبات النهائية",
+        "sections": ["SEC-LIG"],
+        "description": "تركيب الإضاءة"
+      },
+      {
+        "phase": 10,
+        "name": "التشغيل والاختبار",
+        "sections": ["SEC-OPR"],
+        "description": "اختبار جميع الأنظمة والتسليم"
+      }
+    ]
+  },
+  {
+    "project_type": "كهرباء فقط",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "تمديدات كهربائية",
+        "sections": ["SEC-ELC"],
+        "description": "تمديد الكابلات واللوحات"
+      },
+      {
+        "phase": 2,
+        "name": "أنظمة الجهد المنخفض",
+        "sections": ["SEC-LVC"],
+        "description": "تمديد شبكات الضعف"
+      },
+      {
+        "phase": 3,
+        "name": "تركيب الإضاءة",
+        "sections": ["SEC-LIG"],
+        "description": "تركيب وحدات الإضاءة والمفاتيح والأفياش"
+      },
+      {
+        "phase": 4,
+        "name": "الاختبار والتشغيل",
+        "sections": ["SEC-OPR"],
+        "description": "اختبار الدوائر الكهربائية والتشغيل"
+      }
+    ]
+  },
+  {
+    "project_type": "سباكة فقط",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "تمديدات السباكة",
+        "sections": ["SEC-PLM"],
+        "description": "تمديد مواسير المياه والصرف"
+      },
+      {
+        "phase": 2,
+        "name": "العزل",
+        "sections": ["SEC-INS"],
+        "description": "عزل مواسير المياه الساخنة"
+      },
+      {
+        "phase": 3,
+        "name": "الاختبار والتشغيل",
+        "sections": ["SEC-OPR"],
+        "description": "اختبار التمديدات والتسليم"
+      }
+    ]
+  },
+  {
+    "project_type": "دهانات فقط",
+    "phases": [
+      {
+        "phase": 1,
+        "name": "تجهيز الأسطح",
+        "sections": ["SEC-PNT"],
+        "description": "معجنة وصنفرة الجدران"
+      },
+      {
+        "phase": 2,
+        "name": "الدهان",
+        "sections": ["SEC-PNT"],
+        "description": "طبقة أساس وطبقات الدهان النهائية"
+      },
+      {
+        "phase": 3,
+        "name": "التسليم",
+        "sections": ["SEC-OPR"],
+        "description": "التسليم النهائي"
+      }
+    ]
+  }
+]
