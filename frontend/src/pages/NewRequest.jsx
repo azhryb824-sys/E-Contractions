@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Send, AlertCircle, Loader2, Info } from 'lucide-react'
 import api from '../utils/api'
+import { buildingTypeGroups } from '../data/projectOptions'
 
 const projectTypes = ['سكني', 'تجاري', 'مكتبي', 'صناعي', 'ترميم', 'تشطيب']
-const buildingTypes = ['شقة', 'فيلا', 'عمارة سكنية', 'مبنى سكني', 'مبنى تجاري', 'مستودع', 'مخزن', 'أخرى']
 const finishingLevels = ['اقتصادي', 'متوسط', 'جيد جداً', 'فاخر']
 
 const executionOptions = [
@@ -30,6 +30,7 @@ const initialForm = {
   description: '',
   projectType: '',
   buildingType: '',
+  buildingSubtype: '',
   city: '',
   area: '',
   floors: '',
@@ -69,6 +70,7 @@ export default function NewRequest() {
         description: form.description,
         project_type: form.projectType,
         building_type: form.buildingType,
+        building_subtype: form.buildingSubtype || undefined,
         city: form.city,
         area: form.area ? Number(form.area) : undefined,
         floor_count: form.floors ? Number(form.floors) : undefined,
@@ -154,9 +156,22 @@ export default function NewRequest() {
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors bg-white"
               >
                 <option value="">اختر نوع المبنى</option>
-                {buildingTypes.map(t => <option key={t} value={t}>{t}</option>)}
+                {buildingTypeGroups.map(group => (
+                  <optgroup key={group.label} label={group.label}>
+                    {group.options.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                  </optgroup>
+                ))}
               </select>
             </div>
+
+            {form.buildingType === 'other' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">وصف نوع المبنى <span className="text-red-500">*</span></label>
+                <input type="text" name="buildingSubtype" value={form.buildingSubtype} onChange={handleChange} required
+                  placeholder="اكتب الاستخدام الفعلي للمبنى"
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors" />
+              </div>
+            )}
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">المدينة</label>

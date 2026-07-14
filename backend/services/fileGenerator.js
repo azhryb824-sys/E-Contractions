@@ -176,7 +176,7 @@ async function generatePDF({ projectId, fileType, outputDir }) {
   const project = db.prepare('SELECT * FROM projects WHERE id = ?').get(projectId);
   if (!project) return { success: false, error: 'المشروع غير موجود' };
 
-  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(projectId);
+  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? AND quantity > 0 ORDER BY sort_order, category, name_ar').all(projectId);
   const sheetName = getSheetName(fileType);
   const outputPath = path.join(outputDir || path.join(__dirname, '..', 'generated'), `${project.title}_${fileType}_${Date.now()}.pdf`);
   ensureDir(path.dirname(outputPath));
@@ -347,7 +347,7 @@ async function generateExcel({ projectId, fileType, outputDir }) {
   const project = db.prepare('SELECT * FROM projects WHERE id = ?').get(projectId);
   if (!project) return { success: false, error: 'المشروع غير موجود' };
 
-  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(projectId);
+  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? AND quantity > 0 ORDER BY sort_order, category, name_ar').all(projectId);
   const sheetName = getSheetName(fileType);
   const outputPath = path.join(outputDir || path.join(__dirname, '..', 'generated'), `${project.title}_${fileType}_${Date.now()}.xlsx`);
   ensureDir(path.dirname(outputPath));
@@ -432,7 +432,7 @@ async function generateDocx({ projectId, fileType, outputDir }) {
     const project = db.prepare('SELECT * FROM projects WHERE id = ?').get(projectId);
     if (!project) return { success: false, error: 'المشروع غير موجود' };
 
-    const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(projectId);
+    const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? AND quantity > 0 ORDER BY sort_order, category, name_ar').all(projectId);
     const sheetName = getSheetName(fileType);
     const outputPath = path.join(outputDir || path.join(__dirname, '..', 'generated'), `${project.title}_${fileType}_${Date.now()}.docx`);
     ensureDir(path.dirname(outputPath));
@@ -532,7 +532,7 @@ function generateHTMLString({ projectId, fileType }) {
   const db = getDb();
   const project = db.prepare('SELECT * FROM projects WHERE id = ?').get(projectId);
   if (!project) return null;
-  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(projectId);
+  const items = db.prepare('SELECT * FROM project_items WHERE project_id = ? AND quantity > 0 ORDER BY sort_order, category, name_ar').all(projectId);
   return buildHTML({ project, items, fileType, sheetName: getSheetName(fileType) });
 }
 

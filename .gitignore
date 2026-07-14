@@ -5,3 +5,4 @@ backend/generated/
 *.db-shm
 *.db-wal
 .backups/
+backend/ai/models/archive/v3.7.0-20260714/

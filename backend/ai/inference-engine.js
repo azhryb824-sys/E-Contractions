@@ -4,6 +4,8 @@ const modelManager = require('./model-manager');
 const similarityEngine = require('./similarity-engine');
 const dataLoader = require('./data-loader');
 const quantityValidator = require('./quantity-validator');
+const projectSchema = require('./project-schema');
+const { runBoqPipeline } = require('./boq-pipeline');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOGS_DIR = path.join(DATA_DIR, 'catalogs');
@@ -93,6 +95,8 @@ try {
 // ============================================================
 
 function understandProject(request) {
+  request = projectSchema.normalizeProjectRequest(request);
+  const canonicalUnderstanding = projectSchema.parseProject(request);
   const result = {
     explicit_values: {},
     inferred_values: {},
@@ -264,6 +268,10 @@ function understandProject(request) {
   if (!request.building_type && !result.explicit_values.building_type && !result.inferred_values.building_type) result.missing_information.push('نوع المبنى');
   if (result.needs_scope_confirmation) result.missing_information.push('نطاق العمل');
 
+  result.confirmed_inferred_values = canonicalUnderstanding.confirmed_inferred_values;
+  result.unconfirmed_inferred_values = canonicalUnderstanding.unconfirmed_inferred_values;
+  result.questions = canonicalUnderstanding.questions;
+  result.canonical_schema = canonicalUnderstanding;
   return result;
 }
 
@@ -715,6 +723,7 @@ function generateItemFromDict(itemCode, projectParams, extra) {
     classification: dict.classification_default || 'أساسي',
     calculation_method: method,
     quantity_driver: dict.quantity_driver || rule?.quantity_driver || '',
+    quantity_source: source === 'trained_model' ? 'model' : (source === 'similar_project' ? 'similar_projects' : 'rule'),
     integer_required: dict.integer_required || INTEGER_UNITS.has(dict.unit),
     rounding_applied: integerResult.rounding_applied,
     rounding_rule: integerResult.rounding_rule,
@@ -844,12 +853,16 @@ function analyzeRequest(request) {
     type,
     scope,
     buildingType,
+    confidence: Math.max(0.3, Math.min(0.98, 0.45 + dataCompleteness * 0.5)),
     dataCompleteness,
     missingInfo
   };
 }
 
 function generateEstimate(request) {
+  request = projectSchema.normalizeProjectRequest(request);
+  const canonicalRequest = { ...request };
+  request = projectSchema.toLegacyRequest(request);
   const understanding = understandProject(request);
 
   // If scope is not clear, return scope confirmation
@@ -1050,7 +1063,7 @@ function generateEstimate(request) {
     inference_mode: inferenceMode,
     project: {
       project_type: projectParams.project_type,
-      building_type: projectParams.building_type,
+      building_type: canonicalRequest.building_type || projectSchema.canonicalBuildingType(projectParams.building_type) || projectParams.building_type,
       city: projectParams.city,
       area: projectParams.area,
       floor_count: projectParams.floor_count,
@@ -1058,7 +1071,7 @@ function generateEstimate(request) {
       bathroom_count: projectParams.bathroom_count,
       kitchen_count: projectParams.kitchen_count,
       finish_level: projectParams.finish_level,
-      scope: projectParams.scope
+      scope: canonicalRequest.scope || projectParams.scope
     },
     understanding: {
       explicit_values: understanding.explicit_values,
@@ -1092,6 +1105,7 @@ function generateEstimate(request) {
 }
 
 function generateBoq(request, executionMode) {
+  request = projectSchema.normalizeProjectRequest(request);
   const mode = executionMode || request.execution_mode || 'no_additions';
   const understanding = understandProject(request);
 
@@ -1112,7 +1126,7 @@ function generateBoq(request, executionMode) {
   const estimate = generateEstimate(request);
   if (estimate.status !== 'ready') return estimate;
 
-  const sections = estimate.sections || [];
+  let sections = estimate.sections || [];
   const existingItemCodes = [];
   for (const s of sections) {
     for (const item of s.items || []) {
@@ -1191,6 +1205,8 @@ function generateBoq(request, executionMode) {
     };
   }
 
+  const pipeline = runBoqPipeline(sections, estimate.project, request);
+  sections = pipeline.sections;
   const result = {
     document_type: 'quantity_sheet',
     status: criticalErrors ? 'validation_errors' : 'ready',
@@ -1203,6 +1219,11 @@ function generateBoq(request, executionMode) {
     assumptions: estimate.assumptions || [],
     missing_information: estimate.missing_information || [],
     sections,
+    approvedBoq: pipeline.approvedBoq,
+    pipeline_trace: pipeline.pipeline_trace,
+    exclusive_conflicts: pipeline.exclusiveConflicts,
+    missing_required_inputs: pipeline.missingInputs,
+    requires_specialist_review: pipeline.requires_specialist_review,
     warnings: [...new Set(warnings)],
     validation_issues: validationIssues,
     review_required: lowConfItems > 0 || criticalErrors || (estimate.missing_information && estimate.missing_information.length > 0),

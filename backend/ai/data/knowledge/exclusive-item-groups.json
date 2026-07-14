@@ -1,0 +1,7 @@
+[
+  {"id":"floor_finish","label_ar":"الأرضيات","item_codes":["FLR-004","FLR-010","FLR-011"],"selection":"one_or_zoned"},
+  {"id":"hvac_system","label_ar":"التكييف","item_codes":["HVAC-001","HVAC-002","HVAC-003","HVAC-004"],"selection":"one"},
+  {"id":"ceiling_finish","label_ar":"الأسقف","item_codes":["CLG-001","CLG-002","CLG-003","WOD-006"],"selection":"one_or_zoned"},
+  {"id":"facade_finish","label_ar":"الواجهات","item_codes":["FAC-001","FAC-002","FAC-003","FAC-004"],"selection":"one_or_zoned"},
+  {"id":"main_entrance_door","label_ar":"الأبواب الرئيسية","item_codes":["WOD-002","ALM-005","ALM-006"],"selection":"one"}
+]

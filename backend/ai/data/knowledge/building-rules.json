@@ -1,0 +1,18 @@
+{
+  "apartment":{"default_ownership_scope":"single_unit_only","forbidden_codes":["ELC-019","PLM-003","PLM-004","PNT-007","CON-001","CON-002","CON-003","CON-004","CON-005","EXC-001"],"explicit_feature_codes":{"private_roof":[],"common_areas":[],"entire_building":[]}},
+  "villa":{"optional_confirmation_codes":["ELC-019","ELC-018"],"optional_keywords":{"pool":["مسبح"],"solar":["شمسيه","شمسية"],"driver_room":["سائق"],"basement":["قبو"]}},
+  "residential_building":{"required_inputs":["floor_count","unit_count","entrance_count","common_area","roof_area"]},
+  "office":{"forbidden_name_patterns":["خزائن غرف النوم","مطبخ سكني"]},
+  "shop":{"forbidden_name_patterns":["واجهة المبنى بالكامل"],"required_inputs":["shop_frontage"]},
+  "restaurant":{"required_inputs":["seat_count","kitchen_type","fuel_type"],"conditional_name_patterns":["شفط","مصيدة دهون","غاز"]},
+  "cafe":{"required_inputs":["seat_count","has_cooking"],"forbidden_without_feature":["مطبخ ثقيل"]},
+  "clinic":{"required_inputs":["specialty","room_count"],"forbidden_without_feature":["غازات طبية","أشعة"]},
+  "school":{"required_inputs":["classroom_count","student_count"]},
+  "hotel":{"required_inputs":["hotel_room_count","corridor_area","public_area","back_of_house_area"]},
+  "warehouse":{"required_inputs":["storage_type","clear_height","loading_door_count"],"forbidden_name_patterns":["رخام فاخر","خزائن غرف النوم"]},
+  "cold_storage":{"required_inputs":["temperature_range","clear_height","loading_door_count"]},
+  "factory":{"required_inputs":["equipment_count","process_type","industrial_loads"],"requires_specialist_review":true},
+  "workshop":{"required_inputs":["equipment_count","process_type"],"requires_specialist_review":true},
+  "mosque":{"required_inputs":["occupancy_count","prayer_area","ablution_count"]},
+  "mixed_use_building":{"required_inputs":["zones"],"process_each_zone":true}
+}

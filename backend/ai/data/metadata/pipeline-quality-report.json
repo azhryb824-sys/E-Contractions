@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-07-14T22:25:25.000Z",
+  "counts": {
+    "real": 0,
+    "approved": 0,
+    "seed": 4,
+    "synthetic": 500
+  },
+  "approved_by_building_type": {},
+  "production_quantity_training_records": 0,
+  "limitations": [
+    "لا توجد مشاريع حقيقية معتمدة؛ لا يجوز الادعاء بدقة إنتاجية للكميات"
+  ]
+}

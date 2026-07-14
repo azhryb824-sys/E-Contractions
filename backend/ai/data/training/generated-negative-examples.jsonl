@@ -1,0 +1,14 @@
+{"building_type":"apartment","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى apartment","data_source":"synthetic"}
+{"building_type":"villa","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى villa","data_source":"synthetic"}
+{"building_type":"residential_building","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى residential_building","data_source":"synthetic"}
+{"building_type":"office","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى office","data_source":"synthetic"}
+{"building_type":"shop","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى shop","data_source":"synthetic"}
+{"building_type":"restaurant","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى restaurant","data_source":"synthetic"}
+{"building_type":"cafe","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى cafe","data_source":"synthetic"}
+{"building_type":"clinic","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى clinic","data_source":"synthetic"}
+{"building_type":"school","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى school","data_source":"synthetic"}
+{"building_type":"hotel","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى hotel","data_source":"synthetic"}
+{"building_type":"warehouse","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى warehouse","data_source":"synthetic"}
+{"building_type":"factory","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى factory","data_source":"synthetic"}
+{"building_type":"mosque","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى mosque","data_source":"synthetic"}
+{"building_type":"mixed_use_building","label":"forbidden","text":"لا تضف بنداً غير مناسب إلى mixed_use_building","data_source":"synthetic"}

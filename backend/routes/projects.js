@@ -261,6 +261,10 @@ router.post('/:id/predict', (req, res) => {
       floors: project.floor_count || 1,
       finish_level: project.finish_level || 'متوسط',
       scope: scope,
+      ownership_scope: req.body.ownership_scope,
+      zones: req.body.zones || [],
+      selected_alternatives: req.body.selected_alternatives || [],
+      approved_optional_items: req.body.approved_optional_items || [],
     };
 
     const boqResult = inferenceEngine.generateBoq(requestParams, 'no_additions');
@@ -269,6 +273,7 @@ router.post('/:id/predict', (req, res) => {
     }
 
     const sections = boqResult.sections || [];
+    const approvedBoq = boqResult.approvedBoq || [];
 
     // Save per-request debug files
     const requestId = uuidv4();
@@ -292,14 +297,13 @@ router.post('/:id/predict', (req, res) => {
     const flatItems = [];
 
     const transaction = db.transaction(() => {
-      for (const section of sections) {
-        for (const item of section.items || []) {
+      for (const item of approvedBoq) {
+          const section = { name: item.section_name || item.category || 'جدول الكميات المعتمد' };
           const id = uuidv4();
           const itemSource = typeof item.source === 'string' ? item.source : (Array.isArray(item.sources) ? item.sources[0] : 'ai_prediction');
           const qty = item.quantity || 0;
           insert.run(id, req.params.id, null, item.code, item.name_ar, item.category || section.name, item.unit || 'م²', typeof qty === 'number' ? Math.round(qty * 100) / 100 : 0, item.confidence || 0, itemSource, sortOrder++, now);
           flatItems.push({ id, ...item, section_name: section.name });
-        }
       }
     });
 
@@ -319,6 +323,7 @@ router.post('/:id/predict', (req, res) => {
         project_id: req.params.id,
         request_id: requestId,
         sections,
+        approvedBoq,
         items: savedItems,
         summary: predictionSummary,
         understanding: boqResult.understanding,
