@@ -10,6 +10,23 @@ const specializedItemPredictor = require('./specialized/item-predictor');
 const spaceStatePredictor = require('./specialized/space-state-predictor');
 const candidateGenerator = require('./specialized/candidate-generator');
 
+// Data state constants for distinguishing between missing, zero, and out-of-scope
+const DATA_STATE = {
+  MISSING: 'missing',           // Data not provided by user
+  EXPLICIT_ZERO: 'explicit_zero', // User explicitly set value to 0
+  INFERRED_ZERO: 'inferred_zero', // System inferred zero based on logic
+  OUT_OF_SCOPE: 'out_of_scope',   // Not applicable for this project type/scope
+  PROVIDED: 'provided'           // User provided a value
+};
+
+function getDataState(value, defaultValue, isExplicit) {
+  if (isExplicit === false && value === 0) return DATA_STATE.EXPLICIT_ZERO;
+  if (isExplicit === true && value === 0) return DATA_STATE.EXPLICIT_ZERO;
+  if (value === undefined || value === null) return DATA_STATE.MISSING;
+  if (value === 0 && !isExplicit) return DATA_STATE.INFERRED_ZERO;
+  return DATA_STATE.PROVIDED;
+}
+
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOGS_DIR = path.join(DATA_DIR, 'catalogs');
 const KNOWLEDGE_DIR = path.join(DATA_DIR, 'knowledge');
@@ -268,14 +285,44 @@ function understandProject(request) {
     }
   }
 
-  // Collect missing info
-  if (!request.area && !result.explicit_values.area) result.missing_information.push('المساحة');
-  if (spaceStates.room_count.state === 'unknown') result.missing_information.push('عدد الغرف');
-  if (spaceStates.bathroom_count.state === 'unknown') result.missing_information.push('عدد الحمامات');
-  if (!request.finish_level && !result.explicit_values.finish_level && !result.inferred_values.finish_level) result.missing_information.push('مستوى التشطيب');
-  if (!request.city) result.missing_information.push('المدينة/الموقع');
-  if (!request.building_type && !result.explicit_values.building_type && !result.inferred_values.building_type) result.missing_information.push('نوع المبنى');
-  if (result.needs_scope_confirmation) result.missing_information.push('نطاق العمل');
+  // Collect missing info with data state tracking
+  const areaState = getDataState(request.area, null, request.area_explicit);
+  if (areaState === DATA_STATE.MISSING) {
+    result.missing_information.push({ field: 'area', description: 'المساحة', state: DATA_STATE.MISSING });
+  } else if (areaState === DATA_STATE.EXPLICIT_ZERO) {
+    result.explicit_values.area = 0;
+    result.missing_information.push({ field: 'area', description: 'المساحة', state: DATA_STATE.EXPLICIT_ZERO, note: 'تم تحديدها كصفر صراحة' });
+  }
+  
+  if (spaceStates.room_count.state === 'unknown') {
+    result.missing_information.push({ field: 'room_count', description: 'عدد الغرف', state: DATA_STATE.MISSING });
+  } else if (spaceStates.room_count.state === 'explicit_zero') {
+    result.explicit_values.room_count = 0;
+    result.missing_information.push({ field: 'room_count', description: 'عدد الغرف', state: DATA_STATE.EXPLICIT_ZERO, note: 'تم تحديدها كصفر صراحة' });
+  }
+  
+  if (spaceStates.bathroom_count.state === 'unknown') {
+    result.missing_information.push({ field: 'bathroom_count', description: 'عدد الحمامات', state: DATA_STATE.MISSING });
+  } else if (spaceStates.bathroom_count.state === 'explicit_zero') {
+    result.explicit_values.bathroom_count = 0;
+    result.missing_information.push({ field: 'bathroom_count', description: 'عدد الحمامات', state: DATA_STATE.EXPLICIT_ZERO, note: 'تم تحديدها كصفر صراحة' });
+  }
+  
+  if (!request.finish_level && !result.explicit_values.finish_level && !result.inferred_values.finish_level) {
+    result.missing_information.push({ field: 'finish_level', description: 'مستوى التشطيب', state: DATA_STATE.MISSING });
+  }
+  
+  if (!request.city) {
+    result.missing_information.push({ field: 'city', description: 'المدينة/الموقع', state: DATA_STATE.MISSING });
+  }
+  
+  if (!request.building_type && !result.explicit_values.building_type && !result.inferred_values.building_type) {
+    result.missing_information.push({ field: 'building_type', description: 'نوع المبنى', state: DATA_STATE.MISSING });
+  }
+  
+  if (result.needs_scope_confirmation) {
+    result.missing_information.push({ field: 'scope', description: 'نطاق العمل', state: DATA_STATE.MISSING });
+  }
 
   result.confirmed_inferred_values = canonicalUnderstanding.confirmed_inferred_values;
   result.unconfirmed_inferred_values = canonicalUnderstanding.unconfirmed_inferred_values;
@@ -502,9 +549,19 @@ function generateItemFromDict(itemCode, projectParams, extra) {
       if (rule.quantity_driver === 'fixed_per_floor' && projectParams.floor_count) {
         q = rule.default_quantity !== undefined ? rule.default_quantity * projectParams.floor_count : projectParams.floor_count;
       } else {
-        q = rule.default_quantity !== undefined ? rule.default_quantity : 1;
+        // Don't default to 1 - mark as missing data instead
+        if (rule.default_quantity !== undefined) {
+          q = rule.default_quantity;
+        } else {
+          q = 0;
+          method = 'بيانات مفقودة';
+          source = 'missing_data';
+          sourceDetails = { source: 'missing_data', details: 'الكمية الافتراضية غير محددة، يتطلب إدخال يدوي' };
+        }
       }
-      method = rule.quantity_driver === 'fixed_per_floor' ? 'ثابت لكل دور' : 'ثابت لكل مشروع';
+      if (source !== 'missing_data') {
+        method = rule.quantity_driver === 'fixed_per_floor' ? 'ثابت لكل دور' : 'ثابت لكل مشروع';
+      }
     } else if (rule.quantity_driver === 'bathroom_count' && projectParams.bathroom_count) {
       q = projectParams.bathroom_count * (rule.default_per_bathroom || 1);
       method = `عدد الحمامات × ${rule.default_per_bathroom || 1}`;
@@ -522,8 +579,18 @@ function generateItemFromDict(itemCode, projectParams, extra) {
       q = roomCt + livingCt;
       method = 'غرف + صالات';
     } else if (rule.quantity_driver === 'entrance_count') {
-      q = rule.default_when_unknown || 1;
-      method = 'عدد المداخل';
+      // Don't default to 1 - mark as missing data instead
+      if (rule.default_when_unknown !== undefined) {
+        q = rule.default_when_unknown;
+      } else {
+        q = 0;
+        method = 'بيانات مفقودة';
+        source = 'missing_data';
+        sourceDetails = { source: 'missing_data', details: 'عدد المداخل غير محدد، يتطلب إدخال يدوي' };
+      }
+      if (source !== 'missing_data') {
+        method = 'عدد المداخل';
+      }
     } else if (rule.quantity_driver === 'rate_by_space_type') {
       // Use the rule description to calculate
       if (itemCode === 'ELC-001') {
@@ -573,11 +640,19 @@ function generateItemFromDict(itemCode, projectParams, extra) {
     sourceDetails = { source: 'linked_item_stub', linked_to: dict.linked_item_codes.join(', '), details: 'مرتبط ببند آخر، يحسب لاحقاً من البند المرتبط' };
     q = 0;
     method = 'مرتبط ببند آخر';
-  } else if (dict.quantity_driver === 'fixed_per_project' && dict.default_quantity !== undefined) {
-    q = dict.default_quantity;
-    method = 'ثابت للمشروع';
-    source = 'engineering_rule';
-    sourceDetails = { source: 'engineering_rule', details: 'كمية ثابتة' };
+  } else if (dict.quantity_driver === 'fixed_per_project') {
+    // Don't default to 1 - mark as missing data instead
+    if (dict.default_quantity !== undefined) {
+      q = dict.default_quantity;
+      method = 'ثابت للمشروع';
+      source = 'engineering_rule';
+      sourceDetails = { source: 'engineering_rule', details: 'كمية ثابتة' };
+    } else {
+      q = 0;
+      method = 'بيانات مفقودة';
+      source = 'missing_data';
+      sourceDetails = { source: 'missing_data', details: 'الكمية الافتراضية غير محددة، يتطلب إدخال يدوي' };
+    }
   } else if (dict.quantity_driver === 'bathroom_count' && projectParams.bathroom_count) {
     q = projectParams.bathroom_count;
     method = 'عدد الحمامات';
