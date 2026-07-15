@@ -100,7 +100,7 @@ router.get('/:id', (req, res) => {
             spaceStates = boqResult.space_states || null;
 
             db.prepare('DELETE FROM project_items WHERE project_id = ? AND source LIKE ?').run(req.params.id, 'ai_%');
-            const insert = db.prepare(`INSERT INTO project_items (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
+            const insert = db.prepare(`INSERT INTO project_items (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order, created_at, quantity_state, quantity_driver, required_inputs_json, quantity_confidence, can_enter_approved_boq, rule_id, rule_version, pricing_status, is_approved) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
             const now = new Date().toISOString();
             let sortOrder = 0;
 
@@ -108,9 +108,10 @@ router.get('/:id', (req, res) => {
               for (const item of approvedBoq) {
                   const section = { name: item.section_name || item.category || 'جدول الكميات المعتمد' };
                   const id = uuidv4();
-                  const qty = item.quantity || 0;
+                  const qty = item.quantity;
                   const source = typeof item.source === 'string' ? item.source : 'ai_prediction';
-                  insert.run(id, req.params.id, null, item.code, item.name_ar, item.category || section.name, item.unit || 'م²', typeof qty === 'number' ? Math.round(qty * 100) / 100 : 0, item.confidence || 0, source, sortOrder++, now);
+                  if (!Number.isFinite(qty) || qty <= 0 || item.can_enter_approved_boq !== true) continue;
+                  insert.run(id, req.params.id, null, item.code, item.name_ar, item.category || section.name, item.unit || 'م²', Math.round(qty * 100) / 100, item.confidence || 0, source, sortOrder++, now, item.quantity_state, item.quantity_driver, JSON.stringify(item.required_inputs || []), item.quantity_confidence ?? item.confidence ?? 0, 1, item.rule_id, item.rule_version, 'unpriced', 1);
               }
             });
             transaction();
@@ -305,8 +306,8 @@ router.post('/:id/predict', (req, res) => {
     db.prepare('DELETE FROM project_items WHERE project_id = ? AND source LIKE ?').run(req.params.id, 'ai_%');
 
     const insert = db.prepare(`
-      INSERT INTO project_items (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order, created_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO project_items (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order, created_at, quantity_state, quantity_driver, required_inputs_json, quantity_confidence, can_enter_approved_boq, rule_id, rule_version, pricing_status, is_approved)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     const now = new Date().toISOString();
@@ -318,8 +319,9 @@ router.post('/:id/predict', (req, res) => {
           const section = { name: item.section_name || item.category || 'جدول الكميات المعتمد' };
           const id = uuidv4();
           const itemSource = typeof item.source === 'string' ? item.source : (Array.isArray(item.sources) ? item.sources[0] : 'ai_prediction');
-          const qty = item.quantity || 0;
-          insert.run(id, req.params.id, null, item.code, item.name_ar, item.category || section.name, item.unit || 'م²', typeof qty === 'number' ? Math.round(qty * 100) / 100 : 0, item.confidence || 0, itemSource, sortOrder++, now);
+          const qty = item.quantity;
+          if (!Number.isFinite(qty) || qty <= 0 || item.can_enter_approved_boq !== true) continue;
+          insert.run(id, req.params.id, null, item.code, item.name_ar, item.category || section.name, item.unit || 'م²', Math.round(qty * 100) / 100, item.confidence || 0, itemSource, sortOrder++, now, item.quantity_state, item.quantity_driver, JSON.stringify(item.required_inputs || []), item.quantity_confidence ?? item.confidence ?? 0, 1, item.rule_id, item.rule_version, 'unpriced', 1);
           flatItems.push({ id, ...item, section_name: section.name });
       }
     });

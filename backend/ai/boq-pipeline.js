@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const { buildApprovedBoq } = require('./project-schema');
+const quantityEngine = require('./quantity-engine-v2');
 
 const knowledge = name => JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'knowledge', name), 'utf8'));
 const buildingRules = knowledge('building-rules.json');
@@ -57,13 +58,21 @@ function runBoqPipeline(sections, project, request = {}) {
   let items = flatten(sections);
   items = applyBuildingEligibility(items, project, `${request.title || ''} ${request.description || ''}`); trace.push('building_eligibility_filtering');
   const exclusiveConflicts = resolveExclusiveGroups(items, request.selected_alternatives || [], request.zones || []); trace.push('exclusive_group_resolution');
-  items = classifyMeasurements(items); trace.push('quantity_driver_selection','logical_validation');
+  items = classifyMeasurements(items); trace.push('quantity_driver_selection');
+  items = quantityEngine.calculateAll(items, { ...project, ...request }, request.zones || project.zones || []);
+  const testDependencies = { 'OPR-001': ['PLM-001','PLM-002'], 'OPR-002': ['ELC-010','ELC-EARTH'], 'OPR-003': ['HVAC-001','HVAC-005'] };
+  const present = new Set(items.map(item => item.code));
+  items = items.map(item => testDependencies[item.code] && !testDependencies[item.code].some(code => present.has(code))
+    ? { ...item, quantity: null, quantity_state: 'not_applicable', can_enter_approved_boq: false, exclusion_reason: 'لا توجد أعمال تنفيذ مرتبطة للاختبار' }
+    : item);
+  trace.push('required_input_resolution','quantity_calculation','logical_validation');
   items = deduplicate(items); trace.push('deduplication','classification','confidence_calibration');
   const processedSections = rebuild(items, sections);
   const approvedBoq = buildApprovedBoq(processedSections, { optional_item_codes: request.approved_optional_items || [], selected_alternative_codes: request.selected_alternatives || [] });
   trace.push('user_approval','final_boq_creation');
   const rule = buildingRules[project.building_type] || {};
   const missingInputs = (rule.required_inputs || []).filter(key => project[key] == null && request[key] == null);
-  return { sections: processedSections, approvedBoq, exclusiveConflicts, missingInputs, requires_specialist_review: !!rule.requires_specialist_review, pipeline_trace: trace };
+  return { sections: processedSections, approvedBoq, exclusiveConflicts, missingInputs,
+    quantity_catalog_version: quantityEngine.VERSION, requires_specialist_review: !!rule.requires_specialist_review, pipeline_trace: trace };
 }
 module.exports = { runBoqPipeline, applyBuildingEligibility, resolveExclusiveGroups, classifyMeasurements, deduplicate };

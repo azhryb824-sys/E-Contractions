@@ -6,7 +6,7 @@ const sections = [{ code:'S', name:'S', items:[
   {code:'FLR-010',name_ar:'فينيل',quantity:100,classification:'required',quantity_driver:'usable_area'},
   {code:'ELC-008',name_ar:'قواطع',quantity:8,classification:'required',quantity_driver:'engineering_formula',requires_engineering_calculation:true}
 ]}];
-const result = runBoqPipeline(sections,{building_type:'apartment'},{selected_alternatives:['FLR-004']});
+const result = runBoqPipeline(sections,{building_type:'apartment',usable_area:100},{selected_alternatives:['FLR-004']});
 assert(!result.approvedBoq.some(x=>x.code==='ELC-019'));
 assert(!result.approvedBoq.some(x=>x.code==='ELC-008'));
 assert(result.approvedBoq.some(x=>x.code==='FLR-004'));

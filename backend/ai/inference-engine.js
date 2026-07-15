@@ -1293,7 +1293,7 @@ function generateBoq(request, executionMode) {
     };
   }
 
-  const pipeline = runBoqPipeline(sections, estimate.project, request);
+  let pipeline = runBoqPipeline(sections, estimate.project, request);
   sections = pipeline.sections;
   
   // Use new candidate generator for better item coverage
@@ -1301,20 +1301,20 @@ function generateBoq(request, executionMode) {
   
   // Merge candidate results with existing sections
   if (candidateResult.classified && candidateResult.classified.length > 0) {
-    const candidateCodes = new Set(candidateResult.classified.map(c => c.item_code));
-    const existingCodes = new Set(pipeline.approvedBoq.map(i => i.code));
+    const existingCodes = new Set(sections.flatMap(section => (section.items || []).map(item => item.code)));
+    const candidateItems = [];
     
-    // Add new candidates that aren't already in approvedBoq
+    // Candidates are visible for review, then pass through the same quantity and approval gate.
     for (const candidate of candidateResult.classified) {
       if (!existingCodes.has(candidate.item_code)) {
         const dict = itemDictionary[candidate.item_code];
         if (dict) {
           const item = generateItemFromDict(candidate.item_code, {
-            area: estimate.project.area || 150,
-            room_count: estimate.project.room_count || 3,
-            bathroom_count: estimate.project.bathroom_count || 2,
-            kitchen_count: estimate.project.kitchen_count || 1,
-            floor_count: estimate.project.floor_count || 1,
+            area: estimate.project.area ?? null,
+            room_count: estimate.project.room_count ?? null,
+            bathroom_count: estimate.project.bathroom_count ?? null,
+            kitchen_count: estimate.project.kitchen_count ?? null,
+            floor_count: estimate.project.floor_count ?? null,
             finish_level: estimate.project.finish_level || 'جيد',
             building_type: estimate.project.building_type || '',
             project_type: estimate.project.project_type || '',
@@ -1331,10 +1331,15 @@ function generateBoq(request, executionMode) {
             item.section_status = candidate.section_status;
             item.section_reason = candidate.section_reason;
             item.source = candidate.source || 'candidate_generator';
-            pipeline.approvedBoq.push(item);
+            candidateItems.push(item);
           }
         }
       }
+    }
+    if (candidateItems.length) {
+      sections.push({ code: 'SEC-CAND', name: 'بنود مقترحة للمراجعة', sort_order: sections.length + 1, items: candidateItems });
+      pipeline = runBoqPipeline(sections, estimate.project, request);
+      sections = pipeline.sections;
     }
   }
   

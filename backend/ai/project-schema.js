@@ -127,6 +127,10 @@ function buildApprovedBoq(sections = [], approvals = {}) {
       if (item.requires_confirmation === true && item.user_confirmed !== true) continue;
       
       const quantity = Number(item.quantity);
+      // Only a documented, safe quantity may become contractual BOQ data.
+      // Legacy callers may not yet carry quantity metadata; the new pipeline always does.
+      if (item.can_enter_approved_boq === false) continue;
+      if (item.quantity_state && !['exact_from_explicit_count','calculated_from_confirmed_area','calculated_from_zone_geometry'].includes(item.quantity_state)) continue;
       if (!Number.isFinite(quantity) || quantity <= 0) continue;
       
       seen.add(item.code);

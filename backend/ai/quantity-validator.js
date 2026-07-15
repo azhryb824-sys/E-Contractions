@@ -50,14 +50,13 @@ function applyIntegerConstraint(rawQuantity, item, project) {
   let quantity = rawQuantity;
   let rule = null;
 
-  // Ceil for required equipment (fixtures, devices)
+  // Ceil for required equipment (fixtures, devices).  Never turn missing/zero into one.
   if (itemDef.classification_default === 'أساسي' || itemDef.classification_default === 'ضروري') {
     quantity = Math.ceil(rawQuantity);
     rule = 'ceil_required_equipment';
   } else {
-    // Round to nearest integer with at least 1 minimum
-    quantity = Math.max(1, Math.round(rawQuantity));
-    rule = 'round_nearest_min_1';
+    quantity = Math.round(rawQuantity);
+    rule = 'round_nearest';
   }
 
   // Fixed per project items should stay at their default

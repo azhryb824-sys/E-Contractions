@@ -92,7 +92,7 @@ export default function ReviewItems() {
   }
 
   function getTotal(item) {
-    const qty = Number(item.quantity) || 0
+    const qty = Number.isFinite(Number(item.quantity)) ? Number(item.quantity) : 0
     const mat = Number(item.materialCost) || 0
     const lab = Number(item.laborCost) || 0
     return qty * (mat + lab)
@@ -105,7 +105,7 @@ export default function ReviewItems() {
       const payload = {
         items: items.map(item => ({
           _id: item._id || item.id,
-          quantity: Number(item.quantity) || 0,
+          quantity: item.quantity === '' || item.quantity == null ? null : Number(item.quantity),
         }))
       }
       await api.patch(`/items/${id}/batch`, payload)
@@ -143,8 +143,8 @@ export default function ReviewItems() {
 
   async function handleAddItem(e) {
     e.preventDefault()
-    if (!newItem.name.trim()) {
-      setError('يرجى إدخال اسم البند')
+    if (!newItem.name.trim() || newItem.quantity === '' || !Number.isFinite(Number(newItem.quantity)) || Number(newItem.quantity) <= 0) {
+      setError('يرجى إدخال اسم البند وكمية موجبة مؤكدة')
       return
     }
     setError(null)
@@ -153,7 +153,7 @@ export default function ReviewItems() {
         name: newItem.name,
         category: newItem.category,
         unit: newItem.unit,
-        quantity: Number(newItem.quantity) || 0,
+        quantity: Number(newItem.quantity),
       })
       const created = result.item || result
       setItems(prev => [...prev, created])
@@ -323,7 +323,7 @@ export default function ReviewItems() {
                           onChange={e => handleQuantityChange(itemId, e.target.value)}
                           min="0"
                           step="any"
-                          className="w-20 px-2 py-1 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors text-sm"
+                          className="numeric-cell w-20 px-2 py-1 text-center border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-colors text-sm"
                         />
                       </td>
                       <td className="px-3 py-3 text-center text-gray-600">{item.unit || '—'}</td>

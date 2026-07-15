@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Initialize database
 getDb();
+require('./ai/quantity-driver-catalog').seedDatabase(getDb());
 
 // API Routes
 const questionnaire = require('./ai/questionnaire-engine');

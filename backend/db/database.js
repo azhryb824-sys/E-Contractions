@@ -304,6 +304,21 @@ function initSchema() {
       extracted_json TEXT,
       created_at TEXT DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS quantity_driver_catalog (
+      item_code TEXT PRIMARY KEY,
+      item_name_ar TEXT NOT NULL,
+      canonical_unit TEXT NOT NULL,
+      quantity_driver TEXT,
+      calculation_method TEXT NOT NULL,
+      required_inputs_json TEXT NOT NULL,
+      fallback_policy TEXT NOT NULL,
+      rule_id TEXT NOT NULL,
+      rule_version TEXT NOT NULL,
+      engineering_reviewed INTEGER DEFAULT 0,
+      is_active INTEGER DEFAULT 1,
+      updated_at TEXT DEFAULT (datetime('now'))
+    );
   `);
 
   const projectColumns = new Set(db.prepare('PRAGMA table_info(projects)').all().map(column => column.name));
@@ -316,6 +331,15 @@ function initSchema() {
   };
   for (const [name, definition] of Object.entries(additions)) {
     if (!projectColumns.has(name)) db.exec(`ALTER TABLE projects ADD COLUMN ${name} ${definition}`);
+  }
+  const itemColumns = new Set(db.prepare('PRAGMA table_info(project_items)').all().map(column => column.name));
+  const itemAdditions = {
+    quantity_state: 'TEXT', quantity_driver: 'TEXT', required_inputs_json: 'TEXT', quantity_confidence: 'REAL',
+    can_enter_approved_boq: 'INTEGER DEFAULT 0', rule_id: 'TEXT', rule_version: 'TEXT', zone_id: 'TEXT',
+    pricing_status: "TEXT DEFAULT 'unpriced'"
+  };
+  for (const [name, definition] of Object.entries(itemAdditions)) {
+    if (!itemColumns.has(name)) db.exec(`ALTER TABLE project_items ADD COLUMN ${name} ${definition}`);
   }
 }
 

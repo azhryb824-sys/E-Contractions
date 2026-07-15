@@ -100,12 +100,17 @@ router.post('/:id/approve-boq', (req, res) => {
     const approved = Array.isArray(req.body.approvedBoq) ? req.body.approvedBoq : [];
     if (!approved.length) return res.status(400).json({ success: false, error: 'approved_boq_required' });
     const insert = db.prepare(`INSERT INTO project_items
-      (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'questionnaire_approved', ?)`);
+      (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order,
+       quantity_state, quantity_driver, required_inputs_json, quantity_confidence, can_enter_approved_boq, rule_id, rule_version, pricing_status, is_approved)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'questionnaire_approved', ?, ?, ?, ?, ?, ?, ?, ?, 'unpriced', 1)`);
     db.transaction(() => {
       db.prepare("DELETE FROM project_items WHERE project_id=? AND source='questionnaire_approved'").run(project.id);
-      approved.forEach((item, index) => insert.run(uuid(), project.id, item.item_id ?? null, item.code, item.name_ar,
-        item.category ?? null, item.unit ?? null, item.quantity ?? null, item.confidence ?? null, index));
+      approved.forEach((item, index) => {
+        if (!Number.isFinite(item.quantity) || item.quantity <= 0 || item.can_enter_approved_boq !== true) throw new Error(`invalid_approved_quantity:${item.code}`);
+        insert.run(uuid(), project.id, item.item_id ?? null, item.code, item.name_ar, item.category ?? null, item.unit ?? null,
+          item.quantity, item.confidence ?? null, index, item.quantity_state, item.quantity_driver,
+          JSON.stringify(item.required_inputs || []), item.quantity_confidence ?? item.confidence ?? null, 1, item.rule_id ?? null, item.rule_version ?? null);
+      });
       db.prepare("UPDATE project_question_sessions SET status='approved', last_saved_at=datetime('now') WHERE project_id=?").run(project.id);
     })();
     res.json({ success: true, data: { approved_count: approved.length } });
