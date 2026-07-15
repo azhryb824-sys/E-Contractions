@@ -6,3 +6,4 @@ backend/generated/
 *.db-wal
 .backups/
 backend/ai/models/archive/v3.7.0-20260714/
+backend/ai/data/complete-training-bundle-v1/

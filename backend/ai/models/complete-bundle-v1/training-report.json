@@ -1,0 +1,94 @@
+{
+  "dataset": "contractor_complete_training_bundle_v1",
+  "trained_at": "2026-07-15T08:33:38.316Z",
+  "item_prediction": {
+    "split_counts": {
+      "holdout": 17000,
+      "test": 34000,
+      "train": 238000,
+      "validation": 51000
+    },
+    "training_profiles": 36,
+    "test": {
+      "projects": 34000,
+      "precision": 0.9510108602023409,
+      "core_item_recall": 0.9625042735042735,
+      "micro_f1": 0.9567230496062256,
+      "forbidden_item_rate": 0,
+      "exclusive_conflict_rate": 0
+    },
+    "holdout": {
+      "projects": 17000,
+      "precision": 0.955090524335763,
+      "core_item_recall": 0.9646819338422392,
+      "micro_f1": 0.9598622691827298,
+      "forbidden_item_rate": 0,
+      "exclusive_conflict_rate": 0
+    }
+  },
+  "quantities": {
+    "test": {
+      "records": 1700,
+      "evaluated_values": 96450,
+      "mae": 632.4529458867972,
+      "mape": 0.42565291856977044,
+      "range_coverage": 0.6328356661482634,
+      "null_safe_records": 20364
+    },
+    "holdout": {
+      "records": 850,
+      "evaluated_values": 48775,
+      "mae": 814.0780117322154,
+      "mape": 1.0777228620500254,
+      "range_coverage": 0.637662737057919,
+      "null_safe_records": 10172
+    }
+  },
+  "labor": {
+    "test": {
+      "records": 1700,
+      "evaluated_values": 96450,
+      "mae": 853.097160704182,
+      "mape": 0.42562383180411234,
+      "range_coverage": 0.6443753240020736,
+      "null_safe_records": 20364
+    },
+    "holdout": {
+      "records": 850,
+      "evaluated_values": 48775,
+      "mae": 1086.2007706888628,
+      "mape": 1.0775720532303175,
+      "range_coverage": 0.6569349051768324,
+      "null_safe_records": 10172
+    }
+  },
+  "assumptions": {
+    "split_counts": {
+      "holdout": 850,
+      "test": 1700,
+      "train": 11900,
+      "validation": 2550
+    },
+    "profiles": 36
+  },
+  "integrated": {
+    "records": {
+      "holdout": 850,
+      "test": 1700,
+      "train": 11900,
+      "validation": 2550
+    },
+    "catalog": {
+      "catalog_items": 211,
+      "duplicate_codes": 0,
+      "mapping_tests": 8,
+      "office_regression_loaded": true
+    },
+    "production_approved": false
+  },
+  "safety": {
+    "engineering_reviewed": false,
+    "production_approved": false,
+    "quantity_and_labor_require_confirmation": true
+  }
+}

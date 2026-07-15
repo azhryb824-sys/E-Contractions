@@ -1,120 +1,25 @@
 {
-  "training_projects": 340,
   "split_counts": {
-    "train": 230,
-    "validation": 59,
-    "test": 34,
-    "final_holdout": 17
+    "holdout": 17000,
+    "test": 34000,
+    "train": 238000,
+    "validation": 51000
   },
-  "hard_negatives": 8,
+  "training_profiles": 36,
   "test": {
-    "projects": 34,
-    "precision": 0.9594,
-    "core_item_recall": 0.9741,
-    "micro_f1": 0.9667,
+    "projects": 34000,
+    "precision": 0.9510108602023409,
+    "core_item_recall": 0.9625042735042735,
+    "micro_f1": 0.9567230496062256,
     "forbidden_item_rate": 0,
-    "exclusive_conflict_rate": 0,
-    "evidence_accuracy": 1,
-    "by_building_type": {
-      "apartment": {
-        "precision": 0.9036,
-        "recall": 0.6818
-      },
-      "villa": {
-        "precision": 0.981,
-        "recall": 0.9834
-      },
-      "residential_building": {
-        "precision": 0.9474,
-        "recall": 0.989
-      },
-      "office": {
-        "precision": 0.8852,
-        "recall": 0.9643
-      },
-      "shop": {
-        "precision": 0.9302,
-        "recall": 0.9412
-      },
-      "restaurant": {
-        "precision": 1,
-        "recall": 0.9403
-      },
-      "clinic": {
-        "precision": 0.9737,
-        "recall": 1
-      },
-      "school": {
-        "precision": 0.9195,
-        "recall": 1
-      },
-      "hotel": {
-        "precision": 0.9804,
-        "recall": 0.9967
-      },
-      "warehouse": {
-        "precision": 1,
-        "recall": 1
-      },
-      "cold_storage": {
-        "precision": 0.9828,
-        "recall": 1
-      },
-      "factory": {
-        "precision": 0.9737,
-        "recall": 0.9867
-      },
-      "mosque": {
-        "precision": 0.977,
-        "recall": 1
-      },
-      "mixed_use_building": {
-        "precision": 0.8351,
-        "recall": 1
-      }
-    }
+    "exclusive_conflict_rate": 0
   },
-  "final_holdout": {
-    "projects": 17,
-    "precision": 0.9687,
-    "core_item_recall": 0.9335,
-    "micro_f1": 0.9508,
+  "holdout": {
+    "projects": 17000,
+    "precision": 0.955090524335763,
+    "core_item_recall": 0.9646819338422392,
+    "micro_f1": 0.9598622691827298,
     "forbidden_item_rate": 0,
-    "exclusive_conflict_rate": 0,
-    "evidence_accuracy": 1,
-    "by_building_type": {
-      "apartment": {
-        "precision": 0.9857,
-        "recall": 0.7841
-      },
-      "villa": {
-        "precision": 0.9799,
-        "recall": 0.9799
-      },
-      "office": {
-        "precision": 0.8361,
-        "recall": 0.9808
-      },
-      "shop": {
-        "precision": 0.9302,
-        "recall": 1
-      },
-      "cafe": {
-        "precision": 0.9524,
-        "recall": 1
-      },
-      "clinic": {
-        "precision": 0.9649,
-        "recall": 1
-      },
-      "cold_storage": {
-        "precision": 0.9828,
-        "recall": 1
-      },
-      "mosque": {
-        "precision": 0.9885,
-        "recall": 1
-      }
-    }
+    "exclusive_conflict_rate": 0
   }
 }

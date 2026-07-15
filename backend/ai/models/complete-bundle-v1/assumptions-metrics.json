@@ -1,0 +1,9 @@
+{
+  "split_counts": {
+    "holdout": 850,
+    "test": 1700,
+    "train": 11900,
+    "validation": 2550
+  },
+  "profiles": 36
+}

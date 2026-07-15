@@ -27,6 +27,10 @@ function predict(request, understood = {}) {
     const evidence = descriptionTokens.filter(t => (model.tokenStats[t]?.[code]?.positive || 0) > (model.tokenStats[t]?.[code]?.excluded || 0)).slice(0, 3);
     if (!evidence.length && (request.description || request.description_ar)) evidence.push(String(request.description || request.description_ar).slice(0, 120));
     if (classification === 'core' && confidence < 0.45) classification = 'conditional';
+    // A core prediction must never override an exclusion observed for the same
+    // structured project profile. Ambiguous cases remain conditional and require
+    // explicit confirmation instead of silently inserting a forbidden item.
+    if (classification === 'core' && (counts.excluded || 0) > 0) classification = 'conditional';
     items.push({ item_code: code, classification, presence_confidence: +confidence.toFixed(3), evidence_from_description: evidence, reason: evidence.length ? `ارتبط البند بالدليل: ${evidence.join('، ')}` : 'ارتبط البند بنوع المشروع ونطاقه في البيانات المعتمدة', requires_confirmation: classification !== 'core' });
   }
   const normalizedText = normalize(`${request.title || ''} ${request.description || request.description_ar || ''}`);

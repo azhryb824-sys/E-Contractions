@@ -52,7 +52,7 @@ const SCHEMA = {
     suggested_additions: { type: 'array', items: { type: 'object' } },
     sections: {
       type: 'array',
-      minItems: 1,
+      minItems: 0,
       items: {
         type: 'object',
         required: ['code', 'name', 'items'],

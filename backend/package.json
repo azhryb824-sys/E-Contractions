@@ -23,6 +23,7 @@
     "ai:train:scope": "node ai/train.js --component scope",
     "ai:train:item-presence": "node ai/train.js --component item-presence",
     "ai:train:item-specialized": "node ai/specialized/train-item-model.js",
+    "ai:train:complete-bundle": "node ai/specialized/train-complete-bundle.js",
     "ai:train:item-classification": "node ai/train.js --component item-classification",
     "ai:train:quantity-driver": "node ai/train.js --component quantity-driver",
     "ai:train:confidence": "node ai/train.js --component confidence",

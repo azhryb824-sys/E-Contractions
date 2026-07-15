@@ -1,0 +1,18 @@
+{
+  "test": {
+    "records": 1700,
+    "evaluated_values": 96450,
+    "mae": 853.097160704182,
+    "mape": 0.42562383180411234,
+    "range_coverage": 0.6443753240020736,
+    "null_safe_records": 20364
+  },
+  "holdout": {
+    "records": 850,
+    "evaluated_values": 48775,
+    "mae": 1086.2007706888628,
+    "mape": 1.0775720532303175,
+    "range_coverage": 0.6569349051768324,
+    "null_safe_records": 10172
+  }
+}
