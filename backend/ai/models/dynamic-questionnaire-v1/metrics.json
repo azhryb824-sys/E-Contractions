@@ -1,0 +1,40 @@
+{
+  "model_version": "dynamic-questionnaire-v1",
+  "metrics": {
+    "train": {
+      "records": 1190000,
+      "next_total": 0,
+      "next_correct": 0,
+      "readiness_total": 0,
+      "readiness_correct": 0
+    },
+    "validation": {
+      "records": 255000,
+      "next_total": 255000,
+      "next_correct": 255000,
+      "readiness_total": 255000,
+      "readiness_correct": 255000,
+      "next_accuracy": 1,
+      "readiness_accuracy": 1
+    },
+    "test": {
+      "records": 170000,
+      "next_total": 170000,
+      "next_correct": 170000,
+      "readiness_total": 170000,
+      "readiness_correct": 170000,
+      "next_accuracy": 1,
+      "readiness_accuracy": 1
+    },
+    "holdout": {
+      "records": 85000,
+      "next_total": 85000,
+      "next_correct": 85000,
+      "readiness_total": 85000,
+      "readiness_correct": 85000,
+      "next_accuracy": 1,
+      "readiness_accuracy": 1
+    }
+  },
+  "note": "Synthetic package metrics; not an independently engineering-reviewed production benchmark."
+}

@@ -9,3 +9,4 @@ backend/ai/models/archive/v3.7.0-20260714/
 backend/ai/data/complete-training-bundle-v1/
 backend/ai/data/sparse-spaces-complete-bundle-v1/
 backend/ai/data-validation-report.json
+backend/ai/data/dynamic-questionnaire-v1/raw/

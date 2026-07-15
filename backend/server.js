@@ -14,6 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 getDb();
 
 // API Routes
+const questionnaire = require('./ai/questionnaire-engine');
+questionnaire.seedCatalog(getDb());
+app.use('/api/projects', require('./routes/questionnaire'));
 app.use('/api/projects', require('./routes/projects'));
 app.use('/api/items', require('./routes/items'));
 app.use('/api/prices', require('./routes/prices'));

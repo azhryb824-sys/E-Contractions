@@ -149,7 +149,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   try {
     const db = getDb();
-    const { title, description, project_type, building_type, city, area, floor_count, room_count, finish_level, user_id, client_id } = req.body;
+    const { title, description, project_type, building_type, city, area, floor_count, room_count, bathroom_count,
+      finish_level, user_id, client_id, execution_mode = 'show_for_approval', scope } = req.body;
 
     const validation = validator.validateProjectData(req.body);
     if (!validation.valid) {
@@ -160,9 +161,14 @@ router.post('/', (req, res) => {
     const now = new Date().toISOString();
 
     db.prepare(`
-      INSERT INTO projects (id, title, description, project_type, building_type, city, area, floor_count, room_count, finish_level, user_id, client_id, created_at, updated_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).run(id, title, description || null, project_type, building_type || null, city || null, area || null, floor_count || null, room_count || null, finish_level || 'متوسط', user_id || null, client_id || null, now, now);
+      INSERT INTO projects (id, title, description, project_type, building_type, city, area, floor_count, room_count,
+        bathroom_count, finish_level, user_id, client_id, execution_mode, scope, created_at, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(id, title, description || null, project_type, building_type || null, city || null, area ?? null,
+      floor_count ?? null, room_count ?? null, bathroom_count ?? null, finish_level || 'متوسط', user_id || null,
+      client_id || null, execution_mode, scope ?? null, now, now);
+
+    require('../ai/questionnaire-engine').ensureSession(db, { id, project_type, building_type, scope });
 
     const project = db.prepare('SELECT * FROM projects WHERE id = ?').get(id);
     res.status(201).json({ success: true, data: project });

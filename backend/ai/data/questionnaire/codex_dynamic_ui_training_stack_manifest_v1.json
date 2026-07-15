@@ -1,0 +1,23 @@
+{
+  "prompt": "codex_full_dynamic_ui_and_inputs_prompt_ar.md",
+  "dataset": "contractor_dynamic_questionnaire_1_7m_v1.zip",
+  "records": 1700000,
+  "records_per_type": 100000,
+  "category_packages": [
+    "contractor_questionnaire_residential_500k_v1.zip",
+    "contractor_questionnaire_commercial_400k_v1.zip",
+    "contractor_questionnaire_institutional_hospitality_400k_v1.zip",
+    "contractor_questionnaire_industrial_logistics_mixed_400k_v1.zip"
+  ],
+  "supporting_packages": [
+    "contractor_high_precision_items_v1.zip",
+    "contractor_high_precision_adversarial_v1.zip",
+    "contractor_sparse_spaces_complete_bundle_v1.zip",
+    "contractor_high_precision_quantities_v1.zip",
+    "contractor_high_precision_labor_v1.zip",
+    "contractor_high_precision_assumptions_v1.zip",
+    "contractor_catalog_integrity_v1.zip"
+  ],
+  "engineering_reviewed": false,
+  "production_approved": false
+}

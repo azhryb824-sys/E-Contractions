@@ -16,6 +16,9 @@
   box-sizing: border-box;
 }
 
+button, input, select, textarea { min-height: 44px; }
+.questionnaire-shell { max-width: 100%; overflow-x: hidden; }
+
 body {
   font-family: 'Tajawal', sans-serif;
   background-color: #f8fafc;

@@ -12,6 +12,7 @@ import Settings from './pages/Settings'
 import PastProjects from './pages/PastProjects'
 import ActivityLog from './pages/ActivityLog'
 import Approval from './pages/Approval'
+import DynamicQuestionnaire from './pages/DynamicQuestionnaire'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/new-request" element={<NewRequest />} />
         <Route path="/projects/:id" element={<ProjectDetail />} />
+        <Route path="/projects/:id/questionnaire" element={<DynamicQuestionnaire />} />
         <Route path="/projects/:id/review" element={<ReviewItems />} />
         <Route path="/projects/:id/suggestions" element={<ReviewSuggestions />} />
         <Route path="/projects/:id/files" element={<GenerateFiles />} />

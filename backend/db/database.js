@@ -217,7 +217,106 @@ function initSchema() {
       related_id TEXT,
       created_at TEXT DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS question_catalog (
+      question_id TEXT PRIMARY KEY,
+      definition_json TEXT NOT NULL,
+      catalog_version TEXT NOT NULL,
+      is_active INTEGER DEFAULT 1,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS question_versions (
+      id TEXT PRIMARY KEY,
+      question_id TEXT NOT NULL,
+      catalog_version TEXT NOT NULL,
+      definition_json TEXT NOT NULL,
+      created_at TEXT DEFAULT (datetime('now')),
+      UNIQUE(question_id, catalog_version)
+    );
+
+    CREATE TABLE IF NOT EXISTS project_answers (
+      project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+      question_id TEXT NOT NULL,
+      state TEXT NOT NULL CHECK(state IN ('explicit','inferred','unknown','out_of_scope','not_applicable')),
+      value_json TEXT,
+      source TEXT NOT NULL,
+      confidence REAL NOT NULL DEFAULT 1,
+      confirmed_by_user INTEGER DEFAULT 0,
+      answered_at TEXT DEFAULT (datetime('now')),
+      catalog_version TEXT NOT NULL,
+      revision INTEGER NOT NULL DEFAULT 1,
+      PRIMARY KEY(project_id, question_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS project_inferences (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+      field_key TEXT NOT NULL,
+      state TEXT NOT NULL,
+      value_json TEXT,
+      source TEXT NOT NULL,
+      confidence REAL NOT NULL,
+      confirmed_by_user INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT (datetime('now')),
+      UNIQUE(project_id, field_key)
+    );
+
+    CREATE TABLE IF NOT EXISTS project_question_sessions (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL UNIQUE REFERENCES projects(id) ON DELETE CASCADE,
+      dataset_group TEXT,
+      current_stage TEXT DEFAULT 'description',
+      revision INTEGER NOT NULL DEFAULT 1,
+      status TEXT DEFAULT 'draft',
+      last_saved_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS project_blockers (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+      blocker_type TEXT NOT NULL,
+      blocker_key TEXT NOT NULL,
+      details_json TEXT DEFAULT '{}',
+      is_resolved INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT (datetime('now')),
+      resolved_at TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS project_zones (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+      zone_type TEXT NOT NULL,
+      name_ar TEXT,
+      area REAL,
+      floors_json TEXT,
+      state TEXT DEFAULT 'explicit',
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS project_documents (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id) ON DELETE CASCADE,
+      file_name TEXT NOT NULL,
+      file_path TEXT,
+      document_type TEXT,
+      extraction_state TEXT DEFAULT 'pending',
+      extracted_json TEXT,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
   `);
+
+  const projectColumns = new Set(db.prepare('PRAGMA table_info(projects)').all().map(column => column.name));
+  const additions = {
+    execution_mode: "TEXT NOT NULL DEFAULT 'show_for_approval'",
+    questionnaire_version: "TEXT NOT NULL DEFAULT 'dynamic-questionnaire-v1'",
+    revision: 'INTEGER NOT NULL DEFAULT 1',
+    scope: 'TEXT',
+    bathroom_count: 'INTEGER'
+  };
+  for (const [name, definition] of Object.entries(additions)) {
+    if (!projectColumns.has(name)) db.exec(`ALTER TABLE projects ADD COLUMN ${name} ${definition}`);
+  }
 }
 
 module.exports = { getDb };

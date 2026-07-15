@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "total_records": 1700000,
+  "project_types": 17,
+  "records_per_type": {
+    "apartment_fitout": 100000,
+    "apartment_renovation": 100000,
+    "cafe_no_cooking": 100000,
+    "cold_storage": 100000,
+    "dental_clinic": 100000,
+    "dry_warehouse": 100000,
+    "food_factory": 100000,
+    "hotel": 100000,
+    "mixed_use_building": 100000,
+    "mosque": 100000,
+    "office_fitout": 100000,
+    "residential_building": 100000,
+    "restaurant_commercial_kitchen": 100000,
+    "retail_shop": 100000,
+    "school": 100000,
+    "villa_full_construction": 100000,
+    "villa_shell_fitout": 100000
+  },
+  "split_counts_per_type": {
+    "apartment_fitout": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "apartment_renovation": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "cafe_no_cooking": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "cold_storage": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "dental_clinic": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "dry_warehouse": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "food_factory": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "hotel": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "mixed_use_building": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "mosque": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "office_fitout": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "residential_building": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "restaurant_commercial_kitchen": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "retail_shop": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "school": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "villa_full_construction": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    },
+    "villa_shell_fitout": {
+      "train": 70000,
+      "validation": 15000,
+      "test": 10000,
+      "holdout": 5000
+    }
+  },
+  "question_catalog_size": 122,
+  "shard_count": 68,
+  "engineering_reviewed": false,
+  "production_approved": false,
+  "accuracy_note_ar": "البيانات صناعية مقيدة بقواعد لتدريب فهم الطلب والأسئلة والفروع. ليست طلبات عملاء حقيقية ولا بديلاً عن مراجعة هندسية."
+}

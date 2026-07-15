@@ -1,0 +1,1281 @@
+[
+  {
+    "question_id": "Q_EXEC_MODE",
+    "text_ar": "كيف تريد أن يتعامل النظام مع البنود المقترحة؟",
+    "answer_type": "single_select",
+    "critical": true,
+    "affects": [],
+    "options": [
+      "exact_only",
+      "smart_additions",
+      "show_for_approval"
+    ]
+  },
+  {
+    "question_id": "Q_PROJECT_CONDITION",
+    "text_ar": "ما حالة المشروع الحالية؟",
+    "answer_type": "single_select",
+    "critical": true,
+    "affects": [],
+    "options": [
+      "new_construction",
+      "shell_and_core",
+      "existing_fitout",
+      "complete_renovation",
+      "partial_renovation",
+      "maintenance",
+      "expansion",
+      "system_replacement"
+    ]
+  },
+  {
+    "question_id": "Q_SCOPE",
+    "text_ar": "ما نطاق العمل المطلوب؟",
+    "answer_type": "multi_select",
+    "critical": true,
+    "affects": [],
+    "options": [
+      "full_construction",
+      "full_fitout",
+      "partial_fitout",
+      "electrical_only",
+      "plumbing_only",
+      "hvac_only",
+      "lighting_only",
+      "low_current_only",
+      "flooring_only",
+      "painting_only",
+      "waterproofing_only",
+      "facade_only",
+      "fire_system_only",
+      "external_works",
+      "selected_zones"
+    ]
+  },
+  {
+    "question_id": "Q_AREA",
+    "text_ar": "ما مساحة نطاق المشروع؟",
+    "answer_type": "decimal",
+    "critical": true,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_CITY",
+    "text_ar": "في أي مدينة يقع المشروع؟",
+    "answer_type": "text",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_FLOORS",
+    "text_ar": "كم عدد الطوابق الداخلة في النطاق؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_FINISH_LEVEL",
+    "text_ar": "ما مستوى التشطيب؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "economic",
+      "standard",
+      "good",
+      "very_good",
+      "luxury",
+      "specialized"
+    ]
+  },
+  {
+    "question_id": "Q_DRAWINGS",
+    "text_ar": "هل توجد مخططات أو رفع مقاسات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_DRAWING_TYPES"
+    ]
+  },
+  {
+    "question_id": "Q_DRAWING_TYPES",
+    "text_ar": "ما أنواع المخططات المتوفرة؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "architectural",
+      "structural",
+      "electrical",
+      "plumbing",
+      "hvac",
+      "fire",
+      "low_current",
+      "equipment_schedule"
+    ]
+  },
+  {
+    "question_id": "Q_DEMOLITION",
+    "text_ar": "هل توجد أعمال إزالة أو تكسير؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_DEMOLITION_AREAS"
+    ]
+  },
+  {
+    "question_id": "Q_DEMOLITION_AREAS",
+    "text_ar": "ما العناصر المطلوب إزالتها؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "floors",
+      "wall_tiles",
+      "ceilings",
+      "paint",
+      "doors_windows",
+      "electrical",
+      "plumbing",
+      "partitions"
+    ]
+  },
+  {
+    "question_id": "Q_HAS_ROOMS",
+    "text_ar": "هل توجد غرف أو فراغات مغلقة ضمن النطاق؟",
+    "answer_type": "boolean",
+    "critical": true,
+    "affects": [
+      "doors",
+      "partitions",
+      "hvac_zones"
+    ],
+    "yes_followups": [
+      "Q_ROOM_COUNT",
+      "Q_ROOM_TOTAL_AREA"
+    ],
+    "no_skip": [
+      "Q_ROOM_COUNT",
+      "Q_ROOM_TOTAL_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_ROOM_COUNT",
+    "text_ar": "كم عدد الغرف أو الفراغات المغلقة؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_ROOM_TOTAL_AREA",
+    "text_ar": "ما مساحتها الإجمالية؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_BATHROOMS",
+    "text_ar": "هل توجد حمامات داخلة في نطاق العمل؟",
+    "answer_type": "boolean",
+    "critical": true,
+    "affects": [
+      "waterproofing",
+      "tiles",
+      "fixtures",
+      "plumbing"
+    ],
+    "yes_followups": [
+      "Q_BATHROOM_COUNT",
+      "Q_BATHROOM_TOTAL_AREA"
+    ],
+    "no_skip": [
+      "Q_BATHROOM_COUNT",
+      "Q_BATHROOM_TOTAL_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_BATHROOM_COUNT",
+    "text_ar": "كم عدد الحمامات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_BATHROOM_TOTAL_AREA",
+    "text_ar": "ما المساحة الإجمالية لأرضيات الحمامات؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_KITCHEN",
+    "text_ar": "هل يوجد مطبخ ضمن النطاق؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_KITCHEN_COUNT",
+      "Q_KITCHEN_TYPE",
+      "Q_KITCHEN_TOTAL_AREA"
+    ],
+    "no_skip": [
+      "Q_KITCHEN_COUNT",
+      "Q_KITCHEN_TYPE",
+      "Q_KITCHEN_TOTAL_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_KITCHEN_COUNT",
+    "text_ar": "كم عدد المطابخ؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_KITCHEN_TYPE",
+    "text_ar": "ما نوع المطبخ؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "residential",
+      "pantry",
+      "commercial_light",
+      "commercial_heavy",
+      "production"
+    ]
+  },
+  {
+    "question_id": "Q_KITCHEN_TOTAL_AREA",
+    "text_ar": "ما مساحة المطبخ أو المطابخ؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_PANTRY",
+    "text_ar": "هل يوجد بانتري أو ركن مشروبات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PANTRY_AREA"
+    ],
+    "no_skip": [
+      "Q_PANTRY_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PANTRY_AREA",
+    "text_ar": "ما مساحة البانتري؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_PARTITIONS",
+    "text_ar": "هل توجد قواطع داخلية جديدة؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PARTITION_TYPE",
+      "Q_PARTITION_AREA"
+    ],
+    "no_skip": [
+      "Q_PARTITION_TYPE",
+      "Q_PARTITION_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PARTITION_TYPE",
+    "text_ar": "ما نوع القواطع؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "block",
+      "gypsum_board",
+      "glass",
+      "aluminum_glass",
+      "wood",
+      "mixed"
+    ]
+  },
+  {
+    "question_id": "Q_PARTITION_AREA",
+    "text_ar": "ما مساحة القواطع؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_FLOORING",
+    "text_ar": "هل تشمل الأعمال الأرضيات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_FLOORING_TYPE",
+      "Q_FLOORING_AREA"
+    ],
+    "no_skip": [
+      "Q_FLOORING_TYPE",
+      "Q_FLOORING_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_FLOORING_TYPE",
+    "text_ar": "ما نوع الأرضيات؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "ceramic",
+      "porcelain",
+      "marble",
+      "vinyl",
+      "parquet",
+      "carpet",
+      "epoxy",
+      "undecided"
+    ]
+  },
+  {
+    "question_id": "Q_FLOORING_AREA",
+    "text_ar": "ما مساحة الأرضيات؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_CEILING",
+    "text_ar": "هل تشمل الأعمال سقفاً مستعاراً أو زخرفياً؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_CEILING_TYPE",
+      "Q_CEILING_AREA"
+    ],
+    "no_skip": [
+      "Q_CEILING_TYPE",
+      "Q_CEILING_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_CEILING_TYPE",
+    "text_ar": "ما نوع السقف؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "paint_existing",
+      "gypsum_full",
+      "gypsum_partial",
+      "commercial_tiles",
+      "acoustic",
+      "metal",
+      "wood",
+      "undecided"
+    ]
+  },
+  {
+    "question_id": "Q_CEILING_AREA",
+    "text_ar": "ما مساحة السقف؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_PAINTING",
+    "text_ar": "هل تشمل الأعمال الدهانات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PAINTING_AREA"
+    ],
+    "no_skip": [
+      "Q_PAINTING_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PAINTING_AREA",
+    "text_ar": "ما مساحة الأسطح المطلوب دهانها؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_ELECTRICAL",
+    "text_ar": "هل يشمل النطاق الكهرباء؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_ELECTRICAL_LEVEL"
+    ]
+  },
+  {
+    "question_id": "Q_ELECTRICAL_LEVEL",
+    "text_ar": "ما مستوى أعمال الكهرباء؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "points_only",
+      "partial_rewire",
+      "full_rewire",
+      "new_distribution",
+      "equipment_power"
+    ]
+  },
+  {
+    "question_id": "Q_LIGHTING",
+    "text_ar": "هل يشمل النطاق الإنارة؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_LIGHTING_TYPE"
+    ]
+  },
+  {
+    "question_id": "Q_LIGHTING_TYPE",
+    "text_ar": "ما نوع الإنارة؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "general",
+      "decorative",
+      "display",
+      "emergency",
+      "external",
+      "industrial"
+    ]
+  },
+  {
+    "question_id": "Q_LOW_CURRENT",
+    "text_ar": "هل توجد أنظمة تيار خفيف؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_LOW_CURRENT_SYSTEMS"
+    ]
+  },
+  {
+    "question_id": "Q_LOW_CURRENT_SYSTEMS",
+    "text_ar": "ما الأنظمة المطلوبة؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "data",
+      "telephone",
+      "tv",
+      "cctv",
+      "access_control",
+      "intercom",
+      "audio",
+      "public_address",
+      "bms",
+      "smart_system"
+    ]
+  },
+  {
+    "question_id": "Q_HVAC",
+    "text_ar": "هل يشمل النطاق التكييف أو التهوية؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_HVAC_TYPE",
+      "Q_HVAC_AREA"
+    ],
+    "no_skip": [
+      "Q_HVAC_TYPE",
+      "Q_HVAC_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_HVAC_TYPE",
+    "text_ar": "ما نوع النظام؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "split",
+      "concealed",
+      "cassette",
+      "central",
+      "vrf",
+      "ventilation_only",
+      "undecided"
+    ]
+  },
+  {
+    "question_id": "Q_HVAC_AREA",
+    "text_ar": "ما المساحة المكيفة؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_PLUMBING",
+    "text_ar": "هل يشمل النطاق المياه أو الصرف؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PLUMBING_ZONES"
+    ]
+  },
+  {
+    "question_id": "Q_PLUMBING_ZONES",
+    "text_ar": "ما المناطق التي تحتاج مياه أو صرفاً؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "bathrooms",
+      "kitchen",
+      "pantry",
+      "cleaning_points",
+      "industrial_process",
+      "external"
+    ]
+  },
+  {
+    "question_id": "Q_FIRE",
+    "text_ar": "هل يشمل النطاق نظام الحريق؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_FIRE_SCOPE"
+    ]
+  },
+  {
+    "question_id": "Q_FIRE_SCOPE",
+    "text_ar": "ما نطاق نظام الحريق؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "alarm",
+      "detectors",
+      "manual_call_points",
+      "extinguishers",
+      "hose_reels",
+      "sprinklers",
+      "pumps",
+      "tank",
+      "kitchen_suppression",
+      "exit_signs"
+    ]
+  },
+  {
+    "question_id": "Q_FACADE",
+    "text_ar": "هل تشمل الأعمال الواجهة؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_FACADE_TYPE",
+      "Q_FACADE_AREA"
+    ],
+    "no_skip": [
+      "Q_FACADE_TYPE",
+      "Q_FACADE_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_FACADE_TYPE",
+    "text_ar": "ما نوع أعمال الواجهة؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "paint",
+      "stone",
+      "cladding",
+      "glass",
+      "shopfront",
+      "maintenance"
+    ]
+  },
+  {
+    "question_id": "Q_FACADE_AREA",
+    "text_ar": "ما مساحة الواجهة أو أبعادها؟",
+    "answer_type": "measurement_object",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_ROOF",
+    "text_ar": "هل تشمل الأعمال السطح؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_ROOF_AREA",
+      "Q_ROOF_WORKS"
+    ],
+    "no_skip": [
+      "Q_ROOF_AREA",
+      "Q_ROOF_WORKS"
+    ]
+  },
+  {
+    "question_id": "Q_ROOF_AREA",
+    "text_ar": "ما مساحة السطح؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_ROOF_WORKS",
+    "text_ar": "ما أعمال السطح؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "waterproofing",
+      "thermal_insulation",
+      "tiles",
+      "services",
+      "maintenance"
+    ]
+  },
+  {
+    "question_id": "Q_EXTERNAL",
+    "text_ar": "هل توجد أعمال خارجية؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_EXTERNAL_WORKS"
+    ]
+  },
+  {
+    "question_id": "Q_EXTERNAL_WORKS",
+    "text_ar": "ما الأعمال الخارجية؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "walkways",
+      "parking",
+      "gate",
+      "fence",
+      "stormwater",
+      "external_rooms",
+      "external_lighting",
+      "landscaping"
+    ]
+  },
+  {
+    "question_id": "Q_HAS_PARKING",
+    "text_ar": "هل توجد مواقف ضمن النطاق؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PARKING_COUNT",
+      "Q_PARKING_AREA"
+    ],
+    "no_skip": [
+      "Q_PARKING_COUNT",
+      "Q_PARKING_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PARKING_COUNT",
+    "text_ar": "كم عدد المواقف؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_PARKING_AREA",
+    "text_ar": "ما مساحة المواقف؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HAS_ELEVATOR",
+    "text_ar": "هل يوجد مصعد ضمن النطاق؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_ELEVATOR_COUNT",
+      "Q_ELEVATOR_TYPE",
+      "Q_ELEVATOR_STOPS"
+    ],
+    "no_skip": [
+      "Q_ELEVATOR_COUNT",
+      "Q_ELEVATOR_TYPE",
+      "Q_ELEVATOR_STOPS"
+    ]
+  },
+  {
+    "question_id": "Q_ELEVATOR_COUNT",
+    "text_ar": "كم عدد المصاعد؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_ELEVATOR_TYPE",
+    "text_ar": "ما نوع المصعد؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "passenger",
+      "service",
+      "goods",
+      "accessibility"
+    ]
+  },
+  {
+    "question_id": "Q_ELEVATOR_STOPS",
+    "text_ar": "كم عدد الوقفات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_OCCUPANCY",
+    "text_ar": "ما عدد المستخدمين أو الإشغال؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_UNITS",
+    "text_ar": "كم عدد الوحدات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_TIMELINE",
+    "text_ar": "ما المدة المستهدفة؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": [],
+    "unit": "يوم"
+  },
+  {
+    "question_id": "Q_WORK_CONSTRAINTS",
+    "text_ar": "هل توجد قيود عمل أو وصول؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_WORK_CONSTRAINT_DETAILS"
+    ]
+  },
+  {
+    "question_id": "Q_WORK_CONSTRAINT_DETAILS",
+    "text_ar": "اذكر القيود.",
+    "answer_type": "text",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_HAS_COOKING",
+    "text_ar": "هل يوجد طبخ فعلي؟",
+    "answer_type": "boolean",
+    "critical": true,
+    "affects": [],
+    "yes_followups": [
+      "Q_COOKING_FUEL",
+      "Q_COMMERCIAL_KITCHEN_AREA",
+      "Q_EXHAUST"
+    ]
+  },
+  {
+    "question_id": "Q_COOKING_FUEL",
+    "text_ar": "ما مصدر طاقة الطبخ؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "gas",
+      "electric",
+      "mixed"
+    ]
+  },
+  {
+    "question_id": "Q_SEAT_COUNT",
+    "text_ar": "كم عدد المقاعد؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_COMMERCIAL_KITCHEN_AREA",
+    "text_ar": "ما مساحة المطبخ التجاري؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_EXHAUST",
+    "text_ar": "هل يوجد شفط مطبخ؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_EXHAUST_HOOD_COUNT"
+    ]
+  },
+  {
+    "question_id": "Q_EXHAUST_HOOD_COUNT",
+    "text_ar": "كم عدد الهودات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_GREASE_TRAP",
+    "text_ar": "هل توجد مصيدة دهون؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_COLD_ROOM",
+    "text_ar": "هل توجد غرفة تبريد؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_COLD_ROOM_AREA",
+      "Q_TARGET_TEMPERATURE"
+    ]
+  },
+  {
+    "question_id": "Q_COLD_ROOM_AREA",
+    "text_ar": "ما مساحة غرفة التبريد؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_TARGET_TEMPERATURE",
+    "text_ar": "ما درجة الحرارة المطلوبة؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "°م"
+  },
+  {
+    "question_id": "Q_TREATMENT_ROOMS",
+    "text_ar": "كم عدد غرف أو محطات العلاج؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_XRAY",
+    "text_ar": "هل توجد أشعة؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_XRAY_TYPE"
+    ]
+  },
+  {
+    "question_id": "Q_XRAY_TYPE",
+    "text_ar": "ما نوع جهاز الأشعة؟",
+    "answer_type": "multi_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "intraoral",
+      "panoramic",
+      "cbct",
+      "other"
+    ]
+  },
+  {
+    "question_id": "Q_STERILIZATION",
+    "text_ar": "هل توجد غرفة تعقيم؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_STERILIZATION_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_STERILIZATION_AREA",
+    "text_ar": "ما مساحتها؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_MEDICAL_GAS",
+    "text_ar": "هل تتطلب المعدات غازات طبية؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_CLASSROOM_COUNT",
+    "text_ar": "كم عدد الفصول؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_STUDENT_COUNT",
+    "text_ar": "كم عدد الطلاب؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_LABS",
+    "text_ar": "هل توجد مختبرات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_LAB_COUNT"
+    ]
+  },
+  {
+    "question_id": "Q_LAB_COUNT",
+    "text_ar": "كم عدد المختبرات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_CAFETERIA",
+    "text_ar": "هل يوجد مقصف أو مطبخ؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_KITCHEN_TYPE",
+      "Q_KITCHEN_TOTAL_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PLAYGROUND",
+    "text_ar": "هل توجد ساحة ألعاب؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_PLAYGROUND_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_PLAYGROUND_AREA",
+    "text_ar": "ما مساحة الساحة؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HOTEL_ROOM_COUNT",
+    "text_ar": "كم عدد غرف الفندق؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_LAUNDRY",
+    "text_ar": "هل توجد مغسلة مركزية؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_LAUNDRY_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_LAUNDRY_AREA",
+    "text_ar": "ما مساحة المغسلة؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_HOTEL_RESTAURANT",
+    "text_ar": "هل يوجد مطعم أو مطبخ تجاري؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_HAS_COOKING",
+      "Q_COMMERCIAL_KITCHEN_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_MEETING_HALLS",
+    "text_ar": "هل توجد قاعات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_MEETING_HALL_COUNT"
+    ]
+  },
+  {
+    "question_id": "Q_MEETING_HALL_COUNT",
+    "text_ar": "كم عدد القاعات؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_STORAGE_TYPE",
+    "text_ar": "ما نوع المواد المخزنة؟",
+    "answer_type": "single_select",
+    "critical": false,
+    "affects": [],
+    "options": [
+      "dry_goods",
+      "food",
+      "furniture",
+      "retail_stock",
+      "industrial_materials",
+      "other"
+    ]
+  },
+  {
+    "question_id": "Q_CLEAR_HEIGHT",
+    "text_ar": "ما الارتفاع الصافي؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م"
+  },
+  {
+    "question_id": "Q_RACKING",
+    "text_ar": "هل توجد رفوف؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_RACKING_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_RACKING_AREA",
+    "text_ar": "ما مساحة الرفوف؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_LOADING_BAYS",
+    "text_ar": "كم عدد مناطق التحميل؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_REFRIGERATION",
+    "text_ar": "هل يحتاج المستودع إلى تبريد؟",
+    "answer_type": "boolean",
+    "critical": true,
+    "affects": [],
+    "yes_followups": [
+      "Q_TARGET_TEMPERATURE"
+    ]
+  },
+  {
+    "question_id": "Q_COLD_CHAMBER_COUNT",
+    "text_ar": "كم عدد غرف التبريد؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_BACKUP_POWER",
+    "text_ar": "هل يلزم مصدر طاقة احتياطي؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_FACTORY_PROCESS",
+    "text_ar": "ما العملية الصناعية الرئيسية؟",
+    "answer_type": "text",
+    "critical": true,
+    "affects": []
+  },
+  {
+    "question_id": "Q_PRODUCTION_LINES",
+    "text_ar": "كم عدد خطوط الإنتاج؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_EQUIPMENT_SCHEDULE",
+    "text_ar": "هل يوجد جدول معدات وأحمال؟",
+    "answer_type": "boolean",
+    "critical": true,
+    "affects": []
+  },
+  {
+    "question_id": "Q_INDUSTRIAL_DRAINAGE",
+    "text_ar": "هل يوجد صرف صناعي؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_COMPRESSED_AIR",
+    "text_ar": "هل توجد شبكة هواء مضغوط؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_PROCESS_EXHAUST",
+    "text_ar": "هل توجد أبخرة تحتاج شفطاً؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_HYGIENE_ZONES",
+    "text_ar": "هل توجد مناطق صحية عالية المتطلبات؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_HYGIENE_ZONE_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_HYGIENE_ZONE_AREA",
+    "text_ar": "ما مساحتها؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_PRAYER_CAPACITY",
+    "text_ar": "ما الطاقة الاستيعابية للمصلين؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_WOMEN_PRAYER",
+    "text_ar": "هل يوجد مصلى نساء؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_WOMEN_PRAYER_AREA"
+    ]
+  },
+  {
+    "question_id": "Q_WOMEN_PRAYER_AREA",
+    "text_ar": "ما مساحته؟",
+    "answer_type": "decimal",
+    "critical": false,
+    "affects": [],
+    "unit": "م²"
+  },
+  {
+    "question_id": "Q_ABLUTION",
+    "text_ar": "هل توجد مواضئ؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": [],
+    "yes_followups": [
+      "Q_ABLUTION_POINT_COUNT"
+    ]
+  },
+  {
+    "question_id": "Q_ABLUTION_POINT_COUNT",
+    "text_ar": "كم عدد نقاط الوضوء؟",
+    "answer_type": "integer",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_MINARET",
+    "text_ar": "هل تشمل الأعمال منارة؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_MOSQUE_SOUND",
+    "text_ar": "هل يشمل النطاق نظام الصوت؟",
+    "answer_type": "boolean",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_MIXED_ZONES",
+    "text_ar": "ما الاستخدامات الموجودة؟",
+    "answer_type": "multi_select",
+    "critical": true,
+    "affects": [],
+    "options": [
+      "retail",
+      "office",
+      "residential",
+      "hotel",
+      "parking",
+      "services"
+    ]
+  },
+  {
+    "question_id": "Q_ZONE_AREAS",
+    "text_ar": "أدخل مساحة كل استخدام.",
+    "answer_type": "repeatable_measurement",
+    "critical": false,
+    "affects": []
+  },
+  {
+    "question_id": "Q_ZONE_FLOORS",
+    "text_ar": "حدد طوابق كل استخدام.",
+    "answer_type": "repeatable_range",
+    "critical": false,
+    "affects": []
+  }
+]
