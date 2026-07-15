@@ -4,5 +4,5 @@ export const buildingTypeGroups = [
   { label: 'صحي وتعليمي', options: [['clinic','عيادة'],['medical_center','مركز طبي'],['school','مدرسة'],['nursery','حضانة'],['training_center','مركز تدريب']] },
   { label: 'ضيافة', options: [['hotel','فندق'],['serviced_apartments','شقق فندقية'],['event_hall','قاعة مناسبات']] },
   { label: 'تخزين وصناعة', options: [['warehouse','مستودع'],['cold_storage','مخزن مبرد'],['factory','مصنع'],['workshop','ورشة']] },
-  { label: 'ديني ومتعدد الاستخدام', options: [['mosque','مسجد'],['mixed_use_building','مبنى متعدد الاستخدامات'],['other','أخرى']] },
+  { label: 'إسلامي ومتعدد الاستخدام', options: [['mosque','مسجد'],['mixed_use_building','مبنى متعدد الاستخدامات'],['other','أخرى']] },
 ]
