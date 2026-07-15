@@ -12,6 +12,10 @@ services:
         value: production
       - key: RENDER
         value: "true"
+      - key: ACTIVITY_HEARTBEAT_URL
+        value: https://al-moqawel-backend.onrender.com/health
+      - key: ACTIVITY_HEARTBEAT_INTERVAL_MS
+        value: "600000"
     healthCheckPath: /health
 
   - type: web

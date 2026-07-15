@@ -124,36 +124,51 @@ if (fs.existsSync(frontendDist)) {
   console.log(`⚠️ لم يتم العثور على بناء الواجهة الأمامية. قم بتشغيل: cd frontend && npx vite build`);
 }
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🚀 المقاول الإلكتروني - Backend يعمل على المنفذ ${PORT}`);
   console.log(`🌐 API: http://localhost:${PORT}/api`);
   console.log(`💓 Health Check: http://localhost:${PORT}/health`);
 });
 
-// Keep-alive mechanism for Render free tier
-// Prevents the service from sleeping by sending periodic requests
-if (process.env.RENDER || process.env.NODE_ENV === 'production') {
-  const KEEP_ALIVE_INTERVAL = 14 * 60 * 1000; // 14 minutes (Render sleeps after 15 min of inactivity)
-  
-  setInterval(() => {
-    const http = require('http');
-    const options = {
-      hostname: 'localhost',
-      port: PORT,
-      path: '/health',
-      method: 'GET'
-    };
-    
-    const req = http.request(options, (res) => {
-      console.log(`💓 Keep-alive ping sent at ${new Date().toISOString()} - Status: ${res.statusCode}`);
-    });
-    
-    req.on('error', (err) => {
-      console.error('❌ Keep-alive ping failed:', err.message);
-    });
-    
-    req.end();
-  }, KEEP_ALIVE_INTERVAL);
-  
-  console.log(`💓 Keep-alive mechanism enabled (interval: ${KEEP_ALIVE_INTERVAL / 1000 / 60} minutes)`);
+// Periodic public activity heartbeat.  This deliberately calls the public URL,
+// not localhost, so the platform receives an ordinary health request.
+function startActivityHeartbeat() {
+  const healthUrl = process.env.ACTIVITY_HEARTBEAT_URL;
+  if (!healthUrl) return;
+  const intervalMs = Math.max(60_000, Number(process.env.ACTIVITY_HEARTBEAT_INTERVAL_MS) || 10 * 60 * 1000);
+  let inFlight = false;
+  const pulse = async () => {
+    if (inFlight) return;
+    inFlight = true;
+    try {
+      const response = await fetch(healthUrl, { headers: { 'User-Agent': 'al-moqawel-activity-heartbeat/1.0' }, signal: AbortSignal.timeout(15_000) });
+      console.log(`Activity heartbeat: ${response.status} ${new Date().toISOString()}`);
+    } catch (error) {
+      console.error(`Activity heartbeat failed: ${error.message}`);
+    } finally { inFlight = false; }
+  };
+  setInterval(pulse, intervalMs).unref();
+  setTimeout(pulse, 5_000).unref();
+  console.log(`Activity heartbeat enabled every ${Math.round(intervalMs / 60_000)} minutes`);
 }
+startActivityHeartbeat();
+
+server.keepAliveTimeout = 65_000;
+server.headersTimeout = 66_000;
+server.on('error', error => console.error('HTTP server error:', error));
+let stopping = false;
+function shutdown(signal) {
+  if (stopping) return;
+  stopping = true;
+  console.log(`${signal}: closing HTTP server gracefully`);
+  server.close(error => {
+    if (error) process.exitCode = 1;
+    if (error) console.error('Graceful shutdown failed:', error);
+    process.exit();
+  });
+  setTimeout(() => process.exit(1), 25_000).unref();
+}
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('uncaughtException', error => { console.error('Uncaught exception:', error); shutdown('uncaughtException'); });
+process.on('unhandledRejection', error => { console.error('Unhandled rejection:', error); shutdown('unhandledRejection'); });
