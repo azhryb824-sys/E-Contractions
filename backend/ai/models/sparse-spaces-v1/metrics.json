@@ -1,0 +1,14 @@
+{
+  "test": {
+    "records": 5100,
+    "space_state_accuracy": 0.9066176470588235,
+    "forbidden_coverage": 1,
+    "pending_confirmation_coverage": 1
+  },
+  "holdout": {
+    "records": 5100,
+    "space_state_accuracy": 0.9064705882352941,
+    "forbidden_coverage": 1,
+    "pending_confirmation_coverage": 1
+  }
+}

@@ -7,6 +7,7 @@ const quantityValidator = require('./quantity-validator');
 const projectSchema = require('./project-schema');
 const { runBoqPipeline } = require('./boq-pipeline');
 const specializedItemPredictor = require('./specialized/item-predictor');
+const spaceStatePredictor = require('./specialized/space-state-predictor');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOGS_DIR = path.join(DATA_DIR, 'catalogs');
@@ -116,6 +117,12 @@ function understandProject(request) {
   if (request.floor_count !== undefined && request.floor_count !== null) result.explicit_values.floor_count = request.floor_count;
   if (request.floors !== undefined && request.floors !== null && !result.explicit_values.floor_count) result.explicit_values.floor_count = request.floors;
   if (request.living_room_count !== undefined && request.living_room_count !== null) result.explicit_values.living_room_count = request.living_room_count;
+
+  // Preserve zero, unknown, not-applicable and out-of-scope as distinct states.
+  const spaceStates = spaceStatePredictor.inferSpaceStates(request);
+  result.space_states = spaceStates;
+  if (spaceStates.room_count.value !== null) result.explicit_values.room_count = spaceStates.room_count.value;
+  if (spaceStates.bathroom_count.value !== null) result.explicit_values.bathroom_count = spaceStates.bathroom_count.value;
 
   // Infer project type
   const text = ((request.title || '') + ' ' + (request.description || '')).toLowerCase();
@@ -262,8 +269,8 @@ function understandProject(request) {
 
   // Collect missing info
   if (!request.area && !result.explicit_values.area) result.missing_information.push('المساحة');
-  if (!request.rooms && !request.room_count && !result.explicit_values.room_count) result.missing_information.push('عدد الغرف');
-  if (!request.bathrooms && !request.bathroom_count && !result.explicit_values.bathroom_count) result.missing_information.push('عدد الحمامات');
+  if (spaceStates.room_count.state === 'unknown') result.missing_information.push('عدد الغرف');
+  if (spaceStates.bathroom_count.state === 'unknown') result.missing_information.push('عدد الحمامات');
   if (!request.finish_level && !result.explicit_values.finish_level && !result.inferred_values.finish_level) result.missing_information.push('مستوى التشطيب');
   if (!request.city) result.missing_information.push('المدينة/الموقع');
   if (!request.building_type && !result.explicit_values.building_type && !result.inferred_values.building_type) result.missing_information.push('نوع المبنى');
@@ -272,6 +279,8 @@ function understandProject(request) {
   result.confirmed_inferred_values = canonicalUnderstanding.confirmed_inferred_values;
   result.unconfirmed_inferred_values = canonicalUnderstanding.unconfirmed_inferred_values;
   result.questions = canonicalUnderstanding.questions;
+  if (spaceStates.room_count.state === 'unknown') result.questions.push({ field: 'room_count', question: 'كم عدد الغرف أو الفراغات المغلقة الداخلة ضمن نطاق المشروع؟' });
+  if (spaceStates.bathroom_count.state === 'unknown') result.questions.push({ field: 'bathroom_count', question: 'كم عدد الحمامات الداخلة ضمن نطاق المشروع؟' });
   result.canonical_schema = canonicalUnderstanding;
   return result;
 }
@@ -885,8 +894,8 @@ function generateEstimate(request) {
 
   const projectParams = {
     area: request.area || 150,
-    room_count: request.rooms || request.room_count || 3,
-    bathroom_count: request.bathrooms || request.bathroom_count || 2,
+    room_count: understanding.space_states.room_count.value,
+    bathroom_count: understanding.space_states.bathroom_count.value,
     kitchen_count: request.kitchen_count || 1,
     floor_count: request.floors || request.floor_count || 1,
     living_room_count: request.living_room_count || 1,
@@ -1077,7 +1086,9 @@ function generateEstimate(request) {
     understanding: {
       explicit_values: understanding.explicit_values,
       inferred_values: understanding.inferred_values,
-      missing_information: understanding.missing_information
+      missing_information: understanding.missing_information,
+      space_states: understanding.space_states,
+      questions: understanding.questions
     },
     data_completeness: computeDataCompleteness(request),
     assumptions: [
@@ -1210,6 +1221,12 @@ function generateBoq(request, executionMode) {
   sections = pipeline.sections;
   const inferredCondition = request.project_condition || (request.scope === 'full_construction' ? 'new_construction' : request.scope === 'renovation' ? 'renovation' : 'existing_building_fitout');
   const specializedPrediction = specializedItemPredictor.predict(request, { ...estimate.project, project_condition: inferredCondition, ownership_scope: request.ownership_scope || (estimate.project.building_type === 'apartment' ? 'single_unit_only' : '') });
+  const spaceStates = estimate.understanding?.space_states || spaceStatePredictor.inferSpaceStates(request);
+  const spaceSafety = spaceStatePredictor.applyToPredictions(specializedPrediction?.items || [], spaceStates);
+  if (specializedPrediction) {
+    specializedPrediction.items = spaceSafety.items;
+    specializedPrediction.questions = [...(specializedPrediction.questions || []), ...spaceSafety.questions];
+  }
   if (specializedPrediction && specializedPrediction.items.length) {
     const predictedByCode = new Map(specializedPrediction.items.map(item => [item.item_code, item]));
     pipeline.approvedBoq = pipeline.approvedBoq.filter(item => predictedByCode.get(item.code)?.classification === 'core');
@@ -1229,6 +1246,9 @@ function generateBoq(request, executionMode) {
     approvedBoq: pipeline.approvedBoq,
     item_predictions: specializedPrediction ? specializedPrediction.items : [],
     item_prediction_model: specializedPrediction ? specializedPrediction.model_version : null,
+    space_state_model: spaceStatePredictor.load()?.model_version || null,
+    space_states: spaceStates,
+    confirmation_questions: spaceSafety.questions,
     pipeline_trace: pipeline.pipeline_trace,
     exclusive_conflicts: pipeline.exclusiveConflicts,
     missing_required_inputs: pipeline.missingInputs,

@@ -162,6 +162,12 @@ export default function ProjectDetail() {
                   نموذج البنود {project.item_prediction_model}
                 </span>
               )}
+              {project.space_state_model && (
+                <span className="inline-flex items-center gap-1 text-xs text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
+                  <DoorOpen className="w-3 h-3" />
+                  نموذج الفراغات {project.space_state_model}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-1 text-xs text-gray-400">

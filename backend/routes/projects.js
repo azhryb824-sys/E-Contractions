@@ -55,6 +55,8 @@ router.get('/:id', (req, res) => {
     let items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(req.params.id);
     let itemPredictions = [];
     let itemPredictionModel = null;
+    let spaceStateModel = null;
+    let spaceStates = null;
 
     // Auto-predict if no items and auto_predict flag is set (default: true)
     const autoPredict = req.query.auto_predict !== 'false';
@@ -83,8 +85,8 @@ router.get('/:id', (req, res) => {
             building_type: project.building_type,
             city: project.city,
             area: project.area || 150,
-            rooms: project.room_count || 3,
-            bathrooms: project.bathroom_count || 2,
+            rooms: project.room_count ?? null,
+            bathrooms: project.bathroom_count ?? null,
             floors: project.floor_count || 1,
             finish_level: project.finish_level || 'متوسط',
             scope: scope,
@@ -94,6 +96,8 @@ router.get('/:id', (req, res) => {
             const approvedBoq = boqResult.approvedBoq || [];
             itemPredictions = boqResult.item_predictions || [];
             itemPredictionModel = boqResult.item_prediction_model || null;
+            spaceStateModel = boqResult.space_state_model || null;
+            spaceStates = boqResult.space_states || null;
 
             db.prepare('DELETE FROM project_items WHERE project_id = ? AND source LIKE ?').run(req.params.id, 'ai_%');
             const insert = db.prepare(`INSERT INTO project_items (id, project_id, item_id, code, name_ar, category, unit, quantity, confidence, source, sort_order, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
@@ -132,6 +136,8 @@ router.get('/:id', (req, res) => {
       files,
       item_predictions: itemPredictions,
       item_prediction_model: itemPredictionModel || require('../ai/specialized/item-predictor').load()?.model_version || null,
+      space_state_model: spaceStateModel || require('../ai/specialized/space-state-predictor').load()?.model_version || null,
+      space_states: spaceStates,
     };
 
     res.json({ success: true, data: normalized });
@@ -331,6 +337,9 @@ router.post('/:id/predict', (req, res) => {
         approvedBoq,
         item_predictions: boqResult.item_predictions || [],
         item_prediction_model: boqResult.item_prediction_model || null,
+        space_state_model: boqResult.space_state_model || null,
+        space_states: boqResult.space_states || null,
+        confirmation_questions: boqResult.confirmation_questions || [],
         items: savedItems,
         summary: predictionSummary,
         understanding: boqResult.understanding,
