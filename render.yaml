@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: al-moqawel-backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: RENDER
+        value: "true"
+    healthCheckPath: /health
+
+  - type: web
+    name: al-moqawel-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://al-moqawel-backend.onrender.com/api

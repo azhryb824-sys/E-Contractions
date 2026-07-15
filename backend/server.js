@@ -53,6 +53,11 @@ app.put('/api/settings', (req, res) => {
   }
 });
 
+// Health check endpoint for Render free tier keep-alive
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // Dashboard stats
 app.get('/api/dashboard/stats', (req, res) => {
   try {
@@ -121,4 +126,33 @@ if (fs.existsSync(frontendDist)) {
 app.listen(PORT, () => {
   console.log(`🚀 المقاول الإلكتروني - Backend يعمل على المنفذ ${PORT}`);
   console.log(`🌐 API: http://localhost:${PORT}/api`);
+  console.log(`💓 Health Check: http://localhost:${PORT}/health`);
 });
+
+// Keep-alive mechanism for Render free tier
+// Prevents the service from sleeping by sending periodic requests
+if (process.env.RENDER || process.env.NODE_ENV === 'production') {
+  const KEEP_ALIVE_INTERVAL = 14 * 60 * 1000; // 14 minutes (Render sleeps after 15 min of inactivity)
+  
+  setInterval(() => {
+    const http = require('http');
+    const options = {
+      hostname: 'localhost',
+      port: PORT,
+      path: '/health',
+      method: 'GET'
+    };
+    
+    const req = http.request(options, (res) => {
+      console.log(`💓 Keep-alive ping sent at ${new Date().toISOString()} - Status: ${res.statusCode}`);
+    });
+    
+    req.on('error', (err) => {
+      console.error('❌ Keep-alive ping failed:', err.message);
+    });
+    
+    req.end();
+  }, KEEP_ALIVE_INTERVAL);
+  
+  console.log(`💓 Keep-alive mechanism enabled (interval: ${KEEP_ALIVE_INTERVAL / 1000 / 60} minutes)`);
+}
