@@ -1,0 +1,68 @@
+{
+  "integrity": {
+    "splits": {
+      "train": {
+        "projects": 21000,
+        "items": 850155
+      },
+      "validation": {
+        "projects": 4500,
+        "items": 181947
+      },
+      "test": {
+        "projects": 3000,
+        "items": 121288
+      },
+      "holdout": {
+        "projects": 1500,
+        "items": 62489
+      }
+    },
+    "leakage": [],
+    "item_project_mismatches": 0
+  },
+  "validation": {
+    "records": 181947,
+    "quantity_state_accuracy": 0.91414,
+    "quantity_driver_accuracy": 1,
+    "unit_accuracy": 1,
+    "zone_accuracy": 1,
+    "safe_abstention_precision": 0.95289,
+    "safe_abstention_recall": 0.943764,
+    "safe_abstention_f1": 0.948305,
+    "regression_records": 151824,
+    "conditional_regression_mae": 14.442447,
+    "code_name_mismatches": 0
+  },
+  "test": {
+    "records": 121288,
+    "quantity_state_accuracy": 0.913141,
+    "quantity_driver_accuracy": 1,
+    "unit_accuracy": 1,
+    "zone_accuracy": 1,
+    "safe_abstention_precision": 0.95163,
+    "safe_abstention_recall": 0.94373,
+    "safe_abstention_f1": 0.947663,
+    "regression_records": 101066,
+    "conditional_regression_mae": 14.701297,
+    "code_name_mismatches": 0
+  },
+  "holdout": {
+    "records": 62489,
+    "quantity_state_accuracy": 0.914225,
+    "quantity_driver_accuracy": 1,
+    "unit_accuracy": 1,
+    "zone_accuracy": 1,
+    "safe_abstention_precision": 0.953546,
+    "safe_abstention_recall": 0.94324,
+    "safe_abstention_f1": 0.948365,
+    "regression_records": 52185,
+    "conditional_regression_mae": 14.683876,
+    "code_name_mismatches": 0
+  },
+  "limitations": [
+    "Synthetic, rule-grounded data; engineering_reviewed is false.",
+    "Model is shadow-only and does not change approved BOQ output.",
+    "Quantities are emitted only where a calculable state and observed evidence exist."
+  ]
+}

@@ -26,6 +26,7 @@
     "ai:train:complete-bundle": "node ai/specialized/train-complete-bundle.js",
     "ai:train:sparse-spaces": "node ai/specialized/train-sparse-spaces.js",
     "ai:train:questionnaire": "node ai/specialized/train-questionnaire-model.js",
+    "ai:train:apartment-quantity": "node ai/specialized/train-apartment-quantity-models.js",
     "ai:train:item-classification": "node ai/train.js --component item-classification",
     "ai:train:quantity-driver": "node ai/train.js --component quantity-driver",
     "ai:train:confidence": "node ai/train.js --component confidence",
