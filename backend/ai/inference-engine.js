@@ -8,6 +8,7 @@ const projectSchema = require('./project-schema');
 const { runBoqPipeline } = require('./boq-pipeline');
 const specializedItemPredictor = require('./specialized/item-predictor');
 const spaceStatePredictor = require('./specialized/space-state-predictor');
+const candidateGenerator = require('./specialized/candidate-generator');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOGS_DIR = path.join(DATA_DIR, 'catalogs');
@@ -1219,6 +1220,49 @@ function generateBoq(request, executionMode) {
 
   const pipeline = runBoqPipeline(sections, estimate.project, request);
   sections = pipeline.sections;
+  
+  // Use new candidate generator for better item coverage
+  const candidateResult = candidateGenerator.generateAndClassifyItems(estimate.project, request);
+  
+  // Merge candidate results with existing sections
+  if (candidateResult.classified && candidateResult.classified.length > 0) {
+    const candidateCodes = new Set(candidateResult.classified.map(c => c.item_code));
+    const existingCodes = new Set(pipeline.approvedBoq.map(i => i.code));
+    
+    // Add new candidates that aren't already in approvedBoq
+    for (const candidate of candidateResult.classified) {
+      if (!existingCodes.has(candidate.item_code)) {
+        const dict = itemDictionary[candidate.item_code];
+        if (dict) {
+          const item = generateItemFromDict(candidate.item_code, {
+            area: estimate.project.area || 150,
+            room_count: estimate.project.room_count || 3,
+            bathroom_count: estimate.project.bathroom_count || 2,
+            kitchen_count: estimate.project.kitchen_count || 1,
+            floor_count: estimate.project.floor_count || 1,
+            finish_level: estimate.project.finish_level || 'جيد',
+            building_type: estimate.project.building_type || '',
+            project_type: estimate.project.project_type || '',
+            scope: estimate.project.scope || ''
+          }, {
+            scope_inferred: estimate.has_inferred_values,
+            drawings_available: false,
+            similar_project_count: 0
+          });
+          
+          if (item) {
+            item.classification = candidate.classification;
+            item.requires_confirmation = candidate.requires_confirmation;
+            item.section_status = candidate.section_status;
+            item.section_reason = candidate.section_reason;
+            item.source = candidate.source || 'candidate_generator';
+            pipeline.approvedBoq.push(item);
+          }
+        }
+      }
+    }
+  }
+  
   const inferredCondition = request.project_condition || (request.scope === 'full_construction' ? 'new_construction' : request.scope === 'renovation' ? 'renovation' : 'existing_building_fitout');
   const specializedPrediction = specializedItemPredictor.predict(request, { ...estimate.project, project_condition: inferredCondition, ownership_scope: request.ownership_scope || (estimate.project.building_type === 'apartment' ? 'single_unit_only' : '') });
   const spaceStates = estimate.understanding?.space_states || spaceStatePredictor.inferSpaceStates(request);
@@ -1227,10 +1271,10 @@ function generateBoq(request, executionMode) {
     specializedPrediction.items = spaceSafety.items;
     specializedPrediction.questions = [...(specializedPrediction.questions || []), ...spaceSafety.questions];
   }
-  if (specializedPrediction && specializedPrediction.items.length) {
-    const predictedByCode = new Map(specializedPrediction.items.map(item => [item.item_code, item]));
-    pipeline.approvedBoq = pipeline.approvedBoq.filter(item => predictedByCode.get(item.code)?.classification === 'core');
-  }
+  
+  // REMOVED: Strict filtering that only kept 'core' items
+  // Now we keep all classifications: required, recommended, conditional, optional, etc.
+  // pipeline.approvedBoq = pipeline.approvedBoq.filter(item => predictedByCode.get(item.code)?.classification === 'core');
   const result = {
     document_type: 'quantity_sheet',
     status: criticalErrors ? 'validation_errors' : 'ready',

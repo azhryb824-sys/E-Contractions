@@ -1,0 +1,368 @@
+{
+  "version": "v1",
+  "description": "قواعد تغطية الأقسام لأنواع المشاريع المختلفة",
+  "coverage_rules": {
+    "office_fitout": {
+      "building_type": "office",
+      "scope": "full_fitout",
+      "required_sections": [
+        {
+          "section": "preliminary_works",
+          "name": "الأعمال التمهيدية",
+          "status": "required",
+          "reason": "أعمال التجهيز والمسح اللازمة قبل البدء"
+        },
+        {
+          "section": "demolition_removal",
+          "name": "الإزالة والمعالجة",
+          "status": "conditional",
+          "condition": "existing_building",
+          "reason": "عند وجود مبنى قائم يحتاج إزالة أو معالجة"
+        },
+        {
+          "section": "partitions_doors",
+          "name": "القواطع والأبواب",
+          "status": "required",
+          "reason": "المكاتب تتطلب قواطع وأبواب للغرف"
+        },
+        {
+          "section": "flooring",
+          "name": "الأرضيات",
+          "status": "required",
+          "reason": "تشطيب المكتب يشمل الأرضيات"
+        },
+        {
+          "section": "walls_paint",
+          "name": "الجدران والدهانات",
+          "status": "required",
+          "reason": "تشطيب المكتب يشمل الجدران والدهانات"
+        },
+        {
+          "section": "ceilings",
+          "name": "الأسقف",
+          "status": "required",
+          "reason": "تشطيب المكتب يشمل الأسقف"
+        },
+        {
+          "section": "electrical",
+          "name": "الكهرباء",
+          "status": "required",
+          "reason": "المكاتب تتطلب كهرباء للإنارة والأجهزة"
+        },
+        {
+          "section": "lighting",
+          "name": "الإنارة",
+          "status": "required",
+          "reason": "المكاتب تتطلب إنارة كافية"
+        },
+        {
+          "section": "low_voltage",
+          "name": "التيار الخفيف",
+          "status": "conditional",
+          "condition": "modern_office",
+          "reason": "المكاتب الحديثة قد تتطلب شبكات تيار خفيف"
+        },
+        {
+          "section": "hvac",
+          "name": "التكييف والتهوية",
+          "status": "required",
+          "reason": "المكاتب تتطلب تكييفاً وتهوية"
+        },
+        {
+          "section": "plumbing",
+          "name": "السباكة",
+          "status": "conditional",
+          "condition": "has_bathroom_or_pantry",
+          "reason": "عند وجود حمام أو بانتري"
+        },
+        {
+          "section": "fire_safety",
+          "name": "الحريق والسلامة",
+          "status": "conditional",
+          "condition": "commercial_building",
+          "reason": "المباني التجارية تتطلب أنظمة حريق"
+        },
+        {
+          "section": "testing_handover",
+          "name": "الاختبار والتنظيف والتسليم",
+          "status": "required",
+          "reason": "الاختبار والتنظيف قبل التسليم"
+        }
+      ]
+    },
+    "apartment_fitout": {
+      "building_type": "apartment",
+      "scope": "full_fitout",
+      "required_sections": [
+        {
+          "section": "preliminary_works",
+          "name": "الأعمال التمهيدية",
+          "status": "required",
+          "reason": "أعمال التجهيز اللازمة"
+        },
+        {
+          "section": "demolition_removal",
+          "name": "الإزالة والمعالجة",
+          "status": "conditional",
+          "condition": "existing_building",
+          "reason": "عند وجود تشطيب سابق"
+        },
+        {
+          "section": "partitions_doors",
+          "name": "القواطع والأبواب",
+          "status": "conditional",
+          "condition": "has_rooms",
+          "reason": "عند وجود غرف"
+        },
+        {
+          "section": "flooring",
+          "name": "الأرضيات",
+          "status": "required",
+          "reason": "تشطيب الشقة يشمل الأرضيات"
+        },
+        {
+          "section": "walls_paint",
+          "name": "الجدران والدهانات",
+          "status": "required",
+          "reason": "تشطيب الشقة يشمل الجدران والدهانات"
+        },
+        {
+          "section": "ceilings",
+          "name": "الأسقف",
+          "status": "required",
+          "reason": "تشطيب الشقة يشمل الأسقف"
+        },
+        {
+          "section": "electrical",
+          "name": "الكهرباء",
+          "status": "required",
+          "reason": "الشقة تتطلب كهرباء"
+        },
+        {
+          "section": "lighting",
+          "name": "الإنارة",
+          "status": "required",
+          "reason": "الشقة تتطلب إنارة"
+        },
+        {
+          "section": "low_voltage",
+          "name": "التيار الخفيف",
+          "status": "optional",
+          "reason": "قد تتطلب شبكات تيار خفيف"
+        },
+        {
+          "section": "hvac",
+          "name": "التكييف والتهوية",
+          "status": "required",
+          "reason": "الشقة تتطلب تكييفاً"
+        },
+        {
+          "section": "plumbing",
+          "name": "السباكة",
+          "status": "required",
+          "reason": "الشقة تتطلب سباكة للحمامات والمطبخ"
+        },
+        {
+          "section": "kitchen",
+          "name": "المطبخ",
+          "status": "conditional",
+          "condition": "has_kitchen",
+          "reason": "عند وجود مطبخ"
+        },
+        {
+          "section": "testing_handover",
+          "name": "الاختبار والتنظيف والتسليم",
+          "status": "required",
+          "reason": "الاختبار والتنظيف قبل التسليم"
+        }
+      ]
+    },
+    "villa_full_construction": {
+      "building_type": "villa",
+      "scope": "full_construction",
+      "required_sections": [
+        {
+          "section": "excavation_foundations",
+          "name": "الحفر والأساسات",
+          "status": "required",
+          "reason": "الإنشاء من الصفر يتطلب حفراً وأساسات"
+        },
+        {
+          "section": "structural_concrete",
+          "name": "الخرسانة الإنشائية",
+          "status": "required",
+          "reason": "الهيكل الإنشائي للفيلا"
+        },
+        {
+          "section": "masonry",
+          "name": "الأعمال البناءة",
+          "status": "required",
+          "reason": "بناء الجدران"
+        },
+        {
+          "section": "roofing",
+          "name": "الأسقف والأسطح",
+          "status": "required",
+          "reason": "تغطية الفيلا"
+        },
+        {
+          "section": "external_works",
+          "name": "الأعمال الخارجية",
+          "status": "required",
+          "reason": "الواجهات والأسوار"
+        },
+        {
+          "section": "flooring",
+          "name": "الأرضيات",
+          "status": "required",
+          "reason": "تشطيب الأرضيات"
+        },
+        {
+          "section": "walls_paint",
+          "name": "الجدران والدهانات",
+          "status": "required",
+          "reason": "تشطيب الجدران والدهانات"
+        },
+        {
+          "section": "ceilings",
+          "name": "الأسقف",
+          "status": "required",
+          "reason": "تشطيب الأسقف"
+        },
+        {
+          "section": "partitions_doors",
+          "name": "القواطع والأبواب",
+          "status": "required",
+          "reason": "تقسيم الغرف والأبواب"
+        },
+        {
+          "section": "electrical",
+          "name": "الكهرباء",
+          "status": "required",
+          "reason": "الكهرباء للفيلا"
+        },
+        {
+          "section": "lighting",
+          "name": "الإنارة",
+          "status": "required",
+          "reason": "الإنارة للفيلا"
+        },
+        {
+          "section": "hvac",
+          "name": "التكييف والتهوية",
+          "status": "required",
+          "reason": "تكييف الفيلا"
+        },
+        {
+          "section": "plumbing",
+          "name": "السباكة",
+          "status": "required",
+          "reason": "سباكة الفيلا"
+        },
+        {
+          "section": "kitchen",
+          "name": "المطبخ",
+          "status": "required",
+          "reason": "مطبخ الفيلا"
+        },
+        {
+          "section": "fire_safety",
+          "name": "الحريق والسلامة",
+          "status": "conditional",
+          "condition": "large_villa",
+          "reason": "الفلل الكبيرة قد تتطلب أنظمة حريق"
+        },
+        {
+          "section": "testing_handover",
+          "name": "الاختبار والتنظيف والتسليم",
+          "status": "required",
+          "reason": "الاختبار والتنظيف قبل التسليم"
+        }
+      ]
+    },
+    "retail_shop": {
+      "building_type": "shop",
+      "scope": "full_fitout",
+      "required_sections": [
+        {
+          "section": "preliminary_works",
+          "name": "الأعمال التمهيدية",
+          "status": "required",
+          "reason": "أعمال التجهيز"
+        },
+        {
+          "section": "demolition_removal",
+          "name": "الإزالة والمعالجة",
+          "status": "conditional",
+          "condition": "existing_building",
+          "reason": "عند وجود تشطيب سابق"
+        },
+        {
+          "section": "flooring",
+          "name": "الأرضيات",
+          "status": "required",
+          "reason": "المحل يتطلب أرضيات مناسبة"
+        },
+        {
+          "section": "walls_paint",
+          "name": "الجدران والدهانات",
+          "status": "required",
+          "reason": "تشطيب المحل"
+        },
+        {
+          "section": "ceilings",
+          "name": "الأسقف",
+          "status": "required",
+          "reason": "تشطيب المحل"
+        },
+        {
+          "section": "electrical",
+          "name": "الكهرباء",
+          "status": "required",
+          "reason": "المحل يتطلب كهرباء للإنارة والأجهزة"
+        },
+        {
+          "section": "lighting",
+          "name": "الإنارة",
+          "status": "required",
+          "reason": "المحل يتطلب إنارة جيدة"
+        },
+        {
+          "section": "hvac",
+          "name": "التكييف والتهوية",
+          "status": "required",
+          "reason": "المحل يتطلب تكييفاً"
+        },
+        {
+          "section": "plumbing",
+          "name": "السباكة",
+          "status": "conditional",
+          "condition": "has_bathroom",
+          "reason": "عند وجود حمام"
+        },
+        {
+          "section": "fire_safety",
+          "name": "الحريق والسلامة",
+          "status": "conditional",
+          "condition": "commercial_building",
+          "reason": "المحلات التجارية قد تتطلب أنظمة حريق"
+        },
+        {
+          "section": "testing_handover",
+          "name": "الاختبار والتنظيف والتسليم",
+          "status": "required",
+          "reason": "الاختبار والتنظيف قبل التسليم"
+        }
+      ]
+    }
+  },
+  "section_status_types": {
+    "required": "مطلوب دائماً",
+    "conditional": "مشروط بتوفر شرط معين",
+    "optional": "اختياري",
+    "not_applicable": "غير منطبق",
+    "out_of_scope": "خارج النطاق",
+    "requires_question": "يحتاج سؤالاً",
+    "requires_drawing": "يحتاج مخططاً"
+  }
+}

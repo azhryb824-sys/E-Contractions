@@ -94,20 +94,52 @@ function parseProject(request = {}) {
 function buildApprovedBoq(sections = [], approvals = {}) {
   const approvedOptional = new Set(approvals.optional_item_codes || []);
   const selectedAlternatives = new Set(approvals.selected_alternative_codes || []);
-  const excluded = new Set(['forbidden','pending_measurement','pending_confirmation','invalid']);
+  const excluded = new Set(['forbidden','excluded','pending_measurement','pending_confirmation','invalid']);
   const seen = new Set();
   const approved = [];
-  for (const section of sections) for (const item of section.items || []) {
-    const classification = String(item.classification || 'required').toLowerCase();
-    if (!item.code || seen.has(item.code) || excluded.has(classification)) continue;
-    if (classification === 'optional' && !approvedOptional.has(item.code) && item.user_approved !== true) continue;
-    if (classification === 'alternative' && !selectedAlternatives.has(item.code) && item.selected !== true) continue;
-    if (item.needs_confirmation || item.requires_confirmation) continue;
-    const quantity = Number(item.quantity);
-    if (!Number.isFinite(quantity) || quantity <= 0) continue;
-    seen.add(item.code);
-    approved.push({ ...item, section_code: section.code, section_name: section.name, quantity });
+  
+  for (const section of sections) {
+    for (const item of section.items || []) {
+      const classification = String(item.classification || 'required').toLowerCase();
+      
+      // Skip excluded items
+      if (!item.code || seen.has(item.code) || excluded.has(classification)) continue;
+      
+      // Handle optional items - require approval
+      if (classification === 'optional' && !approvedOptional.has(item.code) && item.user_approved !== true) continue;
+      
+      // Handle alternative items - require selection
+      if (classification === 'alternative' && !selectedAlternatives.has(item.code) && item.selected !== true) continue;
+      
+      // Handle conditional items - include them but mark for confirmation
+      if (classification === 'conditional' || classification === 'pending_information' || classification === 'requires_measurement' || classification === 'requires_engineering_design') {
+        // Include conditional items but mark them
+        if (item.needs_confirmation === false || item.requires_confirmation === false) {
+          // Explicitly confirmed, include it
+        } else {
+          // Not confirmed, skip for now but could be shown separately
+          continue;
+        }
+      }
+      
+      // Skip items that need confirmation (unless explicitly confirmed)
+      if (item.needs_confirmation === true && item.user_confirmed !== true) continue;
+      if (item.requires_confirmation === true && item.user_confirmed !== true) continue;
+      
+      const quantity = Number(item.quantity);
+      if (!Number.isFinite(quantity) || quantity <= 0) continue;
+      
+      seen.add(item.code);
+      approved.push({ 
+        ...item, 
+        section_code: section.code, 
+        section_name: section.name, 
+        quantity,
+        final_classification: classification
+      });
+    }
   }
+  
   return approved;
 }
 
