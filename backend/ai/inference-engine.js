@@ -6,6 +6,7 @@ const dataLoader = require('./data-loader');
 const quantityValidator = require('./quantity-validator');
 const projectSchema = require('./project-schema');
 const { runBoqPipeline } = require('./boq-pipeline');
+const specializedItemPredictor = require('./specialized/item-predictor');
 
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALOGS_DIR = path.join(DATA_DIR, 'catalogs');
@@ -1207,6 +1208,12 @@ function generateBoq(request, executionMode) {
 
   const pipeline = runBoqPipeline(sections, estimate.project, request);
   sections = pipeline.sections;
+  const inferredCondition = request.project_condition || (request.scope === 'full_construction' ? 'new_construction' : request.scope === 'renovation' ? 'renovation' : 'existing_building_fitout');
+  const specializedPrediction = specializedItemPredictor.predict(request, { ...estimate.project, project_condition: inferredCondition, ownership_scope: request.ownership_scope || (estimate.project.building_type === 'apartment' ? 'single_unit_only' : '') });
+  if (specializedPrediction && specializedPrediction.items.length) {
+    const predictedByCode = new Map(specializedPrediction.items.map(item => [item.item_code, item]));
+    pipeline.approvedBoq = pipeline.approvedBoq.filter(item => predictedByCode.get(item.code)?.classification === 'core');
+  }
   const result = {
     document_type: 'quantity_sheet',
     status: criticalErrors ? 'validation_errors' : 'ready',
@@ -1220,6 +1227,8 @@ function generateBoq(request, executionMode) {
     missing_information: estimate.missing_information || [],
     sections,
     approvedBoq: pipeline.approvedBoq,
+    item_predictions: specializedPrediction ? specializedPrediction.items : [],
+    item_prediction_model: specializedPrediction ? specializedPrediction.model_version : null,
     pipeline_trace: pipeline.pipeline_trace,
     exclusive_conflicts: pipeline.exclusiveConflicts,
     missing_required_inputs: pipeline.missingInputs,
