@@ -319,6 +319,29 @@ function initSchema() {
       is_active INTEGER DEFAULT 1,
       updated_at TEXT DEFAULT (datetime('now'))
     );
+
+    CREATE TABLE IF NOT EXISTS project_item_prediction_snapshots (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id),
+      request_id TEXT NOT NULL,
+      model_version TEXT,
+      snapshot_json TEXT NOT NULL,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
+    CREATE TABLE IF NOT EXISTS project_deleted_item_audit (
+      id TEXT PRIMARY KEY,
+      project_id TEXT NOT NULL REFERENCES projects(id),
+      item_code TEXT NOT NULL,
+      previous_classification TEXT,
+      new_classification TEXT,
+      reason_code TEXT NOT NULL,
+      reason_ar TEXT,
+      stage TEXT NOT NULL,
+      rule_id TEXT,
+      model_version TEXT,
+      user_id TEXT,
+      created_at TEXT DEFAULT (datetime('now'))
+    );
   `);
 
   const projectColumns = new Set(db.prepare('PRAGMA table_info(projects)').all().map(column => column.name));
@@ -337,6 +360,7 @@ function initSchema() {
     quantity_state: 'TEXT', quantity_driver: 'TEXT', required_inputs_json: 'TEXT', quantity_confidence: 'REAL',
     can_enter_approved_boq: 'INTEGER DEFAULT 0', rule_id: 'TEXT', rule_version: 'TEXT', zone_id: 'TEXT',
     pricing_status: "TEXT DEFAULT 'unpriced'"
+    ,classification: "TEXT DEFAULT 'required'", approval_status: "TEXT DEFAULT 'pending_review'"
   };
   for (const [name, definition] of Object.entries(itemAdditions)) {
     if (!itemColumns.has(name)) db.exec(`ALTER TABLE project_items ADD COLUMN ${name} ${definition}`);

@@ -1368,6 +1368,13 @@ function generateBoq(request, executionMode) {
     missing_information: estimate.missing_information || [],
     sections,
     approvedBoq: pipeline.approvedBoq,
+    // The review list is intentionally independent of quantity readiness.
+    reviewableItems: pipeline.reviewableItems,
+    quantityResults: pipeline.quantityResults,
+    itemPredictionSnapshot: pipeline.itemPredictionSnapshot,
+    deletedItemAudit: pipeline.deletedItemAudit,
+    sectionCoverage: pipeline.sectionCoverage,
+    itemPreservationGate: pipeline.itemPreservationGate,
     item_predictions: specializedPrediction ? specializedPrediction.items : [],
     item_prediction_model: specializedPrediction ? specializedPrediction.model_version : null,
     space_state_model: spaceStatePredictor.load()?.model_version || null,

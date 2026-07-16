@@ -3,16 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const { buildApprovedBoq } = require('./project-schema');
 const quantityEngine = require('./quantity-engine-v2');
+const preservation = require('./item-preservation');
 
 const knowledge = name => JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'knowledge', name), 'utf8'));
 const buildingRules = knowledge('building-rules.json');
 const exclusiveGroups = knowledge('exclusive-item-groups.json');
 const measurementDrivers = new Set(['drawing_measurement','manual_measurement','engineering_formula']);
 
-function flatten(sections) { return sections.flatMap(s => (s.items || []).map(item => ({ ...item, section_code: s.code, section_name: s.name }))); }
-function rebuild(items, sections) {
-  return sections.map(section => ({ ...section, items: items.filter(i => i.section_code === section.code).map(({section_code,section_name,...i}) => i) })).filter(s => s.items.length);
-}
+const flatten = preservation.flatten;
+const rebuild = preservation.rebuild;
 function applyBuildingEligibility(items, project, text) {
   const rule = buildingRules[project.building_type] || {};
   const forbidden = new Set(rule.forbidden_codes || []);
@@ -40,8 +39,8 @@ function resolveExclusiveGroups(items, selected = [], zones = []) {
 }
 function classifyMeasurements(items) {
   return items.map(item => {
-    if (item.requires_drawing || item.quantity_driver === 'drawing_measurement') return { ...item, classification: 'pending_measurement', quantity: null, requires_drawing: true };
-    if (item.requires_engineering_calculation || measurementDrivers.has(item.quantity_driver)) return { ...item, classification: 'pending_measurement', quantity: null, requires_engineering_calculation: true };
+    if (item.requires_drawing || item.quantity_driver === 'drawing_measurement') return { ...item, quantity: null, quantity_state: 'requires_architectural_drawing', requires_drawing: true };
+    if (item.requires_engineering_calculation || measurementDrivers.has(item.quantity_driver)) return { ...item, quantity: null, quantity_state: 'requires_specialist_design', requires_engineering_calculation: true };
     return item;
   });
 }
@@ -59,20 +58,25 @@ function runBoqPipeline(sections, project, request = {}) {
   items = applyBuildingEligibility(items, project, `${request.title || ''} ${request.description || ''}`); trace.push('building_eligibility_filtering');
   const exclusiveConflicts = resolveExclusiveGroups(items, request.selected_alternatives || [], request.zones || []); trace.push('exclusive_group_resolution');
   items = classifyMeasurements(items); trace.push('quantity_driver_selection');
-  items = quantityEngine.calculateAll(items, { ...project, ...request }, request.zones || project.zones || []);
+  const itemPredictionSnapshot = preservation.snapshot(items, { model_version: 'item-prediction-current' });
+  let quantityResults;
+  try { quantityResults = quantityEngine.calculateAll(items, { ...project, ...request }, request.zones || project.zones || []); }
+  catch (error) { quantityResults = items.map(item => ({ ...item, quantity: null, quantity_state: 'quantity_model_unavailable', can_enter_approved_boq: false, quantity_error: error.message })); }
   const testDependencies = { 'OPR-001': ['PLM-001','PLM-002'], 'OPR-002': ['ELC-010','ELC-EARTH'], 'OPR-003': ['HVAC-001','HVAC-005'] };
   const present = new Set(items.map(item => item.code));
-  items = items.map(item => testDependencies[item.code] && !testDependencies[item.code].some(code => present.has(code))
+  quantityResults = quantityResults.map(item => testDependencies[item.code] && !testDependencies[item.code].some(code => present.has(code))
     ? { ...item, quantity: null, quantity_state: 'not_applicable', can_enter_approved_boq: false, exclusion_reason: 'لا توجد أعمال تنفيذ مرتبطة للاختبار' }
     : item);
   trace.push('required_input_resolution','quantity_calculation','logical_validation');
-  items = deduplicate(items); trace.push('deduplication','classification','confidence_calibration');
-  const processedSections = rebuild(items, sections);
+  quantityResults = deduplicate(quantityResults); trace.push('deduplication','classification','confidence_calibration');
+  const preserved = preservation.mergeQuantityResults(itemPredictionSnapshot, quantityResults, sections);
+  const processedSections = preserved.sections;
   const approvedBoq = buildApprovedBoq(processedSections, { optional_item_codes: request.approved_optional_items || [], selected_alternative_codes: request.selected_alternatives || [] });
   trace.push('user_approval','final_boq_creation');
   const rule = buildingRules[project.building_type] || {};
   const missingInputs = (rule.required_inputs || []).filter(key => project[key] == null && request[key] == null);
-  return { sections: processedSections, approvedBoq, exclusiveConflicts, missingInputs,
+  return { sections: processedSections, approvedBoq, reviewableItems: preserved.finalItems, quantityResults, itemPredictionSnapshot,
+    deletedItemAudit: preserved.deleted, sectionCoverage: preserved.sectionCoverage, itemPreservationGate: preserved.quality_gate, exclusiveConflicts, missingInputs,
     quantity_catalog_version: quantityEngine.VERSION, requires_specialist_review: !!rule.requires_specialist_review, pipeline_trace: trace };
 }
 module.exports = { runBoqPipeline, applyBuildingEligibility, resolveExclusiveGroups, classifyMeasurements, deduplicate };

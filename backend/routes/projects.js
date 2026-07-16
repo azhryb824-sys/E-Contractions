@@ -46,6 +46,51 @@ function normalizeAssumptions(value) {
   return [];
 }
 
+function latestPredictionSnapshot(db, projectId) {
+  const row = db.prepare('SELECT * FROM project_item_prediction_snapshots WHERE project_id=? ORDER BY created_at DESC LIMIT 1').get(projectId);
+  if (!row) return null;
+  try { return { ...row, data: JSON.parse(row.snapshot_json) }; } catch { return null; }
+}
+function savePredictionArtifacts(db, projectId, requestId, result) {
+  const data = {
+    item_prediction_snapshot: result.itemPredictionSnapshot || null,
+    reviewable_items: result.reviewableItems || [], quantity_results: result.quantityResults || [],
+    assumptions: result.assumptions || [], missing_assumptions: result.missing_information || [],
+    section_coverage: result.sectionCoverage || [], quality_gate: result.itemPreservationGate || {}
+  };
+  db.prepare('INSERT INTO project_item_prediction_snapshots (id,project_id,request_id,model_version,snapshot_json) VALUES (?,?,?,?,?)')
+    .run(uuidv4(), projectId, requestId, result.item_prediction_model || result.model?.version || null, JSON.stringify(data));
+  const audit = db.prepare(`INSERT INTO project_deleted_item_audit
+    (id,project_id,item_code,previous_classification,new_classification,reason_code,reason_ar,stage,rule_id,model_version,user_id)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?)`);
+  for (const item of result.deletedItemAudit || []) audit.run(uuidv4(), projectId, item.item_code, item.previous_classification || null, item.new_classification || null,
+    item.reason_code, item.reason_ar || null, item.stage || 'unknown', item.rule_id || null, result.item_prediction_model || null, null);
+  return data;
+}
+
+router.get('/:id/item-prediction-snapshot', (req, res) => {
+  const project = getDb().prepare('SELECT id FROM projects WHERE id=?').get(req.params.id);
+  if (!project) return res.status(404).json({ success: false, error: 'project_not_found' });
+  const snapshot = latestPredictionSnapshot(getDb(), req.params.id);
+  res.json({ success: true, data: snapshot?.data?.item_prediction_snapshot || null });
+});
+router.get('/:id/assumption-coverage', (req, res) => {
+  const snapshot = latestPredictionSnapshot(getDb(), req.params.id);
+  res.json({ success: true, data: { assumptions: snapshot?.data?.assumptions || [], section_coverage: snapshot?.data?.section_coverage || [] } });
+});
+router.get('/:id/missing-assumptions', (req, res) => {
+  const snapshot = latestPredictionSnapshot(getDb(), req.params.id);
+  res.json({ success: true, data: snapshot?.data?.missing_assumptions || [] });
+});
+router.get('/:id/quantity-results', (req, res) => {
+  const snapshot = latestPredictionSnapshot(getDb(), req.params.id);
+  res.json({ success: true, data: snapshot?.data?.quantity_results || [] });
+});
+router.get('/:id/deleted-item-audit', (req, res) => {
+  const data = getDb().prepare('SELECT * FROM project_deleted_item_audit WHERE project_id=? ORDER BY created_at DESC').all(req.params.id);
+  res.json({ success: true, data });
+});
+
 router.get('/:id', (req, res) => {
   try {
     const db = getDb();
@@ -57,10 +102,12 @@ router.get('/:id', (req, res) => {
     let itemPredictionModel = null;
     let spaceStateModel = null;
     let spaceStates = null;
+    let snapshot = latestPredictionSnapshot(db, req.params.id);
+    let snapshotItems = snapshot?.data?.reviewable_items || [];
 
     // Auto-predict if no items and auto_predict flag is set (default: true)
     const autoPredict = req.query.auto_predict !== 'false';
-      if (items.length === 0 && autoPredict) {
+      if (items.length === 0 && snapshotItems.length === 0 && autoPredict) {
         try {
           const inferenceEngine = require('../ai/inference-engine');
 
@@ -93,7 +140,10 @@ router.get('/:id', (req, res) => {
           };
           const boqResult = inferenceEngine.generateBoq(requestParams, 'no_additions');
           if (boqResult.status === 'ready' || boqResult.status === 'validation_errors') {
+            const requestId = uuidv4();
+            savePredictionArtifacts(db, req.params.id, requestId, boqResult);
             const approvedBoq = boqResult.approvedBoq || [];
+            const reviewableItems = boqResult.reviewableItems || [];
             itemPredictions = boqResult.item_predictions || [];
             itemPredictionModel = boqResult.item_prediction_model || null;
             spaceStateModel = boqResult.space_state_model || null;
@@ -117,7 +167,8 @@ router.get('/:id', (req, res) => {
             transaction();
 
             db.prepare('UPDATE projects SET assumptions = ?, scope = ?, updated_at = ? WHERE id = ?').run(JSON.stringify(boqResult.assumptions || []), boqResult.project?.scope || project.scope, now, req.params.id);
-            items = db.prepare('SELECT * FROM project_items WHERE project_id = ? ORDER BY sort_order, category, name_ar').all(req.params.id);
+            items = reviewableItems;
+            snapshotItems = reviewableItems;
           }
         } catch (e) {
           console.error('Auto-predict failed for project', req.params.id, e.message);
@@ -127,6 +178,7 @@ router.get('/:id', (req, res) => {
     const files = db.prepare('SELECT * FROM generated_files WHERE project_id = ? ORDER BY created_at DESC').all(req.params.id);
     const projectWithAssumptions = db.prepare('SELECT * FROM projects WHERE id = ?').get(req.params.id);
 
+    if (snapshotItems.length) items = snapshotItems;
     const normalized = {
       ...projectWithAssumptions,
       assumptions: normalizeAssumptions(projectWithAssumptions.assumptions),
@@ -139,6 +191,8 @@ router.get('/:id', (req, res) => {
       item_prediction_model: itemPredictionModel || require('../ai/specialized/item-predictor').load()?.model_version || null,
       space_state_model: spaceStateModel || require('../ai/specialized/space-state-predictor').load()?.model_version || null,
       space_states: spaceStates,
+      section_coverage: snapshot?.data?.section_coverage || [],
+      item_preservation_gate: snapshot?.data?.quality_gate || null,
     };
 
     res.json({ success: true, data: normalized });
@@ -292,6 +346,7 @@ router.post('/:id/predict', (req, res) => {
 
     const sections = boqResult.sections || [];
     const approvedBoq = boqResult.approvedBoq || [];
+    const reviewableItems = boqResult.reviewableItems || [];
 
     // Save per-request debug files
     const requestId = uuidv4();
@@ -302,7 +357,9 @@ router.post('/:id/predict', (req, res) => {
     fs.writeFileSync(debugPrefix + '-project.json', JSON.stringify({ project_id: req.params.id, request_id: requestId, project, inference_mode: boqResult.inference_mode || 'unknown', model_version: boqResult.model?.version || 'none', created_at: new Date().toISOString() }, null, 2));
     fs.writeFileSync(debugPrefix + '-prediction.json', JSON.stringify({ project_id: req.params.id, request_id: requestId, inference_mode: boqResult.inference_mode || 'unknown', model_version: boqResult.model?.version || 'none', sections_count: sections.length, items_count: sections.reduce((s, sec) => s + (sec.items || []).length, 0), assumptions: boqResult.assumptions || [], created_at: new Date().toISOString(), sections }, null, 2));
 
-    // Delete existing AI predictions for this project
+    savePredictionArtifacts(db, req.params.id, requestId, boqResult);
+    // Keep the existing storage of quantity-ready rows for pricing/export. The
+    // review list is stored separately as a snapshot and is never filtered by quantity.
     db.prepare('DELETE FROM project_items WHERE project_id = ? AND source LIKE ?').run(req.params.id, 'ai_%');
 
     const insert = db.prepare(`
@@ -328,11 +385,11 @@ router.post('/:id/predict', (req, res) => {
 
     transaction();
 
-    const savedItems = db.prepare('SELECT * FROM project_items WHERE project_id = ? AND source NOT IN (?) ORDER BY sort_order LIMIT 500').all(req.params.id, '');
+    const savedItems = reviewableItems;
 
     // Update project with prediction summary and scope
     const totalSections = sections.length;
-    const totalItems = flatItems.length;
+    const totalItems = reviewableItems.length;
     const predictionSummary = `تم توقع ${totalSections} قسم و ${totalItems} بند`;
     db.prepare('UPDATE projects SET assumptions = ?, scope = ?, updated_at = ? WHERE id = ?').run(JSON.stringify(boqResult.assumptions || []), scope, now, req.params.id);
 
@@ -343,6 +400,17 @@ router.post('/:id/predict', (req, res) => {
         request_id: requestId,
         sections,
         approvedBoq,
+        candidate_items: boqResult.itemPredictionSnapshot?.items || [],
+        applicable_items: reviewableItems,
+        required_items: reviewableItems.filter(item => item.classification === 'required'),
+        recommended_items: reviewableItems.filter(item => item.classification === 'recommended'),
+        conditional_items: reviewableItems.filter(item => item.classification === 'conditional'),
+        pending_information_items: reviewableItems.filter(item => !Number.isFinite(item.quantity) || item.quantity <= 0),
+        quantity_results: boqResult.quantityResults || [],
+        assumptions: boqResult.assumptions || [],
+        missing_assumptions: boqResult.missing_information || [],
+        section_coverage: boqResult.sectionCoverage || [],
+        quality_gate: boqResult.itemPreservationGate || {},
         item_predictions: boqResult.item_predictions || [],
         item_prediction_model: boqResult.item_prediction_model || null,
         space_state_model: boqResult.space_state_model || null,

@@ -290,7 +290,11 @@ export default function ProjectDetail() {
                       <td className="px-4 py-3 text-gray-900 font-mono text-xs">{item.code || '—'}</td>
                       <td className="px-4 py-3 text-gray-900 font-medium">{item.name_ar || item.name || item.title}</td>
                       <td className="px-4 py-3 text-gray-600">{item.category || '—'}</td>
-                      <td className="px-4 py-3 text-gray-900">{formatNumber(item.quantity)}</td>
+                      <td className="px-4 py-3 text-gray-900">
+                        {Number.isFinite(item.quantity) && item.quantity > 0 ? formatNumber(item.quantity) : (
+                          <span className="text-amber-700 text-xs">معلّقة: {item.quantity_state || 'تحتاج معلومات'}</span>
+                        )}
+                      </td>
                       <td className="px-4 py-3 text-gray-600">{item.unit || '—'}</td>
                       <td className="px-4 py-3">
                         <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${sourceColor}`}>
